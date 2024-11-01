@@ -1,19 +1,18 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Remote\Backups;
+namespace SneakyPanel\Http\Controllers\Api\Remote\Backups;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Backup;
+use SneakyPanel\Models\Backup;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Extensions\Backups\BackupManager;
-use sneakypanel\Extensions\Filesystem\S3Filesystem;
-use sneakypanel\Exceptions\Http\HttpForbiddenException;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Extensions\Backups\BackupManager;
+use SneakyPanel\Extensions\Filesystem\S3Filesystem;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use sneakypanel\Http\Requests\Api\Remote\ReportBackupCompleteRequest;
+use SneakyPanel\Http\Requests\Api\Remote\ReportBackupCompleteRequest;
 
 class BackupStatusController extends Controller
 {
@@ -32,17 +31,17 @@ class BackupStatusController extends Controller
     public function index(ReportBackupCompleteRequest $request, string $backup): JsonResponse
     {
         // Get the node associated with the request.
-        /** @var \sneakypanel\Models\Node $node */
+        /** @var \SneakyPanel\Models\Node $node */
         $node = $request->attributes->get('node');
 
-        /** @var Backup $model */
+        /** @var \SneakyPanel\Models\Backup $model */
         $model = Backup::query()
             ->where('uuid', $backup)
             ->firstOrFail();
 
         // Check that the backup is "owned" by the node making the request. This avoids other nodes
         // from messing with backups that they don't own.
-        /** @var \sneakypanel\Models\Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $model->server;
         if ($server->node_id !== $node->id) {
             throw new HttpForbiddenException('You do not have permission to access that backup.');
@@ -92,7 +91,7 @@ class BackupStatusController extends Controller
      */
     public function restore(Request $request, string $backup): JsonResponse
     {
-        /** @var Backup $model */
+        /** @var \SneakyPanel\Models\Backup $model */
         $model = Backup::query()->where('uuid', $backup)->firstOrFail();
 
         $model->server->update(['status' => null]);
@@ -110,7 +109,7 @@ class BackupStatusController extends Controller
      * the given backup.
      *
      * @throws \Exception
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     protected function completeMultipartUpload(Backup $backup, S3Filesystem $adapter, bool $successful, ?array $parts): void
     {

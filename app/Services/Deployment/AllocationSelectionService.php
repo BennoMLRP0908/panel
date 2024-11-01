@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Deployment;
+namespace SneakyPanel\Services\Deployment;
 
-use sneakypanel\Models\Allocation;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Services\Allocations\AssignmentService;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
-use sneakypanel\Exceptions\Service\Deployment\NoViableAllocationException;
+use SneakyPanel\Models\Allocation;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Services\Allocations\AssignmentService;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Deployment\NoViableAllocationException;
 
 class AllocationSelectionService
 {
@@ -51,7 +51,7 @@ class AllocationSelectionService
      * empty, all ports will be considered when finding an allocation. If set, only ports appearing
      * in the array or range will be used.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function setPorts(array $ports): self
     {
@@ -80,7 +80,7 @@ class AllocationSelectionService
     /**
      * Return a single allocation that should be used as the default allocation for a server.
      *
-     * @throws NoViableAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableAllocationException
      */
     public function handle(): Allocation
     {

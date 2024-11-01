@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Subusers;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Subusers;
 
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Permission;
 
 class UpdateSubuserRequest extends SubuserRequest
 {

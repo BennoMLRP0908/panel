@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use sneakypanel\Contracts\Repository\DaemonKeyRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DaemonKeyRepositoryInterface;
 
 class RemoveDaemonSecretFromServersTable extends Migration
 {
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         $inserts = [];
 
@@ -41,7 +41,7 @@ class RemoveDaemonSecretFromServersTable extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('servers', function (Blueprint $table) {
             $table->char('daemonSecret', 36)->after('startup')->unique();

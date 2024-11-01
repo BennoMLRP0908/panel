@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
 use Illuminate\Support\Arr;
 

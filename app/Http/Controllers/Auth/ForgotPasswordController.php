@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Auth;
+namespace SneakyPanel\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Password;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Events\Auth\FailedPasswordReset;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Events\Auth\FailedPasswordReset;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller

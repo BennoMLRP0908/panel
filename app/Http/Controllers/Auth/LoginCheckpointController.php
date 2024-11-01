@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Auth;
+namespace SneakyPanel\Http\Controllers\Auth;
 
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Http\JsonResponse;
 use PragmaRX\Google2FA\Google2FA;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Events\Auth\ProvidedAuthenticationToken;
-use sneakypanel\Http\Requests\Auth\LoginCheckpointRequest;
+use SneakyPanel\Events\Auth\ProvidedAuthenticationToken;
+use SneakyPanel\Http\Requests\Auth\LoginCheckpointRequest;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class LoginCheckpointController extends AbstractLoginController
@@ -24,7 +24,7 @@ class LoginCheckpointController extends AbstractLoginController
     public function __construct(
         private Encrypter $encrypter,
         private Google2FA $google2FA,
-        private ValidationFactory $validation,
+        private ValidationFactory $validation
     ) {
         parent::__construct();
     }
@@ -56,7 +56,7 @@ class LoginCheckpointController extends AbstractLoginController
         }
 
         try {
-            /** @var User $user */
+            /** @var \SneakyPanel\Models\User $user */
             $user = User::query()->findOrFail($details['user_id']);
         } catch (ModelNotFoundException) {
             $this->sendFailedLoginResponse($request, null, self::TOKEN_EXPIRED_MESSAGE);

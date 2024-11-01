@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Node;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\Node;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Services\Api\KeyCreationService;
-use sneakypanel\Repositories\Eloquent\ApiKeyRepository;
+use SneakyPanel\Services\Api\KeyCreationService;
+use SneakyPanel\Repositories\Eloquent\ApiKeyRepository;
 
 class NodeAutoDeployController extends Controller
 {
@@ -19,7 +19,7 @@ class NodeAutoDeployController extends Controller
     public function __construct(
         private ApiKeyRepository $repository,
         private Encrypter $encrypter,
-        private KeyCreationService $keyCreationService,
+        private KeyCreationService $keyCreationService
     ) {
     }
 
@@ -27,11 +27,11 @@ class NodeAutoDeployController extends Controller
      * Generates a new API key for the logged-in user with only permission to read
      * nodes, and returns that as the deployment key for a node.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function __invoke(Request $request, Node $node): JsonResponse
     {
-        /** @var ApiKey|null $key */
+        /** @var \SneakyPanel\Models\ApiKey|null $key */
         $key = $this->repository->getApplicationKeys($request->user())
             ->filter(function (ApiKey $key) {
                 foreach ($key->getAttributes() as $permission => $value) {

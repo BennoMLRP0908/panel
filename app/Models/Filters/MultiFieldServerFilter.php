@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models\Filters;
+namespace SneakyPanel\Models\Filters;
 
 use Illuminate\Support\Str;
 use Spatie\QueryBuilder\Filters\Filter;

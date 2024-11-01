@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Nest;
+use SneakyPanel\Models\Nest;
 use Illuminate\Database\Eloquent\Collection;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
 
 class NestRepository extends EloquentRepository implements NestRepositoryInterface
 {
@@ -20,9 +20,9 @@ class NestRepository extends EloquentRepository implements NestRepositoryInterfa
     /**
      * Return a nest or all nests with their associated eggs and variables.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
-    public function getWithEggs(?int $id = null): Collection|Nest
+    public function getWithEggs(int $id = null): Collection|Nest
     {
         $instance = $this->getBuilder()->with('eggs', 'eggs.variables');
 
@@ -41,9 +41,9 @@ class NestRepository extends EloquentRepository implements NestRepositoryInterfa
     /**
      * Return a nest or all nests and the count of eggs and servers for that nest.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
-    public function getWithCounts(?int $id = null): Collection|Nest
+    public function getWithCounts(int $id = null): Collection|Nest
     {
         $instance = $this->getBuilder()->withCount(['eggs', 'servers']);
 
@@ -62,7 +62,7 @@ class NestRepository extends EloquentRepository implements NestRepositoryInterfa
     /**
      * Return a nest along with its associated eggs and the servers relation on those eggs.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithEggServers(int $id): Nest
     {

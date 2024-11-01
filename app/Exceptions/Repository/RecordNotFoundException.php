@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Exceptions\Repository;
+namespace SneakyPanel\Exceptions\Repository;
 
 use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;

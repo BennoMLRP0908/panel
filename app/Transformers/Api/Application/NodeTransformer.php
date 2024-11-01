@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Application;
+namespace SneakyPanel\Transformers\Api\Application;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use League\Fractal\Resource\Item;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\NullResource;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 
 class NodeTransformer extends BaseTransformer
 {
@@ -53,7 +53,7 @@ class NodeTransformer extends BaseTransformer
     /**
      * Return the nodes associated with this location.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeAllocations(Node $node): Collection|NullResource
     {
@@ -73,7 +73,7 @@ class NodeTransformer extends BaseTransformer
     /**
      * Return the nodes associated with this location.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeLocation(Node $node): Item|NullResource
     {
@@ -93,7 +93,7 @@ class NodeTransformer extends BaseTransformer
     /**
      * Return the nodes associated with this location.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeServers(Node $node): Collection|NullResource
     {

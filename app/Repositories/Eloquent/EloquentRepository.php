@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
 use Illuminate\Http\Request;
 use Webmozart\Assert\Assert;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
-use sneakypanel\Repositories\Repository;
+use SneakyPanel\Repositories\Repository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use sneakypanel\Contracts\Repository\RepositoryInterface;
-use sneakypanel\Exceptions\Model\DataValidationException;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\RepositoryInterface;
+use SneakyPanel\Exceptions\Model\DataValidationException;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
 
 abstract class EloquentRepository extends Repository implements RepositoryInterface
 {
@@ -71,7 +71,7 @@ abstract class EloquentRepository extends Repository implements RepositoryInterf
     /**
      * Create a new record in the database and return the associated model.
      *
-     * @throws DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function create(array $fields, bool $validate = true, bool $force = false): Model|bool
     {
@@ -92,7 +92,7 @@ abstract class EloquentRepository extends Repository implements RepositoryInterf
     /**
      * Find a model that has the specific ID passed.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function find(int $id): Model
     {
@@ -114,7 +114,7 @@ abstract class EloquentRepository extends Repository implements RepositoryInterf
     /**
      * Find and return the first matching instance for the given fields.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function findFirstWhere(array $fields): Model
     {
@@ -154,8 +154,8 @@ abstract class EloquentRepository extends Repository implements RepositoryInterf
     /**
      * Update a given ID with the passed array of fields.
      *
-     * @throws DataValidationException
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(int $id, array $fields, bool $validate = true, bool $force = false): Model|bool
     {
@@ -200,8 +200,8 @@ abstract class EloquentRepository extends Repository implements RepositoryInterf
     /**
      * Update a record if it exists in the database, otherwise create it.
      *
-     * @throws DataValidationException
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function updateOrCreate(array $where, array $fields, bool $validate = true, bool $force = false): Model|bool
     {

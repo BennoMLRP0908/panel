@@ -1,18 +1,18 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Remote\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Remote\Servers;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Support\Facades\Log;
-use sneakypanel\Models\ServerTransfer;
+use SneakyPanel\Models\ServerTransfer;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class ServerTransferController extends Controller
 {
@@ -22,7 +22,7 @@ class ServerTransferController extends Controller
     public function __construct(
         private ConnectionInterface $connection,
         private ServerRepository $repository,
-        private DaemonServerRepository $daemonServerRepository,
+        private DaemonServerRepository $daemonServerRepository
     ) {
     }
 
@@ -55,7 +55,7 @@ class ServerTransferController extends Controller
             throw new ConflictHttpException('Server is not being transferred.');
         }
 
-        /** @var \sneakypanel\Models\Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $this->connection->transaction(function () use ($server, $transfer) {
             $allocations = array_merge([$transfer->old_allocation], $transfer->old_additional_allocations);
 

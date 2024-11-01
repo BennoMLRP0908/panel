@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Helpers\SoftwareVersionService;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Helpers\SoftwareVersionService;
 
 class BaseController extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Contracts\Criteria;
+namespace SneakyPanel\Contracts\Criteria;
 
 use Illuminate\Database\Eloquent\Model;
-use sneakypanel\Repositories\Repository;
+use SneakyPanel\Repositories\Repository;
 
 interface CriteriaInterface
 {

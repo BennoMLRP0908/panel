@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Deployment;
+namespace SneakyPanel\Exceptions\Service\Deployment;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class NoViableAllocationException extends DisplayException
 {

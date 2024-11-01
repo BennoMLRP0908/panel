@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Support\Collection;
-use sneakypanel\Contracts\Repository\NodeRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NodeRepositoryInterface;
 
 class NodeRepository extends EloquentRepository implements NodeRepositoryInterface
 {

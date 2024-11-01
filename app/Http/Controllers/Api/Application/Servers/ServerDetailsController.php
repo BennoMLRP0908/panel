@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Application\Servers;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Services\Servers\BuildModificationService;
-use sneakypanel\Services\Servers\DetailsModificationService;
-use sneakypanel\Transformers\Api\Application\ServerTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Servers\UpdateServerDetailsRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\UpdateServerBuildConfigurationRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Services\Servers\BuildModificationService;
+use SneakyPanel\Services\Servers\DetailsModificationService;
+use SneakyPanel\Transformers\Api\Application\ServerTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Servers\UpdateServerDetailsRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\UpdateServerBuildConfigurationRequest;
 
 class ServerDetailsController extends ApplicationApiController
 {
@@ -17,7 +17,7 @@ class ServerDetailsController extends ApplicationApiController
      */
     public function __construct(
         private BuildModificationService $buildModificationService,
-        private DetailsModificationService $detailsModificationService,
+        private DetailsModificationService $detailsModificationService
     ) {
         parent::__construct();
     }
@@ -25,9 +25,9 @@ class ServerDetailsController extends ApplicationApiController
     /**
      * Update the details for a specific server.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function details(UpdateServerDetailsRequest $request, Server $server): array
     {
@@ -44,9 +44,9 @@ class ServerDetailsController extends ApplicationApiController
     /**
      * Update the build details for a specific server.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function build(UpdateServerBuildConfigurationRequest $request, Server $server): array
     {

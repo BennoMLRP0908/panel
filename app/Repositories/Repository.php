@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories;
+namespace SneakyPanel\Repositories;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
-use sneakypanel\Contracts\Repository\RepositoryInterface;
+use SneakyPanel\Contracts\Repository\RepositoryInterface;
 
 abstract class Repository implements RepositoryInterface
 {

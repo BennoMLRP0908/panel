@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Locations;
+namespace SneakyPanel\Services\Locations;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Location;
-use sneakypanel\Contracts\Repository\NodeRepositoryInterface;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
-use sneakypanel\Exceptions\Service\Location\HasActiveNodesException;
+use SneakyPanel\Models\Location;
+use SneakyPanel\Contracts\Repository\NodeRepositoryInterface;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Location\HasActiveNodesException;
 
 class LocationDeletionService
 {
@@ -15,14 +15,14 @@ class LocationDeletionService
      */
     public function __construct(
         protected LocationRepositoryInterface $repository,
-        protected NodeRepositoryInterface $nodeRepository,
+        protected NodeRepositoryInterface $nodeRepository
     ) {
     }
 
     /**
      * Delete an existing location.
      *
-     * @throws HasActiveNodesException
+     * @throws \SneakyPanel\Exceptions\Service\Location\HasActiveNodesException
      */
     public function handle(Location|int $location): ?int
     {

@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Carbon\CarbonImmutable;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Models\Permission;
-use sneakypanel\Services\Nodes\NodeJWTService;
-use sneakypanel\Exceptions\Http\HttpForbiddenException;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Services\Servers\GetUserPermissionsService;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Services\Nodes\NodeJWTService;
+use SneakyPanel\Exceptions\Http\HttpForbiddenException;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Services\Servers\GetUserPermissionsService;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
 
 class WebsocketController extends ClientApiController
 {
@@ -19,7 +19,7 @@ class WebsocketController extends ClientApiController
      */
     public function __construct(
         private NodeJWTService $jwtService,
-        private GetUserPermissionsService $permissionsService,
+        private GetUserPermissionsService $permissionsService
     ) {
         parent::__construct();
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Exceptions;
+namespace SneakyPanel\Exceptions;
 
 class AccountNotFoundException extends \Exception
 {

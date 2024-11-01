@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Api;
+namespace SneakyPanel\Http\Requests\Admin\Api;
 
-use sneakypanel\Models\ApiKey;
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Models\ApiKey;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class StoreApplicationApiKeyRequest extends AdminFormRequest
 {

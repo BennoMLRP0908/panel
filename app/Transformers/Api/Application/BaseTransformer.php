@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Application;
+namespace SneakyPanel\Transformers\Api\Application;
 
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterface;
 use Illuminate\Http\Request;
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Container\Container;
 use Illuminate\Database\Eloquent\Model;
 use League\Fractal\TransformerAbstract;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 
 /**
  * @method array transform(Model $model)
@@ -85,13 +85,13 @@ abstract class BaseTransformer extends TransformerAbstract
      * Create a new instance of the transformer and pass along the currently
      * set API key.
      *
-     * @template T of \sneakypanel\Transformers\Api\Application\BaseTransformer
+     * @template T of \SneakyPanel\Transformers\Api\Application\BaseTransformer
      *
      * @param class-string<T> $abstract
      *
      * @return T
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      *
      * @noinspection PhpDocSignatureInspection
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Contracts\Extensions;
+namespace SneakyPanel\Contracts\Extensions;
 
 use Hashids\HashidsInterface as VendorHashidsInterface;
 
@@ -11,5 +11,5 @@ interface HashidsInterface extends VendorHashidsInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function decodeFirst(string $encoded, ?string $default = null): mixed;
+    public function decodeFirst(string $encoded, string $default = null): mixed;
 }

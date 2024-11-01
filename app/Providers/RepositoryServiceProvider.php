@@ -1,42 +1,42 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use sneakypanel\Repositories\Eloquent\EggRepository;
-use sneakypanel\Repositories\Eloquent\NestRepository;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
-use sneakypanel\Repositories\Eloquent\TaskRepository;
-use sneakypanel\Repositories\Eloquent\UserRepository;
-use sneakypanel\Repositories\Eloquent\ApiKeyRepository;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Repositories\Eloquent\SessionRepository;
-use sneakypanel\Repositories\Eloquent\SubuserRepository;
-use sneakypanel\Repositories\Eloquent\DatabaseRepository;
-use sneakypanel\Repositories\Eloquent\LocationRepository;
-use sneakypanel\Repositories\Eloquent\ScheduleRepository;
-use sneakypanel\Repositories\Eloquent\SettingsRepository;
-use sneakypanel\Repositories\Eloquent\AllocationRepository;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Repositories\Eloquent\EggVariableRepository;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
-use sneakypanel\Contracts\Repository\NodeRepositoryInterface;
-use sneakypanel\Contracts\Repository\TaskRepositoryInterface;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
-use sneakypanel\Repositories\Eloquent\DatabaseHostRepository;
-use sneakypanel\Contracts\Repository\ApiKeyRepositoryInterface;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
-use sneakypanel\Repositories\Eloquent\ServerVariableRepository;
-use sneakypanel\Contracts\Repository\SessionRepositoryInterface;
-use sneakypanel\Contracts\Repository\SubuserRepositoryInterface;
-use sneakypanel\Contracts\Repository\DatabaseRepositoryInterface;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
-use sneakypanel\Contracts\Repository\ScheduleRepositoryInterface;
-use sneakypanel\Contracts\Repository\SettingsRepositoryInterface;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
-use sneakypanel\Contracts\Repository\EggVariableRepositoryInterface;
-use sneakypanel\Contracts\Repository\DatabaseHostRepositoryInterface;
-use sneakypanel\Contracts\Repository\ServerVariableRepositoryInterface;
+use SneakyPanel\Repositories\Eloquent\EggRepository;
+use SneakyPanel\Repositories\Eloquent\NestRepository;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Repositories\Eloquent\TaskRepository;
+use SneakyPanel\Repositories\Eloquent\UserRepository;
+use SneakyPanel\Repositories\Eloquent\ApiKeyRepository;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Repositories\Eloquent\SessionRepository;
+use SneakyPanel\Repositories\Eloquent\SubuserRepository;
+use SneakyPanel\Repositories\Eloquent\DatabaseRepository;
+use SneakyPanel\Repositories\Eloquent\LocationRepository;
+use SneakyPanel\Repositories\Eloquent\ScheduleRepository;
+use SneakyPanel\Repositories\Eloquent\SettingsRepository;
+use SneakyPanel\Repositories\Eloquent\AllocationRepository;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Repositories\Eloquent\EggVariableRepository;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NodeRepositoryInterface;
+use SneakyPanel\Contracts\Repository\TaskRepositoryInterface;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Repositories\Eloquent\DatabaseHostRepository;
+use SneakyPanel\Contracts\Repository\ApiKeyRepositoryInterface;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Repositories\Eloquent\ServerVariableRepository;
+use SneakyPanel\Contracts\Repository\SessionRepositoryInterface;
+use SneakyPanel\Contracts\Repository\SubuserRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseRepositoryInterface;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Contracts\Repository\ScheduleRepositoryInterface;
+use SneakyPanel\Contracts\Repository\SettingsRepositoryInterface;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Contracts\Repository\EggVariableRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseHostRepositoryInterface;
+use SneakyPanel\Contracts\Repository\ServerVariableRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {

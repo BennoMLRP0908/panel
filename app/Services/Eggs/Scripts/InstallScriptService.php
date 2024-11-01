@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Eggs\Scripts;
+namespace SneakyPanel\Services\Eggs\Scripts;
 
-use sneakypanel\Models\Egg;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Exceptions\Service\Egg\InvalidCopyFromException;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Egg\InvalidCopyFromException;
 
 class InstallScriptService
 {
@@ -18,9 +18,9 @@ class InstallScriptService
     /**
      * Modify the install script for a given Egg.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws InvalidCopyFromException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\InvalidCopyFromException
      */
     public function handle(Egg $egg, array $data): void
     {

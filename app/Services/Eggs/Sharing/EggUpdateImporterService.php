@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Services\Eggs\Sharing;
+namespace SneakyPanel\Services\Eggs\Sharing;
 
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\EggVariable;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Services\Eggs\EggParserService;
+use SneakyPanel\Services\Eggs\EggParserService;
 
 class EggUpdateImporterService
 {
@@ -21,7 +21,7 @@ class EggUpdateImporterService
     /**
      * Update an existing Egg using an uploaded JSON file.
      *
-     * @throws \sneakypanel\Exceptions\Service\InvalidFileUploadException|\Throwable
+     * @throws \SneakyPanel\Exceptions\Service\InvalidFileUploadException|\Throwable
      */
     public function handle(Egg $egg, UploadedFile $file): Egg
     {

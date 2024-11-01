@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
 
 class ServerRepository extends EloquentRepository implements ServerRepositoryInterface
 {
@@ -35,7 +35,7 @@ class ServerRepository extends EloquentRepository implements ServerRepositoryInt
     /**
      * Return a collection of servers with their associated data for rebuild operations.
      */
-    public function getDataForRebuild(?int $server = null, ?int $node = null): Collection
+    public function getDataForRebuild(int $server = null, int $node = null): Collection
     {
         $instance = $this->getBuilder()->with(['allocation', 'allocations', 'egg', 'node']);
 
@@ -51,7 +51,7 @@ class ServerRepository extends EloquentRepository implements ServerRepositoryInt
     /**
      * Return a collection of servers with their associated data for reinstall operations.
      */
-    public function getDataForReinstall(?int $server = null, ?int $node = null): Collection
+    public function getDataForReinstall(int $server = null, int $node = null): Collection
     {
         $instance = $this->getBuilder()->with(['allocation', 'allocations', 'egg', 'node']);
 
@@ -67,7 +67,7 @@ class ServerRepository extends EloquentRepository implements ServerRepositoryInt
     /**
      * Return a server model and all variables associated with the server.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function findWithVariables(int $id): Server
     {
@@ -139,12 +139,12 @@ class ServerRepository extends EloquentRepository implements ServerRepositoryInt
     /**
      * Return a server by UUID.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getByUuid(string $uuid): Server
     {
         try {
-            /** @var Server $model */
+            /** @var \SneakyPanel\Models\Server $model */
             $model = $this->getBuilder()
                 ->with('nest', 'node')
                 ->where(function (Builder $query) use ($uuid) {

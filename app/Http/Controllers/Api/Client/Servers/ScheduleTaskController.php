@@ -1,23 +1,23 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
-use sneakypanel\Models\Task;
+use SneakyPanel\Models\Task;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Schedule;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Models\Permission;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Repositories\Eloquent\TaskRepository;
-use sneakypanel\Exceptions\Http\HttpForbiddenException;
-use sneakypanel\Transformers\Api\Client\TaskTransformer;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Exceptions\Service\ServiceLimitExceededException;
+use SneakyPanel\Repositories\Eloquent\TaskRepository;
+use SneakyPanel\Exceptions\Http\HttpForbiddenException;
+use SneakyPanel\Transformers\Api\Client\TaskTransformer;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Exceptions\Service\ServiceLimitExceededException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use sneakypanel\Http\Requests\Api\Client\Servers\Schedules\StoreTaskRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Schedules\StoreTaskRequest;
 
 class ScheduleTaskController extends ClientApiController
 {
@@ -26,7 +26,7 @@ class ScheduleTaskController extends ClientApiController
      */
     public function __construct(
         private ConnectionInterface $connection,
-        private TaskRepository $repository,
+        private TaskRepository $repository
     ) {
         parent::__construct();
     }
@@ -34,8 +34,8 @@ class ScheduleTaskController extends ClientApiController
     /**
      * Create a new task for a given schedule and store it in the database.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws ServiceLimitExceededException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\ServiceLimitExceededException
      */
     public function store(StoreTaskRequest $request, Server $server, Schedule $schedule): array
     {
@@ -48,10 +48,10 @@ class ScheduleTaskController extends ClientApiController
             throw new HttpForbiddenException("A backup task cannot be created when the server's backup limit is set to 0.");
         }
 
-        /** @var Task|null $lastTask */
+        /** @var \SneakyPanel\Models\Task|null $lastTask */
         $lastTask = $schedule->tasks()->orderByDesc('sequence_id')->first();
 
-        /** @var Task $task */
+        /** @var \SneakyPanel\Models\Task $task */
         $task = $this->connection->transaction(function () use ($request, $schedule, $lastTask) {
             $sequenceId = ($lastTask->sequence_id ?? 0) + 1;
             $requestSequenceId = $request->integer('sequence_id', $sequenceId);
@@ -95,8 +95,8 @@ class ScheduleTaskController extends ClientApiController
     /**
      * Updates a given task for a server.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(StoreTaskRequest $request, Server $server, Schedule $schedule, Task $task): array
     {

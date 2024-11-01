@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Console\Commands;
+namespace SneakyPanel\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\VarDumper\VarDumper;
-use sneakypanel\Services\Telemetry\TelemetryCollectionService;
+use SneakyPanel\Services\Telemetry\TelemetryCollectionService;
 
 class TelemetryCommand extends Command
 {
-    protected $description = 'Displays all the data that would be sent to the sneakypanel Telemetry Service if telemetry collection is enabled.';
+    protected $description = 'Displays all the data that would be sent to the SneakyPanel Telemetry Service if telemetry collection is enabled.';
 
     protected $signature = 'p:telemetry';
 
@@ -23,7 +23,7 @@ class TelemetryCommand extends Command
     /**
      * Handle execution of command.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle()
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Traits\Services\ReturnsUpdatedModels;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Traits\Services\ReturnsUpdatedModels;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class DetailsModificationService
 {

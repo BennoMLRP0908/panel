@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Eggs;
+namespace SneakyPanel\Services\Eggs;
 
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
-use sneakypanel\Exceptions\Service\InvalidFileUploadException;
+use SneakyPanel\Exceptions\Service\InvalidFileUploadException;
 
 class EggParserService
 {
@@ -14,7 +14,7 @@ class EggParserService
      * Takes an uploaded file and parses out the egg configuration from within.
      *
      * @throws \JsonException
-     * @throws InvalidFileUploadException
+     * @throws \SneakyPanel\Exceptions\Service\InvalidFileUploadException
      */
     public function handle(UploadedFile $file): array
     {

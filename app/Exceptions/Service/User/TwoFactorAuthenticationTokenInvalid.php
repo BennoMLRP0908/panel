@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\User;
+namespace SneakyPanel\Exceptions\Service\User;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class TwoFactorAuthenticationTokenInvalid extends DisplayException
 {

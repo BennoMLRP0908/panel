@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin;
+namespace SneakyPanel\Http\Requests\Admin;
 
 class BaseFormRequest extends AdminFormRequest
 {

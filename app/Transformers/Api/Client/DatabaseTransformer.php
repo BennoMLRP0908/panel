@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\Database;
+use SneakyPanel\Models\Database;
 use League\Fractal\Resource\Item;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Permission;
 use League\Fractal\Resource\NullResource;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Contracts\Extensions\HashidsInterface;
+use SneakyPanel\Contracts\Extensions\HashidsInterface;
 
 class DatabaseTransformer extends BaseClientTransformer
 {

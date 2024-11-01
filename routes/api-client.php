@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use sneakypanel\Http\Controllers\Api\Client;
-use sneakypanel\Http\Middleware\Activity\ServerSubject;
-use sneakypanel\Http\Middleware\Activity\AccountSubject;
-use sneakypanel\Http\Middleware\RequireTwoFactorAuthentication;
-use sneakypanel\Http\Middleware\Api\Client\Server\ResourceBelongsToServer;
-use sneakypanel\Http\Middleware\Api\Client\Server\AuthenticateServerAccess;
+use SneakyPanel\Http\Controllers\Api\Client;
+use SneakyPanel\Http\Middleware\Activity\ServerSubject;
+use SneakyPanel\Http\Middleware\Activity\AccountSubject;
+use SneakyPanel\Http\Middleware\RequireTwoFactorAuthentication;
+use SneakyPanel\Http\Middleware\Api\Client\Server\ResourceBelongsToServer;
+use SneakyPanel\Http\Middleware\Api\Client\Server\AuthenticateServerAccess;
 
 /*
 |--------------------------------------------------------------------------

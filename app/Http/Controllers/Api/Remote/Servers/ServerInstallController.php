@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Remote\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Remote\Servers;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Events\Server\Installed as ServerInstalled;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Events\Server\Installed as ServerInstalled;
 use Illuminate\Contracts\Events\Dispatcher as EventDispatcher;
-use sneakypanel\Http\Requests\Api\Remote\InstallationDataRequest;
+use SneakyPanel\Http\Requests\Api\Remote\InstallationDataRequest;
 
 class ServerInstallController extends Controller
 {
@@ -25,7 +25,7 @@ class ServerInstallController extends Controller
     /**
      * Returns installation information for a server.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(Request $request, string $uuid): JsonResponse
     {
@@ -42,8 +42,8 @@ class ServerInstallController extends Controller
     /**
      * Updates the installation state of a server.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(InstallationDataRequest $request, string $uuid): JsonResponse
     {

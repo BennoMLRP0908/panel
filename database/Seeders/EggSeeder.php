@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\Nest;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\Nest;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
-use sneakypanel\Services\Eggs\Sharing\EggImporterService;
-use sneakypanel\Services\Eggs\Sharing\EggUpdateImporterService;
+use SneakyPanel\Services\Eggs\Sharing\EggImporterService;
+use SneakyPanel\Services\Eggs\Sharing\EggUpdateImporterService;
 
 class EggSeeder extends Seeder
 {
@@ -30,7 +30,7 @@ class EggSeeder extends Seeder
      */
     public function __construct(
         EggImporterService $importerService,
-        EggUpdateImporterService $updateImporterService,
+        EggUpdateImporterService $updateImporterService
     ) {
         $this->importerService = $importerService;
         $this->updateImporterService = $updateImporterService;
@@ -44,7 +44,7 @@ class EggSeeder extends Seeder
         foreach (static::$import as $nest) {
             /* @noinspection PhpParamsInspection */
             $this->parseEggFiles(
-                Nest::query()->where('author', 'support@sneakypanel.com')->where('name', $nest)->firstOrFail()
+                Nest::query()->where('author', 'support@sneakypanel.io')->where('name', $nest)->firstOrFail()
             );
         }
     }

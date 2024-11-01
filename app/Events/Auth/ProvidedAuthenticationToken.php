@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Events\Auth;
+namespace SneakyPanel\Events\Auth;
 
-use sneakypanel\Models\User;
-use sneakypanel\Events\Event;
+use SneakyPanel\Models\User;
+use SneakyPanel\Events\Event;
 
 class ProvidedAuthenticationToken extends Event
 {

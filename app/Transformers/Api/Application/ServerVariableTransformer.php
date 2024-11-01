@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Application;
+namespace SneakyPanel\Transformers\Api\Application;
 
 use League\Fractal\Resource\Item;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\EggVariable;
 use League\Fractal\Resource\NullResource;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 
 class ServerVariableTransformer extends BaseTransformer
 {
@@ -33,7 +33,7 @@ class ServerVariableTransformer extends BaseTransformer
     /**
      * Return the parent service variable data.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeParent(EggVariable $variable): Item|NullResource
     {

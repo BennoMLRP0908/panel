@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin;
+namespace SneakyPanel\Http\Requests\Admin;
 
-use sneakypanel\Models\DatabaseHost;
+use SneakyPanel\Models\DatabaseHost;
 use Illuminate\Contracts\Validation\Validator;
 
 class DatabaseHostFormRequest extends AdminFormRequest

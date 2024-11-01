@@ -1,21 +1,21 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Remote;
+namespace SneakyPanel\Http\Controllers\Api\Remote;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Models\Permission;
 use phpseclib3\Crypt\PublicKeyLoader;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Controllers\Controller;
 use phpseclib3\Exception\NoKeyLoadedException;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
-use sneakypanel\Exceptions\Http\HttpForbiddenException;
-use sneakypanel\Services\Servers\GetUserPermissionsService;
+use SneakyPanel\Exceptions\Http\HttpForbiddenException;
+use SneakyPanel\Services\Servers\GetUserPermissionsService;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use sneakypanel\Http\Requests\Api\Remote\SftpAuthenticationFormRequest;
+use SneakyPanel\Http\Requests\Api\Remote\SftpAuthenticationFormRequest;
 use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
 class SftpAuthenticationController extends Controller

@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nodes;
+namespace SneakyPanel\Http\Controllers\Admin\Nodes;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Repositories\Wings\DaemonConfigurationRepository;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Repositories\Wings\DaemonConfigurationRepository;
 
 class SystemInformationController extends Controller
 {
@@ -21,7 +21,7 @@ class SystemInformationController extends Controller
     /**
      * Returns system information from the Daemon.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function __invoke(Request $request, Node $node): JsonResponse
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 
 interface AllocationRepositoryInterface extends RepositoryInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Exceptions\Solutions;
+namespace SneakyPanel\Exceptions\Solutions;
 
 use Spatie\Ignition\Contracts\Solution;
 

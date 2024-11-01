@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Console\Commands\User;
+namespace SneakyPanel\Console\Commands\User;
 
 use Illuminate\Console\Command;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
 
 class DisableTwoFactorCommand extends Command
 {
@@ -22,8 +22,8 @@ class DisableTwoFactorCommand extends Command
     /**
      * Handle command execution process.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function handle()
     {

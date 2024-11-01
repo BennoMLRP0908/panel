@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Auth;
+namespace SneakyPanel\Http\Controllers\Auth;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\JsonResponse;
@@ -8,11 +8,11 @@ use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Contracts\Events\Dispatcher;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use sneakypanel\Http\Requests\Auth\ResetPasswordRequest;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Http\Requests\Auth\ResetPasswordRequest;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
 
 class ResetPasswordController extends Controller
 {
@@ -31,14 +31,14 @@ class ResetPasswordController extends Controller
     public function __construct(
         private Dispatcher $dispatcher,
         private Hasher $hasher,
-        private UserRepositoryInterface $userRepository,
+        private UserRepositoryInterface $userRepository
     ) {
     }
 
     /**
      * Reset the given user's password.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function __invoke(ResetPasswordRequest $request): JsonResponse
     {
@@ -67,11 +67,11 @@ class ResetPasswordController extends Controller
      * account do not automatically log them in. In those cases, send the user back to the login
      * form with a note telling them their password was changed and to log back in.
      *
-     * @param \Illuminate\Contracts\Auth\CanResetPassword|\sneakypanel\Models\User $user
+     * @param \Illuminate\Contracts\Auth\CanResetPassword|\SneakyPanel\Models\User $user
      * @param string $password
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     protected function resetPassword($user, $password)
     {

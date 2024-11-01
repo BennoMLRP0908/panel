@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Allocations;
+namespace SneakyPanel\Services\Allocations;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Allocation;
-use sneakypanel\Exceptions\Service\Allocation\AutoAllocationNotEnabledException;
-use sneakypanel\Exceptions\Service\Allocation\NoAutoAllocationSpaceAvailableException;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Allocation;
+use SneakyPanel\Exceptions\Service\Allocation\AutoAllocationNotEnabledException;
+use SneakyPanel\Exceptions\Service\Allocation\NoAutoAllocationSpaceAvailableException;
 
 class FindAssignableAllocationService
 {
@@ -22,11 +22,11 @@ class FindAssignableAllocationService
      * no allocation can be found, a new one will be created with a random port between the defined
      * range from the configuration.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\CidrOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\InvalidPortMappingException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\PortOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\CidrOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\InvalidPortMappingException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\PortOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
      */
     public function handle(Server $server): Allocation
     {
@@ -37,7 +37,7 @@ class FindAssignableAllocationService
         // Attempt to find a given available allocation for a server. If one cannot be found
         // we will fall back to attempting to create a new allocation that can be used for the
         // server.
-        /** @var Allocation|null $allocation */
+        /** @var \SneakyPanel\Models\Allocation|null $allocation */
         $allocation = $server->node->allocations()
             ->where('ip', $server->allocation->ip)
             ->whereNull('server_id')
@@ -56,11 +56,11 @@ class FindAssignableAllocationService
      * in the settings. If there are no matches in that range, or something is wrong with the
      * range information provided an exception will be raised.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\CidrOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\InvalidPortMappingException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\PortOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\CidrOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\InvalidPortMappingException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\PortOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
      */
     protected function createNewAllocation(Server $server): Allocation
     {
@@ -100,7 +100,7 @@ class FindAssignableAllocationService
             'allocation_ports' => [$port],
         ]);
 
-        /** @var Allocation $allocation */
+        /** @var \SneakyPanel\Models\Allocation $allocation */
         $allocation = $server->node->allocations()
             ->where('ip', $server->allocation->ip)
             ->where('port', $port)

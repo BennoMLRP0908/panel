@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Api\Daemon;
+namespace SneakyPanel\Http\Middleware\Api\Daemon;
 
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
@@ -29,7 +29,7 @@ class DaemonAuthenticate
     /**
      * Check if a request from the daemon can be properly attributed back to a single node instance.
      *
-     * @throws HttpException
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     public function handle(Request $request, \Closure $next): mixed
     {
@@ -48,7 +48,7 @@ class DaemonAuthenticate
         }
 
         try {
-            /** @var \sneakypanel\Models\Node $node */
+            /** @var \SneakyPanel\Models\Node $node */
             $node = $this->repository->findFirstWhere([
                 'daemon_token_id' => $parts[0],
             ]);

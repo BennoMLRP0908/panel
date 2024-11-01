@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Nodes;
+namespace SneakyPanel\Http\Controllers\Api\Application\Nodes;
 
-use sneakypanel\Services\Deployment\FindViableNodesService;
-use sneakypanel\Transformers\Api\Application\NodeTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Nodes\GetDeployableNodesRequest;
+use SneakyPanel\Services\Deployment\FindViableNodesService;
+use SneakyPanel\Transformers\Api\Application\NodeTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\GetDeployableNodesRequest;
 
 class NodeDeploymentController extends ApplicationApiController
 {
@@ -22,7 +22,7 @@ class NodeDeploymentController extends ApplicationApiController
      * similarly to the server creation process, but allows you to pass the deployment object
      * to this endpoint and get back a list of all Nodes satisfying the requirements.
      *
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableNodeException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException
      */
     public function __invoke(GetDeployableNodesRequest $request): array
     {

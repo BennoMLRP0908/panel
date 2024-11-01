@@ -1,23 +1,23 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\User;
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Collection;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Models\Objects\DeploymentObject;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Services\Deployment\FindViableNodesService;
-use sneakypanel\Repositories\Eloquent\ServerVariableRepository;
-use sneakypanel\Services\Deployment\AllocationSelectionService;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Models\Objects\DeploymentObject;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Services\Deployment\FindViableNodesService;
+use SneakyPanel\Repositories\Eloquent\ServerVariableRepository;
+use SneakyPanel\Services\Deployment\AllocationSelectionService;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class ServerCreationService
 {
@@ -32,7 +32,7 @@ class ServerCreationService
         private ServerRepository $repository,
         private ServerDeletionService $serverDeletionService,
         private ServerVariableRepository $serverVariableRepository,
-        private VariableValidatorService $validatorService,
+        private VariableValidatorService $validatorService
     ) {
     }
 
@@ -43,13 +43,13 @@ class ServerCreationService
      * no node_id the node_is will be picked from the allocation.
      *
      * @throws \Throwable
-     * @throws \sneakypanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      * @throws \Illuminate\Validation\ValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableNodeException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableAllocationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableAllocationException
      */
-    public function handle(array $data, ?DeploymentObject $deployment = null): Server
+    public function handle(array $data, DeploymentObject $deployment = null): Server
     {
         // If a deployment object has been passed we need to get the allocation
         // that the server should use, and assign the node from that allocation.
@@ -82,7 +82,7 @@ class ServerCreationService
         //
         // If that connection fails out we will attempt to perform a cleanup by just
         // deleting the server itself from the system.
-        /** @var Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $this->connection->transaction(function () use ($data, $eggVariableData) {
             // Create the server and assign any additional allocations to it.
             $server = $this->createModel($data);
@@ -109,13 +109,13 @@ class ServerCreationService
     /**
      * Gets an allocation to use for automatic deployment.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableAllocationException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableNodeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException
      */
     private function configureDeployment(array $data, DeploymentObject $deployment): Allocation
     {
-        /** @var Collection $nodes */
+        /** @var \Illuminate\Support\Collection $nodes */
         $nodes = $this->findViableNodesService->setLocations($deployment->getLocations())
             ->setDisk(Arr::get($data, 'disk'))
             ->setMemory(Arr::get($data, 'memory'))
@@ -130,13 +130,13 @@ class ServerCreationService
     /**
      * Store the server in the database and return the model.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     private function createModel(array $data): Server
     {
         $uuid = $this->generateUniqueUuidCombo();
 
-        /** @var Server $model */
+        /** @var \SneakyPanel\Models\Server $model */
         $model = $this->repository->create([
             'external_id' => Arr::get($data, 'external_id'),
             'uuid' => $uuid,

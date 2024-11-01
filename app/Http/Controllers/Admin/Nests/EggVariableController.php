@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nests;
+namespace SneakyPanel\Http\Controllers\Admin\Nests;
 
 use Illuminate\View\View;
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\EggVariable;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Services\Eggs\Variables\VariableUpdateService;
-use sneakypanel\Http\Requests\Admin\Egg\EggVariableFormRequest;
-use sneakypanel\Services\Eggs\Variables\VariableCreationService;
-use sneakypanel\Contracts\Repository\EggVariableRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Services\Eggs\Variables\VariableUpdateService;
+use SneakyPanel\Http\Requests\Admin\Egg\EggVariableFormRequest;
+use SneakyPanel\Services\Eggs\Variables\VariableCreationService;
+use SneakyPanel\Contracts\Repository\EggVariableRepositoryInterface;
 
 class EggVariableController extends Controller
 {
@@ -26,14 +26,14 @@ class EggVariableController extends Controller
         protected VariableUpdateService $updateService,
         protected EggRepositoryInterface $repository,
         protected EggVariableRepositoryInterface $variableRepository,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
     /**
      * Handle request to view the variables attached to an Egg.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function view(int $egg): View
     {
@@ -45,9 +45,9 @@ class EggVariableController extends Controller
     /**
      * Handle a request to create a new Egg variable.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Service\Egg\Variable\BadValidationRuleException
-     * @throws \sneakypanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\Variable\BadValidationRuleException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException
      */
     public function store(EggVariableFormRequest $request, Egg $egg): RedirectResponse
     {
@@ -60,10 +60,10 @@ class EggVariableController extends Controller
     /**
      * Handle a request to update an existing Egg variable.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException
      */
     public function update(EggVariableFormRequest $request, Egg $egg, EggVariable $variable): RedirectResponse
     {

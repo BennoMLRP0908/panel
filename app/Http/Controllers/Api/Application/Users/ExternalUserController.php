@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Users;
+namespace SneakyPanel\Http\Controllers\Api\Application\Users;
 
-use sneakypanel\Models\User;
-use sneakypanel\Transformers\Api\Application\UserTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Users\GetExternalUserRequest;
+use SneakyPanel\Models\User;
+use SneakyPanel\Transformers\Api\Application\UserTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Users\GetExternalUserRequest;
 
 class ExternalUserController extends ApplicationApiController
 {

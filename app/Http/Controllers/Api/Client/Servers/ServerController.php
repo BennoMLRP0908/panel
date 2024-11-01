@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Transformers\Api\Client\ServerTransformer;
-use sneakypanel\Services\Servers\GetUserPermissionsService;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\GetServerRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Transformers\Api\Client\ServerTransformer;
+use SneakyPanel\Services\Servers\GetUserPermissionsService;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\GetServerRequest;
 
 class ServerController extends ClientApiController
 {

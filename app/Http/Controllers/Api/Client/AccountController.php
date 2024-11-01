@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Services\Users\UserUpdateService;
-use sneakypanel\Transformers\Api\Client\AccountTransformer;
-use sneakypanel\Http\Requests\Api\Client\Account\UpdateEmailRequest;
-use sneakypanel\Http\Requests\Api\Client\Account\UpdatePasswordRequest;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Services\Users\UserUpdateService;
+use SneakyPanel\Transformers\Api\Client\AccountTransformer;
+use SneakyPanel\Http\Requests\Api\Client\Account\UpdateEmailRequest;
+use SneakyPanel\Http\Requests\Api\Client\Account\UpdatePasswordRequest;
 
 class AccountController extends ClientApiController
 {

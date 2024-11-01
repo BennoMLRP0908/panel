@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Support\Collection;
 
 interface NodeRepositoryInterface extends RepositoryInterface

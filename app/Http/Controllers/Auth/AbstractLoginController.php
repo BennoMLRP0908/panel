@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Auth;
+namespace SneakyPanel\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\Event;
-use sneakypanel\Events\Auth\DirectLogin;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Events\Auth\DirectLogin;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -49,9 +49,9 @@ abstract class AbstractLoginController extends Controller
     /**
      * Get the failed login response instance.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
-    protected function sendFailedLoginResponse(Request $request, ?Authenticatable $user = null, ?string $message = null)
+    protected function sendFailedLoginResponse(Request $request, Authenticatable $user = null, string $message = null)
     {
         $this->incrementLoginAttempts($request);
         $this->fireFailedLoginEvent($user, [
@@ -91,7 +91,7 @@ abstract class AbstractLoginController extends Controller
     /**
      * Determine if the user is logging in using an email or username.
      */
-    protected function getField(?string $input = null): string
+    protected function getField(string $input = null): string
     {
         return ($input && str_contains($input, '@')) ? 'email' : 'username';
     }
@@ -99,7 +99,7 @@ abstract class AbstractLoginController extends Controller
     /**
      * Fire a failed login event.
      */
-    protected function fireFailedLoginEvent(?Authenticatable $user = null, array $credentials = [])
+    protected function fireFailedLoginEvent(Authenticatable $user = null, array $credentials = [])
     {
         Event::dispatch(new Failed('auth', $user, $credentials));
     }

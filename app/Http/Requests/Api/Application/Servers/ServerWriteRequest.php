@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Servers;
+namespace SneakyPanel\Http\Requests\Api\Application\Servers;
 
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class ServerWriteRequest extends ApplicationApiRequest
 {

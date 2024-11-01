@@ -1,17 +1,13 @@
 <?php
 
-namespace sneakypanel\Repositories\Wings;
+namespace SneakyPanel\Repositories\Wings;
 
 use GuzzleHttp\Client;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Contracts\Foundation\Application;
 
-/**
- * @method \sneakypanel\Repositories\Wings\DaemonRepository setNode(\sneakypanel\Models\Node $node)
- * @method \sneakypanel\Repositories\Wings\DaemonRepository setServer(\sneakypanel\Models\Server $server)
- */
 abstract class DaemonRepository
 {
     protected ?Server $server;

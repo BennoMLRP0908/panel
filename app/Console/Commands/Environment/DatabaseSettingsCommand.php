@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Environment;
+namespace SneakyPanel\Console\Commands\Environment;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Database\DatabaseManager;
-use sneakypanel\Traits\Commands\EnvironmentWriterTrait;
+use SneakyPanel\Traits\Commands\EnvironmentWriterTrait;
 
 class DatabaseSettingsCommand extends Command
 {
@@ -33,7 +33,7 @@ class DatabaseSettingsCommand extends Command
     /**
      * Handle command execution.
      *
-     * @throws \sneakypanel\Exceptions\sneakypanelException
+     * @throws \SneakyPanel\Exceptions\SneakyPanelException
      */
     public function handle(): int
     {

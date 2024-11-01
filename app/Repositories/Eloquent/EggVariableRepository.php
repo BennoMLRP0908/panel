@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-use sneakypanel\Models\EggVariable;
-use sneakypanel\Contracts\Repository\EggVariableRepositoryInterface;
+use SneakyPanel\Models\EggVariable;
+use SneakyPanel\Contracts\Repository\EggVariableRepositoryInterface;
 
 class EggVariableRepository extends EloquentRepository implements EggVariableRepositoryInterface
 {

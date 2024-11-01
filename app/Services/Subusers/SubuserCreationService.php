@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Services\Subusers;
+namespace SneakyPanel\Services\Subusers;
 
 use Illuminate\Support\Str;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Subuser;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Subuser;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Services\Users\UserCreationService;
-use sneakypanel\Repositories\Eloquent\SubuserRepository;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
-use sneakypanel\Exceptions\Service\Subuser\UserIsServerOwnerException;
-use sneakypanel\Exceptions\Service\Subuser\ServerSubuserExistsException;
+use SneakyPanel\Services\Users\UserCreationService;
+use SneakyPanel\Repositories\Eloquent\SubuserRepository;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Exceptions\Service\Subuser\UserIsServerOwnerException;
+use SneakyPanel\Exceptions\Service\Subuser\ServerSubuserExistsException;
 
 class SubuserCreationService
 {
@@ -22,7 +22,7 @@ class SubuserCreationService
         private ConnectionInterface $connection,
         private SubuserRepository $subuserRepository,
         private UserCreationService $userCreationService,
-        private UserRepositoryInterface $userRepository,
+        private UserRepositoryInterface $userRepository
     ) {
     }
 
@@ -31,9 +31,9 @@ class SubuserCreationService
      * If the email address already belongs to a user on the system a new user will not
      * be created.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws ServerSubuserExistsException
-     * @throws UserIsServerOwnerException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\Subuser\ServerSubuserExistsException
+     * @throws \SneakyPanel\Exceptions\Service\Subuser\UserIsServerOwnerException
      * @throws \Throwable
      */
     public function handle(Server $server, string $email, array $permissions): Subuser

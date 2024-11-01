@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Services\Databases\Hosts;
+namespace SneakyPanel\Services\Databases\Hosts;
 
-use sneakypanel\Models\DatabaseHost;
+use SneakyPanel\Models\DatabaseHost;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Extensions\DynamicDatabaseConnection;
-use sneakypanel\Contracts\Repository\DatabaseHostRepositoryInterface;
+use SneakyPanel\Extensions\DynamicDatabaseConnection;
+use SneakyPanel\Contracts\Repository\DatabaseHostRepositoryInterface;
 
 class HostCreationService
 {
@@ -19,7 +19,7 @@ class HostCreationService
         private DatabaseManager $databaseManager,
         private DynamicDatabaseConnection $dynamic,
         private Encrypter $encrypter,
-        private DatabaseHostRepositoryInterface $repository,
+        private DatabaseHostRepositoryInterface $repository
     ) {
     }
 

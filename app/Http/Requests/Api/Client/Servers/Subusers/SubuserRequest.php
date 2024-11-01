@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Subusers;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Subusers;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Subuser;
-use sneakypanel\Exceptions\Http\HttpForbiddenException;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Services\Servers\GetUserPermissionsService;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Subuser;
+use SneakyPanel\Exceptions\Http\HttpForbiddenException;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Services\Servers\GetUserPermissionsService;
 
 abstract class SubuserRequest extends ClientApiRequest
 {
@@ -52,7 +52,7 @@ abstract class SubuserRequest extends ClientApiRequest
     protected function validatePermissionsCanBeAssigned(array $permissions)
     {
         $user = $this->user();
-        /** @var \sneakypanel\Models\Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $this->route()->parameter('server');
 
         // If we are a root admin or the server owner, no need to perform these checks.
@@ -63,8 +63,8 @@ abstract class SubuserRequest extends ClientApiRequest
         // Otherwise, get the current subuser's permission set, and ensure that the
         // permissions they are trying to assign are not _more_ than the ones they
         // already have.
-        /** @var Subuser|null $subuser */
-        /** @var GetUserPermissionsService $service */
+        /** @var \SneakyPanel\Models\Subuser|null $subuser */
+        /** @var \SneakyPanel\Services\Servers\GetUserPermissionsService $service */
         $service = $this->container->make(GetUserPermissionsService::class);
 
         if (count(array_diff($permissions, $service->handle($server, $user))) > 0) {

@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Allocation;
+namespace SneakyPanel\Exceptions\Service\Allocation;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class NoAutoAllocationSpaceAvailableException extends DisplayException
 {

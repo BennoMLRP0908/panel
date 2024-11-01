@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Extensions\Themes;
+namespace SneakyPanel\Extensions\Themes;
 
 class Theme
 {

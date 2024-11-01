@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Services\Locations;
+namespace SneakyPanel\Services\Locations;
 
-use sneakypanel\Models\Location;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Models\Location;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
 
 class LocationCreationService
 {
@@ -17,7 +17,7 @@ class LocationCreationService
     /**
      * Create a new location.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle(array $data): Location
     {

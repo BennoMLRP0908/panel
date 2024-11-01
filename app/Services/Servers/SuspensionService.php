@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class SuspensionService
@@ -16,7 +16,7 @@ class SuspensionService
      * SuspensionService constructor.
      */
     public function __construct(
-        private DaemonServerRepository $daemonServerRepository,
+        private DaemonServerRepository $daemonServerRepository
     ) {
     }
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Mount;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Mount;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
 
 class MountRepository extends EloquentRepository
 {
@@ -29,7 +29,7 @@ class MountRepository extends EloquentRepository
     /**
      * Return all the mounts and their respective relations.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithRelations(string $id): Mount
     {

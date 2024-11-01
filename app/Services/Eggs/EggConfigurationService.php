@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Services\Eggs;
+namespace SneakyPanel\Services\Eggs;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use sneakypanel\Models\Server;
-use sneakypanel\Services\Servers\ServerConfigurationStructureService;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Services\Servers\ServerConfigurationStructureService;
 
 class EggConfigurationService
 {
@@ -64,6 +64,12 @@ class EggConfigurationService
         }
 
         $signal = substr($stop, 1);
+        if (strtoupper($signal) === 'C') {
+            return [
+                'type' => 'stop',
+                'value' => null,
+            ];
+        }
 
         return [
             'type' => 'signal',

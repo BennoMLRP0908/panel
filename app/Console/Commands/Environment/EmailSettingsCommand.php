@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Environment;
+namespace SneakyPanel\Console\Commands\Environment;
 
 use Illuminate\Console\Command;
-use sneakypanel\Traits\Commands\EnvironmentWriterTrait;
+use SneakyPanel\Traits\Commands\EnvironmentWriterTrait;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class EmailSettingsCommand extends Command
@@ -36,7 +36,7 @@ class EmailSettingsCommand extends Command
     /**
      * Handle command execution.
      *
-     * @throws \sneakypanel\Exceptions\sneakypanelException
+     * @throws \SneakyPanel\Exceptions\SneakyPanelException
      */
     public function handle()
     {

@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Carbon\CarbonImmutable;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Services\Nodes\NodeJWTService;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\UploadFileRequest;
+use SneakyPanel\Services\Nodes\NodeJWTService;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\UploadFileRequest;
 
 class FileUploadController extends ClientApiController
 {
@@ -16,7 +16,7 @@ class FileUploadController extends ClientApiController
      * FileUploadController constructor.
      */
     public function __construct(
-        private NodeJWTService $jwtService,
+        private NodeJWTService $jwtService
     ) {
         parent::__construct();
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
 interface PermissionRepositoryInterface extends RepositoryInterface
 {

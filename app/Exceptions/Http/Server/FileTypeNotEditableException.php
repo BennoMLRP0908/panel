@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Http\Server;
+namespace SneakyPanel\Exceptions\Http\Server;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class FileTypeNotEditableException extends DisplayException
 {

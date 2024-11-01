@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $user_id
  * @property string $token
  * @property \Carbon\CarbonImmutable $created_at
- * @property User $user
+ * @property \SneakyPanel\Models\User $user
  */
 class RecoveryToken extends Model
 {

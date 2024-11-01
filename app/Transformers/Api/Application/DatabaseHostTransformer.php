@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Application;
+namespace SneakyPanel\Transformers\Api\Application;
 
-use sneakypanel\Models\Database;
-use sneakypanel\Models\DatabaseHost;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Models\DatabaseHost;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\NullResource;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 
 class DatabaseHostTransformer extends BaseTransformer
 {
@@ -42,7 +42,7 @@ class DatabaseHostTransformer extends BaseTransformer
     /**
      * Include the databases associated with this host.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeDatabases(DatabaseHost $model): Collection|NullResource
     {

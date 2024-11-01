@@ -1,22 +1,22 @@
 <?php
 
-namespace sneakypanel\Services\Backups;
+namespace SneakyPanel\Services\Backups;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Backup;
+use SneakyPanel\Models\Backup;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Extensions\Backups\BackupManager;
-use sneakypanel\Repositories\Wings\DaemonBackupRepository;
-use sneakypanel\Exceptions\Service\Backup\BackupLockedException;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Extensions\Backups\BackupManager;
+use SneakyPanel\Repositories\Wings\DaemonBackupRepository;
+use SneakyPanel\Exceptions\Service\Backup\BackupLockedException;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class DeleteBackupService
 {
     public function __construct(
         private ConnectionInterface $connection,
         private BackupManager $manager,
-        private DaemonBackupRepository $daemonBackupRepository,
+        private DaemonBackupRepository $daemonBackupRepository
     ) {
     }
 
@@ -70,7 +70,7 @@ class DeleteBackupService
         $this->connection->transaction(function () use ($backup) {
             $backup->delete();
 
-            /** @var \sneakypanel\Extensions\Filesystem\S3Filesystem $adapter */
+            /** @var \SneakyPanel\Extensions\Filesystem\S3Filesystem $adapter */
             $adapter = $this->manager->adapter(Backup::ADAPTER_AWS_S3);
 
             $adapter->getClient()->deleteObject([

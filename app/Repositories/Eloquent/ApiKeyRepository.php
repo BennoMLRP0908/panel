@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\User;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Support\Collection;
-use sneakypanel\Contracts\Repository\ApiKeyRepositoryInterface;
+use SneakyPanel\Contracts\Repository\ApiKeyRepositoryInterface;
 
 class ApiKeyRepository extends EloquentRepository implements ApiKeyRepositoryInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Application;
+namespace SneakyPanel\Transformers\Api\Application;
 
-use sneakypanel\Models\Subuser;
+use SneakyPanel\Models\Subuser;
 use League\Fractal\Resource\Item;
 use League\Fractal\Resource\NullResource;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 
 class SubuserTransformer extends BaseTransformer
 {
@@ -40,7 +40,7 @@ class SubuserTransformer extends BaseTransformer
     /**
      * Return a generic item of user for this subuser.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeUser(Subuser $subuser): Item|NullResource
     {
@@ -56,7 +56,7 @@ class SubuserTransformer extends BaseTransformer
     /**
      * Return a generic item of server for this subuser.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeServer(Subuser $subuser): Item|NullResource
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Events\Auth;
+namespace SneakyPanel\Events\Auth;
 
-use sneakypanel\Events\Event;
+use SneakyPanel\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
 class FailedPasswordReset extends Event

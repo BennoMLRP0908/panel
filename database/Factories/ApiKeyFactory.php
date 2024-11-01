@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ApiKeyFactory extends Factory

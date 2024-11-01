@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Nodes;
+namespace SneakyPanel\Http\Requests\Api\Application\Nodes;
 
 class GetDeployableNodesRequest extends GetNodesRequest
 {

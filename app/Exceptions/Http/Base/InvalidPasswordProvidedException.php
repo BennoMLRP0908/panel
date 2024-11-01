@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Http\Base;
+namespace SneakyPanel\Exceptions\Http\Base;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class InvalidPasswordProvidedException extends DisplayException
 {

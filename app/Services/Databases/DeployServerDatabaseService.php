@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Databases;
+namespace SneakyPanel\Services\Databases;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Database;
-use sneakypanel\Models\DatabaseHost;
-use sneakypanel\Exceptions\Service\Database\NoSuitableDatabaseHostException;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Models\DatabaseHost;
+use SneakyPanel\Exceptions\Service\Database\NoSuitableDatabaseHostException;
 
 class DeployServerDatabaseService
 {
@@ -19,8 +19,8 @@ class DeployServerDatabaseService
 
     /**
      * @throws \Throwable
-     * @throws \sneakypanel\Exceptions\Service\Database\TooManyDatabasesException
-     * @throws \sneakypanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
+     * @throws \SneakyPanel\Exceptions\Service\Database\TooManyDatabasesException
+     * @throws \SneakyPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
      */
     public function handle(Server $server, array $data): Database
     {

@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Services\Users;
+namespace SneakyPanel\Services\Users;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use PragmaRX\Google2FA\Google2FA;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
-use sneakypanel\Repositories\Eloquent\RecoveryTokenRepository;
-use sneakypanel\Exceptions\Service\User\TwoFactorAuthenticationTokenInvalid;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Repositories\Eloquent\RecoveryTokenRepository;
+use SneakyPanel\Exceptions\Service\User\TwoFactorAuthenticationTokenInvalid;
 
 class ToggleTwoFactorService
 {
@@ -22,7 +22,7 @@ class ToggleTwoFactorService
         private Encrypter $encrypter,
         private Google2FA $google2FA,
         private RecoveryTokenRepository $recoveryTokenRepository,
-        private UserRepositoryInterface $repository,
+        private UserRepositoryInterface $repository
     ) {
     }
 
@@ -33,9 +33,9 @@ class ToggleTwoFactorService
      * @throws \PragmaRX\Google2FA\Exceptions\IncompatibleWithGoogleAuthenticatorException
      * @throws \PragmaRX\Google2FA\Exceptions\InvalidCharactersException
      * @throws \PragmaRX\Google2FA\Exceptions\SecretKeyTooShortException
-     * @throws TwoFactorAuthenticationTokenInvalid
+     * @throws \SneakyPanel\Exceptions\Service\User\TwoFactorAuthenticationTokenInvalid
      */
-    public function handle(User $user, string $token, ?bool $toggleState = null): array
+    public function handle(User $user, string $token, bool $toggleState = null): array
     {
         $secret = $this->encrypter->decrypt($user->totp_secret);
 

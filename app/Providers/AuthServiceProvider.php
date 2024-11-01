@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Laravel\Sanctum\Sanctum;
-use sneakypanel\Models\ApiKey;
-use sneakypanel\Models\Server;
-use sneakypanel\Policies\ServerPolicy;
+use SneakyPanel\Models\ApiKey;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Policies\ServerPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -20,5 +20,10 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Sanctum::usePersonalAccessTokenModel(ApiKey::class);
+    }
+
+    public function register(): void
+    {
+        Sanctum::ignoreMigrations();
     }
 }

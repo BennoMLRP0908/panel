@@ -1,21 +1,21 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Locations;
+namespace SneakyPanel\Http\Controllers\Api\Application\Locations;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Location;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\QueryBuilder;
-use sneakypanel\Services\Locations\LocationUpdateService;
-use sneakypanel\Services\Locations\LocationCreationService;
-use sneakypanel\Services\Locations\LocationDeletionService;
-use sneakypanel\Transformers\Api\Application\LocationTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Locations\GetLocationRequest;
-use sneakypanel\Http\Requests\Api\Application\Locations\GetLocationsRequest;
-use sneakypanel\Http\Requests\Api\Application\Locations\StoreLocationRequest;
-use sneakypanel\Http\Requests\Api\Application\Locations\DeleteLocationRequest;
-use sneakypanel\Http\Requests\Api\Application\Locations\UpdateLocationRequest;
+use SneakyPanel\Services\Locations\LocationUpdateService;
+use SneakyPanel\Services\Locations\LocationCreationService;
+use SneakyPanel\Services\Locations\LocationDeletionService;
+use SneakyPanel\Transformers\Api\Application\LocationTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Locations\GetLocationRequest;
+use SneakyPanel\Http\Requests\Api\Application\Locations\GetLocationsRequest;
+use SneakyPanel\Http\Requests\Api\Application\Locations\StoreLocationRequest;
+use SneakyPanel\Http\Requests\Api\Application\Locations\DeleteLocationRequest;
+use SneakyPanel\Http\Requests\Api\Application\Locations\UpdateLocationRequest;
 
 class LocationController extends ApplicationApiController
 {
@@ -25,7 +25,7 @@ class LocationController extends ApplicationApiController
     public function __construct(
         private LocationCreationService $creationService,
         private LocationDeletionService $deletionService,
-        private LocationUpdateService $updateService,
+        private LocationUpdateService $updateService
     ) {
         parent::__construct();
     }
@@ -59,7 +59,7 @@ class LocationController extends ApplicationApiController
      * Store a new location on the Panel and return an HTTP/201 response code with the
      * new location attached.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreLocationRequest $request): JsonResponse
     {
@@ -78,8 +78,8 @@ class LocationController extends ApplicationApiController
     /**
      * Update a location on the Panel and return the updated record to the user.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateLocationRequest $request, Location $location): array
     {
@@ -93,7 +93,7 @@ class LocationController extends ApplicationApiController
     /**
      * Delete a location from the Panel.
      *
-     * @throws \sneakypanel\Exceptions\Service\Location\HasActiveNodesException
+     * @throws \SneakyPanel\Exceptions\Service\Location\HasActiveNodesException
      */
     public function delete(DeleteLocationRequest $request, Location $location): Response
     {

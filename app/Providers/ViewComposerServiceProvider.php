@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use sneakypanel\Http\ViewComposers\AssetComposer;
+use SneakyPanel\Http\ViewComposers\AssetComposer;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {

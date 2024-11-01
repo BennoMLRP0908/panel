@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Files;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Files;
 
-use sneakypanel\Models\Permission;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class UploadFileRequest extends ClientApiRequest
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Jobs\Schedule;
+namespace SneakyPanel\Jobs\Schedule;
 
 use Exception;
-use sneakypanel\Jobs\Job;
+use SneakyPanel\Jobs\Job;
 use Carbon\CarbonImmutable;
-use sneakypanel\Models\Task;
+use SneakyPanel\Models\Task;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use sneakypanel\Services\Backups\InitiateBackupService;
-use sneakypanel\Repositories\Wings\DaemonPowerRepository;
-use sneakypanel\Repositories\Wings\DaemonCommandRepository;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Services\Backups\InitiateBackupService;
+use SneakyPanel\Repositories\Wings\DaemonPowerRepository;
+use SneakyPanel\Repositories\Wings\DaemonCommandRepository;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class RunTaskJob extends Job implements ShouldQueue
 {
@@ -37,7 +37,7 @@ class RunTaskJob extends Job implements ShouldQueue
     public function handle(
         DaemonCommandRepository $commandRepository,
         InitiateBackupService $backupService,
-        DaemonPowerRepository $powerRepository,
+        DaemonPowerRepository $powerRepository
     ) {
         // Do not process a task that is not set to active, unless it's been manually triggered.
         if (!$this->task->schedule->is_active && !$this->manualRun) {
@@ -88,7 +88,7 @@ class RunTaskJob extends Job implements ShouldQueue
     /**
      * Handle a failure while sending the action to the daemon or otherwise processing the job.
      */
-    public function failed(?\Exception $exception = null)
+    public function failed(\Exception $exception = null)
     {
         $this->markTaskNotQueued();
         $this->markScheduleComplete();
@@ -99,7 +99,7 @@ class RunTaskJob extends Job implements ShouldQueue
      */
     private function queueNextTask()
     {
-        /** @var Task|null $nextTask */
+        /** @var \SneakyPanel\Models\Task|null $nextTask */
         $nextTask = Task::query()->where('schedule_id', $this->task->schedule_id)
             ->orderBy('sequence_id', 'asc')
             ->where('sequence_id', '>', $this->task->sequence_id)

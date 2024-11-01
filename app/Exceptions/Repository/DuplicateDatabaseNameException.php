@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Repository;
+namespace SneakyPanel\Exceptions\Repository;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class DuplicateDatabaseNameException extends DisplayException
 {

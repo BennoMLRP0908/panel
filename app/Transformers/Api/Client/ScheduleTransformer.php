@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\Task;
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Task;
+use SneakyPanel\Models\Schedule;
 use League\Fractal\Resource\Collection;
 
 class ScheduleTransformer extends BaseClientTransformer
@@ -12,6 +12,9 @@ class ScheduleTransformer extends BaseClientTransformer
 
     protected array $defaultIncludes = ['tasks'];
 
+    /**
+     * {@inheritdoc}
+     */
     public function getResourceName(): string
     {
         return Schedule::RESOURCE_NAME;
@@ -45,7 +48,7 @@ class ScheduleTransformer extends BaseClientTransformer
     /**
      * Allows attaching the tasks specific to the schedule in the response.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function includeTasks(Schedule $model): Collection
     {

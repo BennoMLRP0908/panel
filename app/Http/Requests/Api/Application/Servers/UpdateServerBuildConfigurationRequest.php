@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Servers;
+namespace SneakyPanel\Http\Requests\Api\Application\Servers;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Collection;
 
 class UpdateServerBuildConfigurationRequest extends ServerWriteRequest

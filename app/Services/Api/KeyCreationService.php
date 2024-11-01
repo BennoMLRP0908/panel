@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Api;
+namespace SneakyPanel\Services\Api;
 
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Contracts\Repository\ApiKeyRepositoryInterface;
+use SneakyPanel\Contracts\Repository\ApiKeyRepositoryInterface;
 
 class KeyCreationService
 {
@@ -33,7 +33,7 @@ class KeyCreationService
      * This will automatically generate an identifier and an encrypted token that are
      * stored in the database.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle(array $data, array $permissions = []): ApiKey
     {

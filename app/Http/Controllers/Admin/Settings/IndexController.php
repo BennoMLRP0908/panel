@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Settings;
+namespace SneakyPanel\Http\Controllers\Admin\Settings;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Traits\Helpers\AvailableLanguages;
-use sneakypanel\Services\Helpers\SoftwareVersionService;
-use sneakypanel\Contracts\Repository\SettingsRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Settings\BaseSettingsFormRequest;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Traits\Helpers\AvailableLanguages;
+use SneakyPanel\Services\Helpers\SoftwareVersionService;
+use SneakyPanel\Contracts\Repository\SettingsRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Settings\BaseSettingsFormRequest;
 
 class IndexController extends Controller
 {
@@ -25,7 +25,7 @@ class IndexController extends Controller
         private Kernel $kernel,
         private SettingsRepositoryInterface $settings,
         private SoftwareVersionService $versionService,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 
@@ -43,8 +43,8 @@ class IndexController extends Controller
     /**
      * Handle settings update.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(BaseSettingsFormRequest $request): RedirectResponse
     {

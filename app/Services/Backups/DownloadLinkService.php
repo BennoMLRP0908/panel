@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Backups;
+namespace SneakyPanel\Services\Backups;
 
 use Carbon\CarbonImmutable;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Backup;
-use sneakypanel\Services\Nodes\NodeJWTService;
-use sneakypanel\Extensions\Backups\BackupManager;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Backup;
+use SneakyPanel\Services\Nodes\NodeJWTService;
+use SneakyPanel\Extensions\Backups\BackupManager;
 
 class DownloadLinkService
 {
@@ -45,7 +45,7 @@ class DownloadLinkService
      */
     protected function getS3BackupUrl(Backup $backup): string
     {
-        /** @var \sneakypanel\Extensions\Filesystem\S3Filesystem $adapter */
+        /** @var \SneakyPanel\Extensions\Filesystem\S3Filesystem $adapter */
         $adapter = $this->backupManager->adapter(Backup::ADAPTER_AWS_S3);
 
         $request = $adapter->getClient()->createPresignedRequest(

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Nodes;
+namespace SneakyPanel\Services\Nodes;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Str;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Contracts\Repository\NodeRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NodeRepositoryInterface;
 
 class NodeCreationService
 {
@@ -20,7 +20,7 @@ class NodeCreationService
     /**
      * Create a new node on the panel.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle(array $data): Node
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Locations;
+namespace SneakyPanel\Http\Requests\Api\Application\Locations;
 
-use sneakypanel\Models\Location;
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Models\Location;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class StoreLocationRequest extends ApplicationApiRequest
 {

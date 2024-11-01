@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Services\Acl\Api;
+namespace SneakyPanel\Services\Acl\Api;
 
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 
 class AdminAcl
 {

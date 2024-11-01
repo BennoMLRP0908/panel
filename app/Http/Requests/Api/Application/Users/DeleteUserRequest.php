@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Users;
+namespace SneakyPanel\Http\Requests\Api\Application\Users;
 
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class DeleteUserRequest extends ApplicationApiRequest
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Services\Databases\DatabaseManagementService;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Services\Databases\DatabaseManagementService;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class ServerDeletionService
 {
@@ -20,7 +20,7 @@ class ServerDeletionService
     public function __construct(
         private ConnectionInterface $connection,
         private DaemonServerRepository $daemonServerRepository,
-        private DatabaseManagementService $databaseManagementService,
+        private DatabaseManagementService $databaseManagementService
     ) {
     }
 
@@ -38,7 +38,7 @@ class ServerDeletionService
      * Delete a server from the panel and remove any associated databases from hosts.
      *
      * @throws \Throwable
-     * @throws \sneakypanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function handle(Server $server): void
     {

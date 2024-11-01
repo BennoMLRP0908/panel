@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Traits\Helpers;
+namespace SneakyPanel\Traits\Helpers;
 
 use Matriphe\ISO639\ISO639;
 use Illuminate\Filesystem\Filesystem;

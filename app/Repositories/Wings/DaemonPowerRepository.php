@@ -1,23 +1,19 @@
 <?php
 
-namespace sneakypanel\Repositories\Wings;
+namespace SneakyPanel\Repositories\Wings;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\TransferException;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
-/**
- * @method \sneakypanel\Repositories\Wings\DaemonPowerRepository setNode(\sneakypanel\Models\Node $node)
- * @method \sneakypanel\Repositories\Wings\DaemonPowerRepository setServer(\sneakypanel\Models\Server $server)
- */
 class DaemonPowerRepository extends DaemonRepository
 {
     /**
      * Sends a power action to the server instance.
      *
-     * @throws DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function send(string $action): ResponseInterface
     {

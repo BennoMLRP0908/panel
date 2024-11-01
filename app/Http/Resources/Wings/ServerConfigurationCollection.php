@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Resources\Wings;
+namespace SneakyPanel\Http\Resources\Wings;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Container\Container;
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use sneakypanel\Services\Eggs\EggConfigurationService;
-use sneakypanel\Services\Servers\ServerConfigurationStructureService;
+use SneakyPanel\Services\Eggs\EggConfigurationService;
+use SneakyPanel\Services\Servers\ServerConfigurationStructureService;
 
 class ServerConfigurationCollection extends ResourceCollection
 {

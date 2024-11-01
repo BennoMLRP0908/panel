@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Databases;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Databases;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Validation\Rule;
-use sneakypanel\Models\Database;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Models\Permission;
 use Illuminate\Database\Query\Builder;
-use sneakypanel\Contracts\Http\ClientPermissionsRequest;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Services\Databases\DatabaseManagementService;
+use SneakyPanel\Contracts\Http\ClientPermissionsRequest;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Services\Databases\DatabaseManagementService;
 
 class StoreDatabaseRequest extends ClientApiRequest implements ClientPermissionsRequest
 {

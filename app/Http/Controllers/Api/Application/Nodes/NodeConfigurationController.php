@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Nodes;
+namespace SneakyPanel\Http\Controllers\Api\Application\Nodes;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Http\Requests\Api\Application\Nodes\GetNodeRequest;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\GetNodeRequest;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class NodeConfigurationController extends ApplicationApiController
 {

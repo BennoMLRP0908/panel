@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Session;
+use SneakyPanel\Models\Session;
 use Illuminate\Support\Collection;
-use sneakypanel\Contracts\Repository\SessionRepositoryInterface;
+use SneakyPanel\Contracts\Repository\SessionRepositoryInterface;
 
 class SessionRepository extends EloquentRepository implements SessionRepositoryInterface
 {

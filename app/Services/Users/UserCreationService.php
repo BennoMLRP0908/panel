@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Services\Users;
+namespace SneakyPanel\Services\Users;
 
 use Ramsey\Uuid\Uuid;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Auth\PasswordBroker;
-use sneakypanel\Notifications\AccountCreated;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Notifications\AccountCreated;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
 
 class UserCreationService
 {
@@ -19,7 +19,7 @@ class UserCreationService
         private ConnectionInterface $connection,
         private Hasher $hasher,
         private PasswordBroker $passwordBroker,
-        private UserRepositoryInterface $repository,
+        private UserRepositoryInterface $repository
     ) {
     }
 
@@ -27,7 +27,7 @@ class UserCreationService
      * Create a new user on the system.
      *
      * @throws \Exception
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle(array $data): User
     {
@@ -41,7 +41,7 @@ class UserCreationService
             $data['password'] = $this->hasher->make(str_random(30));
         }
 
-        /** @var User $user */
+        /** @var \SneakyPanel\Models\User $user */
         $user = $this->repository->create(array_merge($data, [
             'uuid' => Uuid::uuid4()->toString(),
         ]), true, true);

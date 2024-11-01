@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Databases;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Databases;
 
-use sneakypanel\Models\Permission;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class RotatePasswordRequest extends ClientApiRequest
 {

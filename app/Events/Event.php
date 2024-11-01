@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Events;
+namespace SneakyPanel\Events;
 
 abstract class Event
 {

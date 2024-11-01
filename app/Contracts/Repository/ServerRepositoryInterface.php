@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
@@ -16,17 +16,17 @@ interface ServerRepositoryInterface extends RepositoryInterface
     /**
      * Return a collection of servers with their associated data for rebuild operations.
      */
-    public function getDataForRebuild(?int $server = null, ?int $node = null): Collection;
+    public function getDataForRebuild(int $server = null, int $node = null): Collection;
 
     /**
      * Return a collection of servers with their associated data for reinstall operations.
      */
-    public function getDataForReinstall(?int $server = null, ?int $node = null): Collection;
+    public function getDataForReinstall(int $server = null, int $node = null): Collection;
 
     /**
      * Return a server model and all variables associated with the server.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function findWithVariables(int $id): Server;
 
@@ -57,7 +57,7 @@ interface ServerRepositoryInterface extends RepositoryInterface
     /**
      * Return a server by UUID.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getByUuid(string $uuid): Server;
 

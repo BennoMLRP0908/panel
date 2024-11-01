@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Settings;
+namespace SneakyPanel\Http\Requests\Admin\Settings;
 
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class AdvancedSettingsFormRequest extends AdminFormRequest
 {

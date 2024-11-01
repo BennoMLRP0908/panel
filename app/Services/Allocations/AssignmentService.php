@@ -1,20 +1,20 @@
 <?php
 
-namespace sneakypanel\Services\Allocations;
+namespace SneakyPanel\Services\Allocations;
 
 use IPTools\Network;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
-use sneakypanel\Exceptions\Service\Allocation\CidrOutOfRangeException;
-use sneakypanel\Exceptions\Service\Allocation\PortOutOfRangeException;
-use sneakypanel\Exceptions\Service\Allocation\InvalidPortMappingException;
-use sneakypanel\Exceptions\Service\Allocation\TooManyPortsInRangeException;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Allocation\CidrOutOfRangeException;
+use SneakyPanel\Exceptions\Service\Allocation\PortOutOfRangeException;
+use SneakyPanel\Exceptions\Service\Allocation\InvalidPortMappingException;
+use SneakyPanel\Exceptions\Service\Allocation\TooManyPortsInRangeException;
 
 class AssignmentService
 {
-    public const CIDR_MAX_BITS = 25;
+    public const CIDR_MAX_BITS = 27;
     public const CIDR_MIN_BITS = 32;
     public const PORT_FLOOR = 1024;
     public const PORT_CEIL = 65535;
@@ -31,11 +31,11 @@ class AssignmentService
     /**
      * Insert allocations into the database and link them to a specific node.
      *
-     * @throws DisplayException
-     * @throws CidrOutOfRangeException
-     * @throws InvalidPortMappingException
-     * @throws PortOutOfRangeException
-     * @throws TooManyPortsInRangeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\CidrOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\InvalidPortMappingException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\PortOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
      */
     public function handle(Node $node, array $data): void
     {

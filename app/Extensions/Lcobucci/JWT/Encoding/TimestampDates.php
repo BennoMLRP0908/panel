@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Extensions\Lcobucci\JWT\Encoding;
+namespace SneakyPanel\Extensions\Lcobucci\JWT\Encoding;
 
 use Lcobucci\JWT\ClaimsFormatter;
 use Lcobucci\JWT\Token\RegisteredClaims;

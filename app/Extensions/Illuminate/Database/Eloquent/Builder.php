@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Extensions\Illuminate\Database\Eloquent;
+namespace SneakyPanel\Extensions\Illuminate\Database\Eloquent;
 
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 

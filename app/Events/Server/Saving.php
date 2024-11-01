@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Events\Server;
+namespace SneakyPanel\Events\Server;
 
-use sneakypanel\Events\Event;
-use sneakypanel\Models\Server;
+use SneakyPanel\Events\Event;
+use SneakyPanel\Models\Server;
 use Illuminate\Queue\SerializesModels;
 
 class Saving extends Event

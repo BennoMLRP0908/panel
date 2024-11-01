@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Nests;
+namespace SneakyPanel\Http\Requests\Api\Application\Nests;
 
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class GetNestsRequest extends ApplicationApiRequest
 {

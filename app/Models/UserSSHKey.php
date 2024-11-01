@@ -1,13 +1,12 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * \sneakypanel\Models\UserSSHKey.
+ * \SneakyPanel\Models\UserSSHKey.
  *
  * @property int $id
  * @property int $user_id
@@ -17,7 +16,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property User $user
+ * @property \SneakyPanel\Models\User $user
  *
  * @method static \Illuminate\Database\Eloquent\Builder|UserSSHKey newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|UserSSHKey newQuery()
@@ -40,8 +39,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class UserSSHKey extends Model
 {
-    /** @use HasFactory<\Database\Factories\UserSSHKeyFactory> */
-    use HasFactory;
     use SoftDeletes;
 
     public const RESOURCE_NAME = 'ssh_key';

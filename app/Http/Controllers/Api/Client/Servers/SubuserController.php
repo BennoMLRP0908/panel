@@ -1,23 +1,23 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Models\Permission;
 use Illuminate\Support\Facades\Log;
-use sneakypanel\Repositories\Eloquent\SubuserRepository;
-use sneakypanel\Services\Subusers\SubuserCreationService;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Transformers\Api\Client\SubuserTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
-use sneakypanel\Http\Requests\Api\Client\Servers\Subusers\GetSubuserRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Subusers\StoreSubuserRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Subusers\DeleteSubuserRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Subusers\UpdateSubuserRequest;
+use SneakyPanel\Repositories\Eloquent\SubuserRepository;
+use SneakyPanel\Services\Subusers\SubuserCreationService;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Transformers\Api\Client\SubuserTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Subusers\GetSubuserRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Subusers\StoreSubuserRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Subusers\DeleteSubuserRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Subusers\UpdateSubuserRequest;
 
 class SubuserController extends ClientApiController
 {
@@ -27,7 +27,7 @@ class SubuserController extends ClientApiController
     public function __construct(
         private SubuserRepository $repository,
         private SubuserCreationService $creationService,
-        private DaemonServerRepository $serverRepository,
+        private DaemonServerRepository $serverRepository
     ) {
         parent::__construct();
     }
@@ -57,9 +57,9 @@ class SubuserController extends ClientApiController
     /**
      * Create a new subuser for the given server.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Service\Subuser\ServerSubuserExistsException
-     * @throws \sneakypanel\Exceptions\Service\Subuser\UserIsServerOwnerException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\Subuser\ServerSubuserExistsException
+     * @throws \SneakyPanel\Exceptions\Service\Subuser\UserIsServerOwnerException
      * @throws \Throwable
      */
     public function store(StoreSubuserRequest $request, Server $server): array
@@ -83,12 +83,12 @@ class SubuserController extends ClientApiController
     /**
      * Update a given subuser in the system for the server.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateSubuserRequest $request, Server $server): array
     {
-        /** @var \sneakypanel\Models\Subuser $subuser */
+        /** @var \SneakyPanel\Models\Subuser $subuser */
         $subuser = $request->attributes->get('subuser');
 
         $permissions = $this->getDefaultPermissions($request);
@@ -138,7 +138,7 @@ class SubuserController extends ClientApiController
      */
     public function delete(DeleteSubuserRequest $request, Server $server): JsonResponse
     {
-        /** @var \sneakypanel\Models\Subuser $subuser */
+        /** @var \SneakyPanel\Models\Subuser $subuser */
         $subuser = $request->attributes->get('subuser');
 
         $log = Activity::event('server:subuser.delete')

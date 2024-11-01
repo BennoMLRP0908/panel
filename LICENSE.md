@@ -1,8 +1,8 @@
 # The MIT License (MIT)
 
 ```
-sneakypanel®
-Copyright © Dane Everitt <dane@daneeveritt.com> and contributors
+SneakyPanel®
+Copyright © Sneaky <dane@daneeveritt.com> and contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

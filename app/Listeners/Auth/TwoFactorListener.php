@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Listeners\Auth;
+namespace SneakyPanel\Listeners\Auth;
 
-use sneakypanel\Facades\Activity;
-use sneakypanel\Events\Auth\ProvidedAuthenticationToken;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Events\Auth\ProvidedAuthenticationToken;
 
 class TwoFactorListener
 {

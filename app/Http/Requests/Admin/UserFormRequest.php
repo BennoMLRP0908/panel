@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin;
+namespace SneakyPanel\Http\Requests\Admin;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Support\Collection;
 
 class UserFormRequest extends AdminFormRequest

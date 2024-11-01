@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Api;
+namespace SneakyPanel\Http\Middleware\Api;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;

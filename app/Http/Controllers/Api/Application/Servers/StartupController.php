@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Application\Servers;
 
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
-use sneakypanel\Services\Servers\StartupModificationService;
-use sneakypanel\Transformers\Api\Application\ServerTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Servers\UpdateServerStartupRequest;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Services\Servers\StartupModificationService;
+use SneakyPanel\Transformers\Api\Application\ServerTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Servers\UpdateServerStartupRequest;
 
 class StartupController extends ApplicationApiController
 {
@@ -23,9 +23,9 @@ class StartupController extends ApplicationApiController
      * Update the startup and environment settings for a specific server.
      *
      * @throws \Illuminate\Validation\ValidationException
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(UpdateServerStartupRequest $request, Server $server): array
     {

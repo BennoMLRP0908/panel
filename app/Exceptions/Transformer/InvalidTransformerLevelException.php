@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Exceptions\Transformer;
+namespace SneakyPanel\Exceptions\Transformer;
 
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
-class InvalidTransformerLevelException extends sneakypanelException
+class InvalidTransformerLevelException extends SneakyPanelException
 {
 }

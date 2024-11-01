@@ -1,5 +1,5 @@
 @php
-    /** @var \sneakypanel\Models\Server $server */
+    /** @var \SneakyPanel\Models\Server $server */
     $router = app('router');
 @endphp
 <div class="row">

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Eggs\Variables;
+namespace SneakyPanel\Services\Eggs\Variables;
 
-use sneakypanel\Models\EggVariable;
-use sneakypanel\Traits\Services\ValidatesValidationRules;
+use SneakyPanel\Models\EggVariable;
+use SneakyPanel\Traits\Services\ValidatesValidationRules;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-use sneakypanel\Contracts\Repository\EggVariableRepositoryInterface;
-use sneakypanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException;
+use SneakyPanel\Contracts\Repository\EggVariableRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException;
 
 class VariableCreationService
 {
@@ -31,9 +31,9 @@ class VariableCreationService
     /**
      * Create a new variable for a given Egg.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Service\Egg\Variable\BadValidationRuleException
-     * @throws ReservedVariableNameException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\Variable\BadValidationRuleException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException
      */
     public function handle(int $egg, array $data): EggVariable
     {

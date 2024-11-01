@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Api\Client\Server;
+namespace SneakyPanel\Http\Middleware\Api\Client\Server;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use sneakypanel\Exceptions\Http\Server\ServerStateConflictException;
+use SneakyPanel\Exceptions\Http\Server\ServerStateConflictException;
 
 class AuthenticateServerAccess
 {
@@ -28,7 +28,7 @@ class AuthenticateServerAccess
      */
     public function handle(Request $request, \Closure $next): mixed
     {
-        /** @var \sneakypanel\Models\User $user */
+        /** @var \SneakyPanel\Models\User $user */
         $user = $request->user();
         $server = $request->route()->parameter('server');
 

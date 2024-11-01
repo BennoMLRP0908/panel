@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin;
+namespace SneakyPanel\Http\Requests\Admin;
 
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Location;
 
 class LocationFormRequest extends AdminFormRequest
 {

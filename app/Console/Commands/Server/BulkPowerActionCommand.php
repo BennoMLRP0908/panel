@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Server;
+namespace SneakyPanel\Console\Commands\Server;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\Factory as ValidatorFactory;
-use sneakypanel\Repositories\Wings\DaemonPowerRepository;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Repositories\Wings\DaemonPowerRepository;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class BulkPowerActionCommand extends Command
 {
@@ -30,7 +30,7 @@ class BulkPowerActionCommand extends Command
     /**
      * Handle the bulk power request.
      *
-     * @throws ValidationException
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function handle()
     {

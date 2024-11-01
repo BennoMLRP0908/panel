@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Settings;
+namespace SneakyPanel\Http\Controllers\Admin\Settings;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use sneakypanel\Contracts\Repository\SettingsRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Settings\AdvancedSettingsFormRequest;
+use SneakyPanel\Contracts\Repository\SettingsRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Settings\AdvancedSettingsFormRequest;
 
 class AdvancedController extends Controller
 {
@@ -22,7 +22,7 @@ class AdvancedController extends Controller
         private ConfigRepository $config,
         private Kernel $kernel,
         private SettingsRepositoryInterface $settings,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 
@@ -45,8 +45,8 @@ class AdvancedController extends Controller
     }
 
     /**
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(AdvancedSettingsFormRequest $request): RedirectResponse
     {

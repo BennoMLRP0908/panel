@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Support\Str;
 use Symfony\Component\Yaml\Yaml;
@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 /**
@@ -35,15 +34,13 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property string $daemonBase
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property Location $location
- * @property \sneakypanel\Models\Mount[]|\Illuminate\Database\Eloquent\Collection $mounts
- * @property \sneakypanel\Models\Server[]|\Illuminate\Database\Eloquent\Collection $servers
- * @property \sneakypanel\Models\Allocation[]|\Illuminate\Database\Eloquent\Collection $allocations
+ * @property \SneakyPanel\Models\Location $location
+ * @property \SneakyPanel\Models\Mount[]|\Illuminate\Database\Eloquent\Collection $mounts
+ * @property \SneakyPanel\Models\Server[]|\Illuminate\Database\Eloquent\Collection $servers
+ * @property \SneakyPanel\Models\Allocation[]|\Illuminate\Database\Eloquent\Collection $allocations
  */
 class Node extends Model
 {
-    /** @use HasFactory<\Database\Factories\NodeFactory> */
-    use HasFactory;
     use Notifiable;
 
     /**

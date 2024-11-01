@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Policies;
+namespace SneakyPanel\Policies;
 
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
 
 class ServerPolicy
 {

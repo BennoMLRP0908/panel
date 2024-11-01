@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Traits\Commands;
+namespace SneakyPanel\Traits\Commands;
 
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
 trait EnvironmentWriterTrait
 {
@@ -23,13 +23,13 @@ trait EnvironmentWriterTrait
     /**
      * Update the .env file for the application using the passed in values.
      *
-     * @throws sneakypanelException
+     * @throws \SneakyPanel\Exceptions\SneakyPanelException
      */
     public function writeToEnvironment(array $values = []): void
     {
         $path = base_path('.env');
         if (!file_exists($path)) {
-            throw new sneakypanelException('Cannot locate .env file, was this software installed correctly?');
+            throw new SneakyPanelException('Cannot locate .env file, was this software installed correctly?');
         }
 
         $saveContents = file_get_contents($path);

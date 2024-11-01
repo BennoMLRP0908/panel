@@ -1,22 +1,23 @@
 <?php
 
-namespace sneakypanel\Services\Telemetry;
+namespace SneakyPanel\Services\Telemetry;
 
+use Exception;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\Nest;
-use sneakypanel\Models\Node;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Mount;
-use sneakypanel\Models\Backup;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\Nest;
+use SneakyPanel\Models\Node;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Mount;
+use SneakyPanel\Models\Backup;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Location;
 use Illuminate\Support\Facades\DB;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Support\Facades\Http;
-use sneakypanel\Repositories\Eloquent\SettingsRepository;
-use sneakypanel\Repositories\Wings\DaemonConfigurationRepository;
+use SneakyPanel\Repositories\Eloquent\SettingsRepository;
+use SneakyPanel\Repositories\Wings\DaemonConfigurationRepository;
 
 class TelemetryCollectionService
 {
@@ -25,28 +26,28 @@ class TelemetryCollectionService
      */
     public function __construct(
         private DaemonConfigurationRepository $daemonConfigurationRepository,
-        private SettingsRepository $settingsRepository,
+        private SettingsRepository $settingsRepository
     ) {
     }
 
     /**
-     * Collects telemetry data and sends it to the sneakypanel Telemetry Service.
+     * Collects telemetry data and sends it to the SneakyPanel Telemetry Service.
      */
     public function __invoke(): void
     {
         try {
             $data = $this->collect();
-        } catch (\Exception) {
+        } catch (Exception) {
             return;
         }
 
-        Http::post('https://telemetry.sneakypanel.com', $data);
+        Http::post('https://telemetry.sneakypanel.io', $data);
     }
 
     /**
      * Collects telemetry data and returns it as an array.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function collect(): array
     {
@@ -59,7 +60,7 @@ class TelemetryCollectionService
         $nodes = Node::all()->map(function ($node) {
             try {
                 $info = $this->daemonConfigurationRepository->setNode($node)->getSystemInformation(2);
-            } catch (\Exception) {
+            } catch (Exception) {
                 return null;
             }
 
@@ -141,10 +142,10 @@ class TelemetryCollectionService
                     'count' => Egg::count(),
                     // Egg UUIDs are generated randomly on import, so there is not a consistent way to
                     // determine if servers are using default eggs or not.
-                    //                    'server_usage' => Egg::all()
-                    //                        ->flatMap(fn (Egg $egg) => [$egg->uuid => $egg->servers->count()])
-                    //                        ->filter(fn (int $count) => $count > 0)
-                    //                        ->toArray(),
+//                    'server_usage' => Egg::all()
+//                        ->flatMap(fn (Egg $egg) => [$egg->uuid => $egg->servers->count()])
+//                        ->filter(fn (int $count) => $count > 0)
+//                        ->toArray(),
                 ],
 
                 'locations' => [
@@ -159,10 +160,10 @@ class TelemetryCollectionService
                     'count' => Nest::count(),
                     // Nest UUIDs are generated randomly on import, so there is not a consistent way to
                     // determine if servers are using default eggs or not.
-                    //                    'server_usage' => Nest::all()
-                    //                        ->flatMap(fn (Nest $nest) => [$nest->uuid => $nest->eggs->sum(fn (Egg $egg) => $egg->servers->count())])
-                    //                        ->filter(fn (int $count) => $count > 0)
-                    //                        ->toArray(),
+//                    'server_usage' => Nest::all()
+//                        ->flatMap(fn (Nest $nest) => [$nest->uuid => $nest->eggs->sum(fn (Egg $egg) => $egg->servers->count())])
+//                        ->filter(fn (int $count) => $count > 0)
+//                        ->toArray(),
                 ],
 
                 'nodes' => [

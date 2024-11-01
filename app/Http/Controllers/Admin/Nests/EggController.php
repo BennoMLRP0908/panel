@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nests;
+namespace SneakyPanel\Http\Controllers\Admin\Nests;
 
 use Illuminate\View\View;
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Eggs\EggUpdateService;
-use sneakypanel\Services\Eggs\EggCreationService;
-use sneakypanel\Services\Eggs\EggDeletionService;
-use sneakypanel\Http\Requests\Admin\Egg\EggFormRequest;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Eggs\EggUpdateService;
+use SneakyPanel\Services\Eggs\EggCreationService;
+use SneakyPanel\Services\Eggs\EggDeletionService;
+use SneakyPanel\Http\Requests\Admin\Egg\EggFormRequest;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
 
 class EggController extends Controller
 {
@@ -27,14 +27,14 @@ class EggController extends Controller
         protected EggRepositoryInterface $repository,
         protected EggUpdateService $updateService,
         protected NestRepositoryInterface $nestRepository,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
     /**
      * Handle a request to display the Egg creation page.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function create(): View
     {
@@ -47,8 +47,8 @@ class EggController extends Controller
     /**
      * Handle request to store a new Egg.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Service\Egg\NoParentConfigurationFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\NoParentConfigurationFoundException
      */
     public function store(EggFormRequest $request): RedirectResponse
     {
@@ -79,9 +79,9 @@ class EggController extends Controller
     /**
      * Handle request to update an Egg.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Egg\NoParentConfigurationFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\NoParentConfigurationFoundException
      */
     public function update(EggFormRequest $request, Egg $egg): RedirectResponse
     {
@@ -97,8 +97,8 @@ class EggController extends Controller
     /**
      * Handle request to destroy an egg.
      *
-     * @throws \sneakypanel\Exceptions\Service\Egg\HasChildrenException
-     * @throws \sneakypanel\Exceptions\Service\HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\HasChildrenException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function destroy(Egg $egg): RedirectResponse
     {
@@ -111,7 +111,7 @@ class EggController extends Controller
     /**
      * Normalizes a string of docker image data into the expected egg format.
      */
-    protected function normalizeDockerImages(?string $input = null): array
+    protected function normalizeDockerImages(string $input = null): array
     {
         $data = array_map(fn ($value) => trim($value), explode("\n", $input ?? ''));
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 /**
- * sneakypanel\Models\Setting.
+ * SneakyPanel\Models\Setting.
  *
  * @property int $id
  * @property string $key

@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Maintenance;
+namespace SneakyPanel\Console\Commands\Maintenance;
 
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -36,7 +36,7 @@ class CleanServiceBackupFilesCommand extends Command
 
         collect($files)->each(function (\SplFileInfo $file) {
             $lastModified = Carbon::createFromTimestamp($this->disk->lastModified($file->getPath()));
-            if ((int) $lastModified->diffInMinutes(Carbon::now()) > self::BACKUP_THRESHOLD_MINUTES) {
+            if ($lastModified->diffInMinutes(Carbon::now()) > self::BACKUP_THRESHOLD_MINUTES) {
                 $this->disk->delete($file->getPath());
                 $this->info(trans('command/messages.maintenance.deleting_service_backup', ['file' => $file->getFilename()]));
             }

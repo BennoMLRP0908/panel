@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Schedules;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Schedules;
 
-use sneakypanel\Models\Schedule;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Schedule;
+use SneakyPanel\Models\Permission;
 
 class StoreScheduleRequest extends ViewScheduleRequest
 {

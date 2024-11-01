@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
@@ -58,7 +58,7 @@ class AuditLog extends Model
      */
     public static function instance(string $action, array $metadata, bool $isSystem = false): self
     {
-        /** @var Request $request */
+        /** @var \Illuminate\Http\Request $request */
         $request = Container::getInstance()->make('request');
         if ($isSystem || !$request instanceof Request) {
             $request = null;

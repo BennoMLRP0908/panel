@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Helper;
+namespace SneakyPanel\Exceptions\Service\Helper;
 
 class CdnVersionFetchingException extends \Exception
 {

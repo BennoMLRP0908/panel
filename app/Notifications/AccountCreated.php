@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Notifications;
+namespace SneakyPanel\Notifications;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;

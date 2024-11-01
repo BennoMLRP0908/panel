@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Base;
+namespace SneakyPanel\Http\Controllers\Base;
 
 use Illuminate\View\View;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
 
 class IndexController extends Controller
 {
@@ -14,7 +14,7 @@ class IndexController extends Controller
      */
     public function __construct(
         protected ServerRepositoryInterface $repository,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Database;
+use SneakyPanel\Models\Database;
 use Illuminate\Support\Collection;
 use Illuminate\Foundation\Application;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use sneakypanel\Contracts\Repository\DatabaseRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseRepositoryInterface;
 
 class DatabaseRepository extends EloquentRepository implements DatabaseRepositoryInterface
 {

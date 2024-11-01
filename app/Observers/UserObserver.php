@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Observers;
+namespace SneakyPanel\Observers;
 
-use sneakypanel\Events;
-use sneakypanel\Models\User;
+use SneakyPanel\Events;
+use SneakyPanel\Models\User;
 
 class UserObserver
 {

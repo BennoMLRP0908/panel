@@ -1,22 +1,22 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Servers;
+namespace SneakyPanel\Http\Controllers\Admin\Servers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Nest;
-use sneakypanel\Models\Server;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Servers\EnvironmentService;
+use SneakyPanel\Models\Nest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Servers\EnvironmentService;
 use Illuminate\Contracts\View\Factory as ViewFactory;
-use sneakypanel\Repositories\Eloquent\NestRepository;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
-use sneakypanel\Repositories\Eloquent\MountRepository;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Traits\Controllers\JavascriptInjection;
-use sneakypanel\Repositories\Eloquent\LocationRepository;
-use sneakypanel\Repositories\Eloquent\DatabaseHostRepository;
+use SneakyPanel\Repositories\Eloquent\NestRepository;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Repositories\Eloquent\MountRepository;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Traits\Controllers\JavascriptInjection;
+use SneakyPanel\Repositories\Eloquent\LocationRepository;
+use SneakyPanel\Repositories\Eloquent\DatabaseHostRepository;
 
 class ServerViewController extends Controller
 {
@@ -33,7 +33,7 @@ class ServerViewController extends Controller
         private NodeRepository $nodeRepository,
         private ServerRepository $repository,
         private EnvironmentService $environmentService,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 
@@ -70,7 +70,7 @@ class ServerViewController extends Controller
     /**
      * Returns the server startup management page.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function startup(Request $request, Server $server): View
     {
@@ -118,7 +118,7 @@ class ServerViewController extends Controller
      * Returns the base server management page, or an exception if the server
      * is in a state that cannot be recovered from.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function manage(Request $request, Server $server): View
     {

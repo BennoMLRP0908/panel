@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Overrides;
+namespace SneakyPanel\Console\Commands\Overrides;
 
-use sneakypanel\Console\RequiresDatabaseMigrations;
+use SneakyPanel\Console\RequiresDatabaseMigrations;
 use Illuminate\Database\Console\Seeds\SeedCommand as BaseSeedCommand;
 
 class SeedCommand extends BaseSeedCommand

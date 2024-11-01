@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models\Objects;
+namespace SneakyPanel\Models\Objects;
 
 class DeploymentObject
 {

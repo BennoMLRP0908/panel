@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Validation\Rules\NotIn;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -14,9 +14,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property string $target
  * @property bool $read_only
  * @property bool $user_mountable
- * @property \sneakypanel\Models\Egg[]|\Illuminate\Database\Eloquent\Collection $eggs
- * @property \sneakypanel\Models\Node[]|\Illuminate\Database\Eloquent\Collection $nodes
- * @property \sneakypanel\Models\Server[]|\Illuminate\Database\Eloquent\Collection $servers
+ * @property \SneakyPanel\Models\Egg[]|\Illuminate\Database\Eloquent\Collection $eggs
+ * @property \SneakyPanel\Models\Node[]|\Illuminate\Database\Eloquent\Collection $nodes
+ * @property \SneakyPanel\Models\Server[]|\Illuminate\Database\Eloquent\Collection $servers
  */
 class Mount extends Model
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Activity;
+namespace SneakyPanel\Http\Middleware\Activity;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Server;
-use sneakypanel\Facades\LogTarget;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Facades\LogTarget;
 
 class ServerSubject
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Schedule;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
-use sneakypanel\Contracts\Repository\ScheduleRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\ScheduleRepositoryInterface;
 
 class ScheduleRepository extends EloquentRepository implements ScheduleRepositoryInterface
 {
@@ -29,7 +29,7 @@ class ScheduleRepository extends EloquentRepository implements ScheduleRepositor
     /**
      * Return a schedule model with all the associated tasks as a relationship.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getScheduleWithTasks(int $schedule): Schedule
     {

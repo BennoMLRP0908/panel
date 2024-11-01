@@ -1,21 +1,21 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Models\Allocation;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Transformers\Api\Client\AllocationTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Services\Allocations\FindAssignableAllocationService;
-use sneakypanel\Http\Requests\Api\Client\Servers\Network\GetNetworkRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Network\NewAllocationRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Network\DeleteAllocationRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Network\UpdateAllocationRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Network\SetPrimaryAllocationRequest;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Models\Allocation;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Transformers\Api\Client\AllocationTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Services\Allocations\FindAssignableAllocationService;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Network\GetNetworkRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Network\NewAllocationRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Network\DeleteAllocationRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Network\UpdateAllocationRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Network\SetPrimaryAllocationRequest;
 
 class NetworkAllocationController extends ClientApiController
 {
@@ -24,7 +24,7 @@ class NetworkAllocationController extends ClientApiController
      */
     public function __construct(
         private FindAssignableAllocationService $assignableAllocationService,
-        private ServerRepository $serverRepository,
+        private ServerRepository $serverRepository
     ) {
         parent::__construct();
     }
@@ -43,8 +43,8 @@ class NetworkAllocationController extends ClientApiController
     /**
      * Set the primary allocation for a server.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateAllocationRequest $request, Server $server, Allocation $allocation): array
     {
@@ -67,8 +67,8 @@ class NetworkAllocationController extends ClientApiController
     /**
      * Set the primary allocation for a server.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function setPrimary(SetPrimaryAllocationRequest $request, Server $server, Allocation $allocation): array
     {
@@ -88,7 +88,7 @@ class NetworkAllocationController extends ClientApiController
      * Set the notes for the allocation for a server.
      *s.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function store(NewAllocationRequest $request, Server $server): array
     {
@@ -111,7 +111,7 @@ class NetworkAllocationController extends ClientApiController
     /**
      * Delete an allocation from a server.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function delete(DeleteAllocationRequest $request, Server $server, Allocation $allocation): JsonResponse
     {

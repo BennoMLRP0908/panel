@@ -1,18 +1,18 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Permission;
-use sneakypanel\Models\ActivityLog;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Models\ActivityLog;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\JoinClause;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Transformers\Api\Client\ActivityLogTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Transformers\Api\Client\ActivityLogTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
 
 class ActivityLogController extends ClientApiController
 {

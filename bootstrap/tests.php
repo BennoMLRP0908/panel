@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $app = require __DIR__ . '/app.php';
 
-/** @var sneakypanel\Console\Kernel $kernel */
+/** @var \SneakyPanel\Console\Kernel $kernel */
 $kernel = $app->make(Kernel::class);
 
 /*

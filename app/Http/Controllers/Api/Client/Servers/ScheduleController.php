@@ -1,26 +1,26 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Schedule;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Helpers\Utilities;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Repositories\Eloquent\ScheduleRepository;
-use sneakypanel\Services\Schedules\ProcessScheduleService;
-use sneakypanel\Transformers\Api\Client\ScheduleTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Helpers\Utilities;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Repositories\Eloquent\ScheduleRepository;
+use SneakyPanel\Services\Schedules\ProcessScheduleService;
+use SneakyPanel\Transformers\Api\Client\ScheduleTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use sneakypanel\Http\Requests\Api\Client\Servers\Schedules\ViewScheduleRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Schedules\StoreScheduleRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Schedules\DeleteScheduleRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Schedules\UpdateScheduleRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Schedules\TriggerScheduleRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Schedules\ViewScheduleRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Schedules\StoreScheduleRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Schedules\DeleteScheduleRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Schedules\UpdateScheduleRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Schedules\TriggerScheduleRequest;
 
 class ScheduleController extends ClientApiController
 {
@@ -47,12 +47,12 @@ class ScheduleController extends ClientApiController
     /**
      * Store a new schedule for a server.
      *
-     * @throws DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreScheduleRequest $request, Server $server): array
     {
-        /** @var Schedule $model */
+        /** @var \SneakyPanel\Models\Schedule $model */
         $model = $this->repository->create([
             'server_id' => $server->id,
             'name' => $request->input('name'),
@@ -95,9 +95,9 @@ class ScheduleController extends ClientApiController
     /**
      * Updates a given schedule with the new data provided.
      *
-     * @throws DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateScheduleRequest $request, Server $server, Schedule $schedule): array
     {
@@ -165,7 +165,7 @@ class ScheduleController extends ClientApiController
     /**
      * Get the next run timestamp based on the cron data provided.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     protected function getNextRunAt(Request $request): Carbon
     {

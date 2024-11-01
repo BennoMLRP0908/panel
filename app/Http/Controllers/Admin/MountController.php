@@ -1,22 +1,22 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Nest;
+use SneakyPanel\Models\Nest;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Mount;
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Mount;
+use SneakyPanel\Models\Location;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Http\Requests\Admin\MountFormRequest;
-use sneakypanel\Repositories\Eloquent\MountRepository;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Requests\Admin\MountFormRequest;
+use SneakyPanel\Repositories\Eloquent\MountRepository;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
 
 class MountController extends Controller
 {
@@ -28,7 +28,7 @@ class MountController extends Controller
         protected NestRepositoryInterface $nestRepository,
         protected LocationRepositoryInterface $locationRepository,
         protected MountRepository $repository,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
@@ -45,7 +45,7 @@ class MountController extends Controller
     /**
      * Return the mount view page.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function view(string $id): View
     {

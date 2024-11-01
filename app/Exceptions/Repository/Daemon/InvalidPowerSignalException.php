@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Repository\Daemon;
+namespace SneakyPanel\Exceptions\Repository\Daemon;
 
-use sneakypanel\Exceptions\Repository\RepositoryException;
+use SneakyPanel\Exceptions\Repository\RepositoryException;
 
 class InvalidPowerSignalException extends RepositoryException
 {

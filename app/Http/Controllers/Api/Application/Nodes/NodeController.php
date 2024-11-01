@@ -1,20 +1,20 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Nodes;
+namespace SneakyPanel\Http\Controllers\Api\Application\Nodes;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\QueryBuilder;
-use sneakypanel\Services\Nodes\NodeUpdateService;
-use sneakypanel\Services\Nodes\NodeCreationService;
-use sneakypanel\Services\Nodes\NodeDeletionService;
-use sneakypanel\Transformers\Api\Application\NodeTransformer;
-use sneakypanel\Http\Requests\Api\Application\Nodes\GetNodeRequest;
-use sneakypanel\Http\Requests\Api\Application\Nodes\GetNodesRequest;
-use sneakypanel\Http\Requests\Api\Application\Nodes\StoreNodeRequest;
-use sneakypanel\Http\Requests\Api\Application\Nodes\DeleteNodeRequest;
-use sneakypanel\Http\Requests\Api\Application\Nodes\UpdateNodeRequest;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Services\Nodes\NodeUpdateService;
+use SneakyPanel\Services\Nodes\NodeCreationService;
+use SneakyPanel\Services\Nodes\NodeDeletionService;
+use SneakyPanel\Transformers\Api\Application\NodeTransformer;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\GetNodeRequest;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\GetNodesRequest;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\StoreNodeRequest;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\DeleteNodeRequest;
+use SneakyPanel\Http\Requests\Api\Application\Nodes\UpdateNodeRequest;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class NodeController extends ApplicationApiController
 {
@@ -24,7 +24,7 @@ class NodeController extends ApplicationApiController
     public function __construct(
         private NodeCreationService $creationService,
         private NodeDeletionService $deletionService,
-        private NodeUpdateService $updateService,
+        private NodeUpdateService $updateService
     ) {
         parent::__construct();
     }
@@ -58,7 +58,7 @@ class NodeController extends ApplicationApiController
      * Create a new node on the Panel. Returns the created node and an HTTP/201
      * status response on success.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreNodeRequest $request): JsonResponse
     {
@@ -96,7 +96,7 @@ class NodeController extends ApplicationApiController
      * Deletes a given node from the Panel as long as there are no servers
      * currently attached to it.
      *
-     * @throws \sneakypanel\Exceptions\Service\HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function delete(DeleteNodeRequest $request, Node $node): JsonResponse
     {

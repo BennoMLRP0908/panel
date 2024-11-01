@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Auth;
+namespace SneakyPanel\Http\Controllers\Auth;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
+use SneakyPanel\Facades\Activity;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -35,7 +35,7 @@ class LoginController extends AbstractLoginController
     /**
      * Handle a login request to the application.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      * @throws \Illuminate\Validation\ValidationException
      */
     public function login(Request $request): JsonResponse
@@ -48,7 +48,7 @@ class LoginController extends AbstractLoginController
         try {
             $username = $request->input('user');
 
-            /** @var User $user */
+            /** @var \SneakyPanel\Models\User $user */
             $user = User::query()->where($this->getField($username), $username)->firstOrFail();
         } catch (ModelNotFoundException) {
             $this->sendFailedLoginResponse($request);

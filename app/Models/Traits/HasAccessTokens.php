@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Models\Traits;
+namespace SneakyPanel\Models\Traits;
 
 use Illuminate\Support\Str;
 use Laravel\Sanctum\Sanctum;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use sneakypanel\Extensions\Laravel\Sanctum\NewAccessToken;
+use SneakyPanel\Extensions\Laravel\Sanctum\NewAccessToken;
 
 /**
- * @mixin \sneakypanel\Models\Model
+ * @mixin \SneakyPanel\Models\Model
  */
 trait HasAccessTokens
 {
@@ -26,7 +26,7 @@ trait HasAccessTokens
 
     public function createToken(?string $memo, ?array $ips): NewAccessToken
     {
-        /** @var ApiKey $token */
+        /** @var \SneakyPanel\Models\ApiKey $token */
         $token = $this->tokens()->forceCreate([
             'user_id' => $this->id,
             'key_type' => ApiKey::TYPE_ACCOUNT,

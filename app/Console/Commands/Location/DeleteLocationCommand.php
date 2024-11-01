@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Location;
+namespace SneakyPanel\Console\Commands\Location;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
-use sneakypanel\Services\Locations\LocationDeletionService;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Services\Locations\LocationDeletionService;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
 
 class DeleteLocationCommand extends Command
 {
@@ -20,7 +20,7 @@ class DeleteLocationCommand extends Command
      */
     public function __construct(
         private LocationDeletionService $deletionService,
-        private LocationRepositoryInterface $repository,
+        private LocationRepositoryInterface $repository
     ) {
         parent::__construct();
     }
@@ -28,8 +28,8 @@ class DeleteLocationCommand extends Command
     /**
      * Respond to the command request.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Location\HasActiveNodesException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Location\HasActiveNodesException
      */
     public function handle()
     {

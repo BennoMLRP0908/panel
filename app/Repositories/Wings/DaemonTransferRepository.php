@@ -1,20 +1,16 @@
 <?php
 
-namespace sneakypanel\Repositories\Wings;
+namespace SneakyPanel\Repositories\Wings;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Lcobucci\JWT\Token\Plain;
 use GuzzleHttp\Exception\GuzzleException;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
-/**
- * @method \sneakypanel\Repositories\Wings\DaemonTransferRepository setNode(\sneakypanel\Models\Node $node)
- * @method \sneakypanel\Repositories\Wings\DaemonTransferRepository setServer(\sneakypanel\Models\Server $server)
- */
 class DaemonTransferRepository extends DaemonRepository
 {
     /**
-     * @throws DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function notify(Node $targetNode, Plain $token): void
     {

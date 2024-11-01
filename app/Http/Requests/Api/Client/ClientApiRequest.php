@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client;
+namespace SneakyPanel\Http\Requests\Api\Client;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Contracts\Http\ClientPermissionsRequest;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Contracts\Http\ClientPermissionsRequest;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 /**
- * @method \sneakypanel\Models\User user($guard = null)
+ * @method \SneakyPanel\Models\User user($guard = null)
  */
 class ClientApiRequest extends ApplicationApiRequest
 {

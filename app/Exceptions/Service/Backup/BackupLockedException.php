@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Backup;
+namespace SneakyPanel\Exceptions\Service\Backup;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class BackupLockedException extends DisplayException
 {

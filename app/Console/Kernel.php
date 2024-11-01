@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Console;
+namespace SneakyPanel\Console;
 
 use Ramsey\Uuid\Uuid;
-use sneakypanel\Models\ActivityLog;
+use SneakyPanel\Models\ActivityLog;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Database\Console\PruneCommand;
-use sneakypanel\Repositories\Eloquent\SettingsRepository;
+use SneakyPanel\Repositories\Eloquent\SettingsRepository;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use sneakypanel\Services\Telemetry\TelemetryCollectionService;
-use sneakypanel\Console\Commands\Schedule\ProcessRunnableCommand;
-use sneakypanel\Console\Commands\Maintenance\PruneOrphanedBackupsCommand;
-use sneakypanel\Console\Commands\Maintenance\CleanServiceBackupFilesCommand;
+use SneakyPanel\Services\Telemetry\TelemetryCollectionService;
+use SneakyPanel\Console\Commands\Schedule\ProcessRunnableCommand;
+use SneakyPanel\Console\Commands\Maintenance\PruneOrphanedBackupsCommand;
+use SneakyPanel\Console\Commands\Maintenance\CleanServiceBackupFilesCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -52,7 +52,7 @@ class Kernel extends ConsoleKernel
     /**
      * I wonder what this does.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     private function registerTelemetry(Schedule $schedule): void

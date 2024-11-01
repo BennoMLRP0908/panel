@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\ServerVariable;
-use sneakypanel\Contracts\Repository\ServerVariableRepositoryInterface;
+use SneakyPanel\Models\ServerVariable;
+use SneakyPanel\Contracts\Repository\ServerVariableRepositoryInterface;
 
 class ServerVariableRepository extends EloquentRepository implements ServerVariableRepositoryInterface
 {

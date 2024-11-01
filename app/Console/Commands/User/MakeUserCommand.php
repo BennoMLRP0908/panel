@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Console\Commands\User;
+namespace SneakyPanel\Console\Commands\User;
 
 use Illuminate\Console\Command;
-use sneakypanel\Services\Users\UserCreationService;
+use SneakyPanel\Services\Users\UserCreationService;
 
 class MakeUserCommand extends Command
 {
@@ -23,7 +23,7 @@ class MakeUserCommand extends Command
      * Handle command request to create a new user.
      *
      * @throws \Exception
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle()
     {

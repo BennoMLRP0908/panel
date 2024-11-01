@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Servers;
+namespace SneakyPanel\Http\Controllers\Admin\Servers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Models\Filters\AdminServerFilter;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Models\Filters\AdminServerFilter;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 
 class ServerController extends Controller

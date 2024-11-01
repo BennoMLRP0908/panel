@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Middleware;
+namespace SneakyPanel\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 

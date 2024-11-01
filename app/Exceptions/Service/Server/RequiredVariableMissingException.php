@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Server;
+namespace SneakyPanel\Exceptions\Service\Server;
 
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
-class RequiredVariableMissingException extends sneakypanelException
+class RequiredVariableMissingException extends SneakyPanelException
 {
 }

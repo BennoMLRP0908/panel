@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Network;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Network;
 
 class SetPrimaryAllocationRequest extends UpdateAllocationRequest
 {

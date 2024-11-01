@@ -1,28 +1,27 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
-use sneakypanel\Rules\Username;
-use sneakypanel\Facades\Activity;
+use SneakyPanel\Rules\Username;
+use SneakyPanel\Facades\Activity;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\Rules\In;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
-use sneakypanel\Models\Traits\HasAccessTokens;
+use SneakyPanel\Models\Traits\HasAccessTokens;
 use Illuminate\Auth\Passwords\CanResetPassword;
-use sneakypanel\Traits\Helpers\AvailableLanguages;
+use SneakyPanel\Traits\Helpers\AvailableLanguages;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\Access\Authorizable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use sneakypanel\Notifications\SendPasswordReset as ResetPasswordNotification;
+use SneakyPanel\Notifications\SendPasswordReset as ResetPasswordNotification;
 
 /**
- * sneakypanel\Models\User.
+ * SneakyPanel\Models\User.
  *
  * @property int $id
  * @property string|null $external_id
@@ -41,18 +40,18 @@ use sneakypanel\Notifications\SendPasswordReset as ResetPasswordNotification;
  * @property bool $gravatar
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\ApiKey[] $apiKeys
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\ApiKey[] $apiKeys
  * @property int|null $api_keys_count
  * @property string $name
  * @property \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property int|null $notifications_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\RecoveryToken[] $recoveryTokens
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\RecoveryToken[] $recoveryTokens
  * @property int|null $recovery_tokens_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Server[] $servers
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Server[] $servers
  * @property int|null $servers_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\UserSSHKey[] $sshKeys
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\UserSSHKey[] $sshKeys
  * @property int|null $ssh_keys_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\ApiKey[] $tokens
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\ApiKey[] $tokens
  * @property int|null $tokens_count
  *
  * @method static \Database\Factories\UserFactory factory(...$parameters)
@@ -90,8 +89,6 @@ class User extends Model implements
     use CanResetPassword;
     use HasAccessTokens;
     use Notifiable;
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory;
 
     public const USER_LEVEL_USER = 0;
     public const USER_LEVEL_ADMIN = 1;

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Facades;
+namespace SneakyPanel\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use sneakypanel\Services\Activity\ActivityLogService;
+use SneakyPanel\Services\Activity\ActivityLogService;
 
 class Activity extends Facade
 {

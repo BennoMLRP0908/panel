@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Services\Schedules;
+namespace SneakyPanel\Services\Schedules;
 
 use Exception;
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Schedule;
 use Illuminate\Contracts\Bus\Dispatcher;
-use sneakypanel\Jobs\Schedule\RunTaskJob;
+use SneakyPanel\Jobs\Schedule\RunTaskJob;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class ProcessScheduleService
 {
@@ -27,7 +27,7 @@ class ProcessScheduleService
      */
     public function handle(Schedule $schedule, bool $now = false): void
     {
-        /** @var \sneakypanel\Models\Task $task */
+        /** @var \SneakyPanel\Models\Task $task */
         $task = $schedule->tasks()->orderBy('sequence_id')->first();
 
         if (is_null($task)) {

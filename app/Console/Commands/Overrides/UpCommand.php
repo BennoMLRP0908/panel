@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Overrides;
+namespace SneakyPanel\Console\Commands\Overrides;
 
-use sneakypanel\Console\RequiresDatabaseMigrations;
+use SneakyPanel\Console\RequiresDatabaseMigrations;
 use Illuminate\Foundation\Console\UpCommand as BaseUpCommand;
 
 class UpCommand extends BaseUpCommand

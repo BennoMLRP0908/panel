@@ -1,18 +1,18 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Servers;
+namespace SneakyPanel\Http\Controllers\Admin\Servers;
 
 use Illuminate\View\View;
-use sneakypanel\Models\Node;
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Node;
+use SneakyPanel\Models\Location;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Repositories\Eloquent\NestRepository;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
-use sneakypanel\Http\Requests\Admin\ServerFormRequest;
-use sneakypanel\Services\Servers\ServerCreationService;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Repositories\Eloquent\NestRepository;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Http\Requests\Admin\ServerFormRequest;
+use SneakyPanel\Services\Servers\ServerCreationService;
 
 class CreateServerController extends Controller
 {
@@ -24,14 +24,14 @@ class CreateServerController extends Controller
         private NestRepository $nestRepository,
         private NodeRepository $nodeRepository,
         private ServerCreationService $creationService,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 
     /**
      * Displays the create server page.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(): View|RedirectResponse
     {
@@ -63,9 +63,9 @@ class CreateServerController extends Controller
      * Create a new server on the remote system.
      *
      * @throws \Illuminate\Validation\ValidationException
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableAllocationException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableNodeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException
      * @throws \Throwable
      */
     public function store(ServerFormRequest $request): RedirectResponse

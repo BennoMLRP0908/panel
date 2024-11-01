@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\ServerVariable;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\ServerVariable;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Traits\Services\HasUserLevels;
+use SneakyPanel\Traits\Services\HasUserLevels;
 
 class StartupModificationService
 {
@@ -70,7 +70,7 @@ class StartupModificationService
         $eggId = Arr::get($data, 'egg_id');
 
         if (is_digit($eggId) && $server->egg_id !== (int) $eggId) {
-            /** @var Egg $egg */
+            /** @var \SneakyPanel\Models\Egg $egg */
             $egg = Egg::query()->findOrFail($data['egg_id']);
 
             $server = $server->forceFill([

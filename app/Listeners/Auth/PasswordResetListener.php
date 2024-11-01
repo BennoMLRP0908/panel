@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Listeners\Auth;
+namespace SneakyPanel\Listeners\Auth;
 
 use Illuminate\Http\Request;
-use sneakypanel\Facades\Activity;
+use SneakyPanel\Facades\Activity;
 use Illuminate\Auth\Events\PasswordReset;
 
 class PasswordResetListener

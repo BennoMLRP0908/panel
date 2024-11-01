@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Exceptions;
+namespace SneakyPanel\Exceptions;
 
 use Exception;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
-class DisplayException extends sneakypanelException implements HttpExceptionInterface
+class DisplayException extends SneakyPanelException implements HttpExceptionInterface
 {
     public const LEVEL_DEBUG = 'debug';
     public const LEVEL_INFO = 'info';
@@ -72,7 +72,7 @@ class DisplayException extends sneakypanelException implements HttpExceptionInte
 
         try {
             $logger = Container::getInstance()->make(LoggerInterface::class);
-        } catch (\Exception) {
+        } catch (Exception) {
             throw $this->getPrevious();
         }
 

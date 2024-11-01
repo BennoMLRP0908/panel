@@ -1,18 +1,18 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Subuser;
-use sneakypanel\Models\EggVariable;
-use sneakypanel\Observers\UserObserver;
-use sneakypanel\Observers\ServerObserver;
-use sneakypanel\Observers\SubuserObserver;
-use sneakypanel\Observers\EggVariableObserver;
-use sneakypanel\Listeners\Auth\AuthenticationListener;
-use sneakypanel\Events\Server\Installed as ServerInstalledEvent;
-use sneakypanel\Notifications\ServerInstalled as ServerInstalledNotification;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Subuser;
+use SneakyPanel\Models\EggVariable;
+use SneakyPanel\Observers\UserObserver;
+use SneakyPanel\Observers\ServerObserver;
+use SneakyPanel\Observers\SubuserObserver;
+use SneakyPanel\Observers\EggVariableObserver;
+use SneakyPanel\Listeners\Auth\AuthenticationListener;
+use SneakyPanel\Events\Server\Installed as ServerInstalledEvent;
+use SneakyPanel\Notifications\ServerInstalled as ServerInstalledNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider

@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Users;
+namespace SneakyPanel\Http\Controllers\Api\Application\Users;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\QueryBuilder;
-use sneakypanel\Services\Users\UserUpdateService;
-use sneakypanel\Services\Users\UserCreationService;
-use sneakypanel\Services\Users\UserDeletionService;
-use sneakypanel\Transformers\Api\Application\UserTransformer;
-use sneakypanel\Http\Requests\Api\Application\Users\GetUsersRequest;
-use sneakypanel\Http\Requests\Api\Application\Users\StoreUserRequest;
-use sneakypanel\Http\Requests\Api\Application\Users\DeleteUserRequest;
-use sneakypanel\Http\Requests\Api\Application\Users\UpdateUserRequest;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Services\Users\UserUpdateService;
+use SneakyPanel\Services\Users\UserCreationService;
+use SneakyPanel\Services\Users\UserDeletionService;
+use SneakyPanel\Transformers\Api\Application\UserTransformer;
+use SneakyPanel\Http\Requests\Api\Application\Users\GetUsersRequest;
+use SneakyPanel\Http\Requests\Api\Application\Users\StoreUserRequest;
+use SneakyPanel\Http\Requests\Api\Application\Users\DeleteUserRequest;
+use SneakyPanel\Http\Requests\Api\Application\Users\UpdateUserRequest;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class UserController extends ApplicationApiController
 {
@@ -23,7 +23,7 @@ class UserController extends ApplicationApiController
     public function __construct(
         private UserCreationService $creationService,
         private UserDeletionService $deletionService,
-        private UserUpdateService $updateService,
+        private UserUpdateService $updateService
     ) {
         parent::__construct();
     }
@@ -64,8 +64,8 @@ class UserController extends ApplicationApiController
      * Revocation errors are returned under the 'revocation_errors' key in the response
      * meta. If there are no errors this is an empty array.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateUserRequest $request, User $user): array
     {
@@ -83,7 +83,7 @@ class UserController extends ApplicationApiController
      * header on successful creation.
      *
      * @throws \Exception
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreUserRequest $request): JsonResponse
     {
@@ -103,7 +103,7 @@ class UserController extends ApplicationApiController
      * Handle a request to delete a user from the Panel. Returns a HTTP/204 response
      * on successful deletion.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function delete(DeleteUserRequest $request, User $user): JsonResponse
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Nodes;
+namespace SneakyPanel\Services\Nodes;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Contracts\Translation\Translator;
-use sneakypanel\Contracts\Repository\NodeRepositoryInterface;
-use sneakypanel\Exceptions\Service\HasActiveServersException;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NodeRepositoryInterface;
+use SneakyPanel\Exceptions\Service\HasActiveServersException;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
 
 class NodeDeletionService
 {
@@ -16,14 +16,14 @@ class NodeDeletionService
     public function __construct(
         protected NodeRepositoryInterface $repository,
         protected ServerRepositoryInterface $serverRepository,
-        protected Translator $translator,
+        protected Translator $translator
     ) {
     }
 
     /**
      * Delete a node from the panel if no servers are attached to it.
      *
-     * @throws HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function handle(int|Node $node): int
     {

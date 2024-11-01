@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Servers;
+namespace SneakyPanel\Http\Requests\Api\Application\Servers;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Models\Objects\DeploymentObject;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Models\Objects\DeploymentObject;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class StoreServerRequest extends ApplicationApiRequest
 {

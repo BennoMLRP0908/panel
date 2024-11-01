@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

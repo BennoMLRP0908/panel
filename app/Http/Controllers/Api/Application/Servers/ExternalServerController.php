@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Application\Servers;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Transformers\Api\Application\ServerTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Servers\GetExternalServerRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Transformers\Api\Application\ServerTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Servers\GetExternalServerRequest;
 
 class ExternalServerController extends ApplicationApiController
 {

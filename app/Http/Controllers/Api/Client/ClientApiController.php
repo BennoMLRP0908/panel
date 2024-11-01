@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Transformers\Api\Client\BaseClientTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Transformers\Api\Client\BaseClientTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 abstract class ClientApiController extends ApplicationApiController
 {
@@ -39,7 +39,7 @@ abstract class ClientApiController extends ApplicationApiController
     /**
      * Return an instance of an application transformer.
      *
-     * @template T of \sneakypanel\Transformers\Api\Client\BaseClientTransformer
+     * @template T of \SneakyPanel\Transformers\Api\Client\BaseClientTransformer
      *
      * @param class-string<T> $abstract
      *

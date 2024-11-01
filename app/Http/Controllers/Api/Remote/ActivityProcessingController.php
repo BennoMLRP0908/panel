@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Remote;
+namespace SneakyPanel\Http\Controllers\Api\Remote;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Facades\Log;
-use sneakypanel\Models\ActivityLog;
-use sneakypanel\Models\ActivityLogSubject;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Http\Requests\Api\Remote\ActivityEventRequest;
+use SneakyPanel\Models\ActivityLog;
+use SneakyPanel\Models\ActivityLogSubject;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Requests\Api\Remote\ActivityEventRequest;
 
 class ActivityProcessingController extends Controller
 {
@@ -19,7 +19,7 @@ class ActivityProcessingController extends Controller
     {
         $tz = Carbon::now()->getTimezone();
 
-        /** @var \sneakypanel\Models\Node $node */
+        /** @var \SneakyPanel\Models\Node $node */
         $node = $request->attributes->get('node');
 
         $servers = $node->servers()->whereIn('uuid', $request->servers())->get()->keyBy('uuid');
@@ -27,7 +27,7 @@ class ActivityProcessingController extends Controller
 
         $logs = [];
         foreach ($request->input('data') as $datum) {
-            /** @var Server|null $server */
+            /** @var \SneakyPanel\Models\Server|null $server */
             $server = $servers->get($datum['server']);
             if (is_null($server) || !Str::startsWith($datum['event'], 'server:')) {
                 continue;

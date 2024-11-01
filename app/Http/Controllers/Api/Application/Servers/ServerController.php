@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Application\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
 use Spatie\QueryBuilder\QueryBuilder;
-use sneakypanel\Services\Servers\ServerCreationService;
-use sneakypanel\Services\Servers\ServerDeletionService;
-use sneakypanel\Transformers\Api\Application\ServerTransformer;
-use sneakypanel\Http\Requests\Api\Application\Servers\GetServerRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\GetServersRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\ServerWriteRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\StoreServerRequest;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Services\Servers\ServerCreationService;
+use SneakyPanel\Services\Servers\ServerDeletionService;
+use SneakyPanel\Transformers\Api\Application\ServerTransformer;
+use SneakyPanel\Http\Requests\Api\Application\Servers\GetServerRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\GetServersRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\ServerWriteRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\StoreServerRequest;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class ServerController extends ApplicationApiController
 {
@@ -22,7 +22,7 @@ class ServerController extends ApplicationApiController
      */
     public function __construct(
         private ServerCreationService $creationService,
-        private ServerDeletionService $deletionService,
+        private ServerDeletionService $deletionService
     ) {
         parent::__construct();
     }
@@ -47,11 +47,11 @@ class ServerController extends ApplicationApiController
      *
      * @throws \Throwable
      * @throws \Illuminate\Validation\ValidationException
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableAllocationException
-     * @throws \sneakypanel\Exceptions\Service\Deployment\NoViableNodeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException
      */
     public function store(StoreServerRequest $request): JsonResponse
     {
@@ -75,7 +75,7 @@ class ServerController extends ApplicationApiController
     /**
      * Deletes a server.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function delete(ServerWriteRequest $request, Server $server, string $force = ''): Response
     {

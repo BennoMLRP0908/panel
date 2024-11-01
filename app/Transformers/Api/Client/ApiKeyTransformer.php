@@ -1,11 +1,14 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 
 class ApiKeyTransformer extends BaseClientTransformer
 {
+    /**
+     * {@inheritdoc}
+     */
     public function getResourceName(): string
     {
         return ApiKey::RESOURCE_NAME;

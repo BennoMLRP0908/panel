@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Users;
+namespace SneakyPanel\Services\Users;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Contracts\Hashing\Hasher;
-use sneakypanel\Traits\Services\HasUserLevels;
+use SneakyPanel\Traits\Services\HasUserLevels;
 
 class UserUpdateService
 {

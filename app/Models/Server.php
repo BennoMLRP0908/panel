@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Query\JoinClause;
@@ -8,13 +8,12 @@ use Znck\Eloquent\Traits\BelongsToThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use sneakypanel\Exceptions\Http\Server\ServerStateConflictException;
+use SneakyPanel\Exceptions\Http\Server\ServerStateConflictException;
 
 /**
- * \sneakypanel\Models\Server.
+ * \SneakyPanel\Models\Server.
  *
  * @property int $id
  * @property string|null $external_id
@@ -44,29 +43,29 @@ use sneakypanel\Exceptions\Http\Server\ServerStateConflictException;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $installed_at
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\ActivityLog[] $activity
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\ActivityLog[] $activity
  * @property int|null $activity_count
- * @property Allocation|null $allocation
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Allocation[] $allocations
+ * @property \SneakyPanel\Models\Allocation|null $allocation
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Allocation[] $allocations
  * @property int|null $allocations_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Backup[] $backups
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Backup[] $backups
  * @property int|null $backups_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Database[] $databases
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Database[] $databases
  * @property int|null $databases_count
- * @property Egg|null $egg
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Mount[] $mounts
+ * @property \SneakyPanel\Models\Egg|null $egg
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Mount[] $mounts
  * @property int|null $mounts_count
- * @property Nest $nest
- * @property Node $node
+ * @property \SneakyPanel\Models\Nest $nest
+ * @property \SneakyPanel\Models\Node $node
  * @property \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property int|null $notifications_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Schedule[] $schedules
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Schedule[] $schedules
  * @property int|null $schedules_count
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Subuser[] $subusers
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Subuser[] $subusers
  * @property int|null $subusers_count
- * @property ServerTransfer|null $transfer
- * @property User $user
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\EggVariable[] $variables
+ * @property \SneakyPanel\Models\ServerTransfer|null $transfer
+ * @property \SneakyPanel\Models\User $user
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\EggVariable[] $variables
  * @property int|null $variables_count
  *
  * @method static \Database\Factories\ServerFactory factory(...$parameters)
@@ -105,8 +104,6 @@ use sneakypanel\Exceptions\Http\Server\ServerStateConflictException;
  */
 class Server extends Model
 {
-    /** @use HasFactory<\Database\Factories\ServerFactory> */
-    use HasFactory;
     use BelongsToThrough;
     use Notifiable;
 
@@ -166,7 +163,7 @@ class Server extends Model
         'egg_id' => 'required|exists:eggs,id',
         'startup' => 'required|string',
         'skip_scripts' => 'sometimes|boolean',
-        'image' => ['required', 'string', 'max:191', 'regex:/^~?[\w\.\/\-:@ ]*$/'],
+        'image' => ['required', 'string', 'max:191', 'regex:/^[\w\.\/\-:@ ]*$/'],
         'database_limit' => 'present|nullable|integer|min:0',
         'allocation_limit' => 'sometimes|nullable|integer|min:0',
         'backup_limit' => 'present|nullable|integer|min:0',
@@ -351,16 +348,16 @@ class Server extends Model
      * exception is raised. This should be called whenever something needs to make
      * sure the server is not in a weird state that should block user access.
      *
-     * @throws ServerStateConflictException
+     * @throws \SneakyPanel\Exceptions\Http\Server\ServerStateConflictException
      */
     public function validateCurrentState()
     {
         if (
-            $this->isSuspended()
-            || $this->node->isUnderMaintenance()
-            || !$this->isInstalled()
-            || $this->status === self::STATUS_RESTORING_BACKUP
-            || !is_null($this->transfer)
+            $this->isSuspended() ||
+            $this->node->isUnderMaintenance() ||
+            !$this->isInstalled() ||
+            $this->status === self::STATUS_RESTORING_BACKUP ||
+            !is_null($this->transfer)
         ) {
             throw new ServerStateConflictException($this);
         }
@@ -375,9 +372,9 @@ class Server extends Model
     public function validateTransferState()
     {
         if (
-            !$this->isInstalled()
-            || $this->status === self::STATUS_RESTORING_BACKUP
-            || !is_null($this->transfer)
+            !$this->isInstalled() ||
+            $this->status === self::STATUS_RESTORING_BACKUP ||
+            !is_null($this->transfer)
         ) {
             throw new ServerStateConflictException($this);
         }

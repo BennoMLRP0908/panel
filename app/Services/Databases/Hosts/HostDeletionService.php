@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Databases\Hosts;
+namespace SneakyPanel\Services\Databases\Hosts;
 
-use sneakypanel\Exceptions\Service\HasActiveServersException;
-use sneakypanel\Contracts\Repository\DatabaseRepositoryInterface;
-use sneakypanel\Contracts\Repository\DatabaseHostRepositoryInterface;
+use SneakyPanel\Exceptions\Service\HasActiveServersException;
+use SneakyPanel\Contracts\Repository\DatabaseRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseHostRepositoryInterface;
 
 class HostDeletionService
 {
@@ -13,7 +13,7 @@ class HostDeletionService
      */
     public function __construct(
         private DatabaseRepositoryInterface $databaseRepository,
-        private DatabaseHostRepositoryInterface $repository,
+        private DatabaseHostRepositoryInterface $repository
     ) {
     }
 
@@ -21,7 +21,7 @@ class HostDeletionService
      * Delete a specified host from the Panel if no databases are
      * attached to it.
      *
-     * @throws HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function handle(int $host): int
     {

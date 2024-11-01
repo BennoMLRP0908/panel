@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use sneakypanel\Models\Database;
+use SneakyPanel\Models\Database;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DatabaseFactory extends Factory

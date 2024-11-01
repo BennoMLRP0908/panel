@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Nest;
+namespace SneakyPanel\Http\Requests\Admin\Nest;
 
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class StoreNestFormRequest extends AdminFormRequest
 {

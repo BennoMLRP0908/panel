@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Servers\Databases;
+namespace SneakyPanel\Http\Requests\Api\Application\Servers\Databases;
 
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 
 class ServerDatabaseWriteRequest extends GetServerDatabasesRequest
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use sneakypanel\Services\Activity\ActivityLogBatchService;
-use sneakypanel\Services\Activity\ActivityLogTargetableService;
+use SneakyPanel\Services\Activity\ActivityLogBatchService;
+use SneakyPanel\Services\Activity\ActivityLogTargetableService;
 
 class ActivityLogServiceProvider extends ServiceProvider
 {

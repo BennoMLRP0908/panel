@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Notifications;
+namespace SneakyPanel\Notifications;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Bus\Queueable;
-use sneakypanel\Events\Event;
-use sneakypanel\Models\Server;
+use SneakyPanel\Events\Event;
+use SneakyPanel\Models\Server;
 use Illuminate\Container\Container;
-use sneakypanel\Events\Server\Installed;
+use SneakyPanel\Events\Server\Installed;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use sneakypanel\Contracts\Core\ReceivesEvents;
+use SneakyPanel\Contracts\Core\ReceivesEvents;
 use Illuminate\Contracts\Notifications\Dispatcher;
 use Illuminate\Notifications\Messages\MailMessage;
 

@@ -1,18 +1,18 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Services\Servers\ReinstallServerService;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Services\Servers\ReinstallServerService;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use sneakypanel\Http\Requests\Api\Client\Servers\Settings\RenameServerRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Settings\SetDockerImageRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Settings\ReinstallServerRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Settings\RenameServerRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Settings\SetDockerImageRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Settings\ReinstallServerRequest;
 
 class SettingsController extends ClientApiController
 {
@@ -21,7 +21,7 @@ class SettingsController extends ClientApiController
      */
     public function __construct(
         private ServerRepository $repository,
-        private ReinstallServerService $reinstallServerService,
+        private ReinstallServerService $reinstallServerService
     ) {
         parent::__construct();
     }
@@ -29,8 +29,8 @@ class SettingsController extends ClientApiController
     /**
      * Renames a server.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function rename(RenameServerRequest $request, Server $server): JsonResponse
     {

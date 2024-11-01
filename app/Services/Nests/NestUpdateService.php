@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Services\Nests;
+namespace SneakyPanel\Services\Nests;
 
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
 
 class NestUpdateService
 {
@@ -16,8 +16,8 @@ class NestUpdateService
     /**
      * Update a nest and prevent changing the author once it is set.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function handle(int $nest, array $data): void
     {

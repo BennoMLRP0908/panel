@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Api\Client\Server;
+namespace SneakyPanel\Http\Middleware\Api\Client\Server;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Task;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Backup;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Subuser;
-use sneakypanel\Models\Database;
-use sneakypanel\Models\Schedule;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Task;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Backup;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Subuser;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Models\Schedule;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -31,7 +31,7 @@ class ResourceBelongsToServer
             throw new \InvalidArgumentException('This middleware cannot be used in a context that is missing a server in the parameters.');
         }
 
-        /** @var Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $request->route()->parameter('server');
         $exception = new NotFoundHttpException('The requested resource was not found for this server.');
         foreach ($params as $key => $model) {

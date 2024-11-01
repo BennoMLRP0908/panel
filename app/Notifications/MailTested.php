@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Notifications;
+namespace SneakyPanel\Notifications;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 
@@ -20,8 +20,8 @@ class MailTested extends Notification
     public function toMail(): MailMessage
     {
         return (new MailMessage())
-            ->subject('sneakypanel Test Message')
+            ->subject('SneakyPanel Test Message')
             ->greeting('Hello ' . $this->user->name . '!')
-            ->line('This is a test of the sneakypanel mail system. You\'re good to go!');
+            ->line('This is a test of the SneakyPanel mail system. You\'re good to go!');
     }
 }

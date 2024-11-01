@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Transformers\Api\Client\ApiKeyTransformer;
-use sneakypanel\Http\Requests\Api\Client\Account\StoreApiKeyRequest;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Transformers\Api\Client\ApiKeyTransformer;
+use SneakyPanel\Http\Requests\Api\Client\Account\StoreApiKeyRequest;
 
 class ApiKeyController extends ClientApiController
 {
@@ -25,7 +25,7 @@ class ApiKeyController extends ClientApiController
     /**
      * Store a new API key for a user's account.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function store(StoreApiKeyRequest $request): array
     {
@@ -54,7 +54,7 @@ class ApiKeyController extends ClientApiController
      */
     public function delete(ClientApiRequest $request, string $identifier): JsonResponse
     {
-        /** @var ApiKey $key */
+        /** @var \SneakyPanel\Models\ApiKey $key */
         $key = $request->user()->apiKeys()
             ->where('key_type', ApiKey::TYPE_ACCOUNT)
             ->where('identifier', $identifier)

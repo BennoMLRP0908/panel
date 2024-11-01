@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin;
+namespace SneakyPanel\Http\Requests\Admin;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
 

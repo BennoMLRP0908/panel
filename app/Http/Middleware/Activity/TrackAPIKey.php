@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Activity;
+namespace SneakyPanel\Http\Middleware\Activity;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\ApiKey;
-use sneakypanel\Facades\LogTarget;
+use SneakyPanel\Models\ApiKey;
+use SneakyPanel\Facades\LogTarget;
 
 class TrackAPIKey
 {

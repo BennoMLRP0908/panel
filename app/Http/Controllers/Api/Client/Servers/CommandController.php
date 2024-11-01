@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Facades\Activity;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Facades\Activity;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\BadResponseException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use sneakypanel\Repositories\Wings\DaemonCommandRepository;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\SendCommandRequest;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Repositories\Wings\DaemonCommandRepository;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\SendCommandRequest;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class CommandController extends ClientApiController
 {
@@ -26,7 +26,7 @@ class CommandController extends ClientApiController
     /**
      * Send a command to a running server.
      *
-     * @throws DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function index(SendCommandRequest $request, Server $server): Response
     {

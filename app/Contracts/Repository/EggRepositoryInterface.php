@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Database\Eloquent\Collection;
 
 interface EggRepositoryInterface extends RepositoryInterface
@@ -10,7 +10,7 @@ interface EggRepositoryInterface extends RepositoryInterface
     /**
      * Return an egg with the variables relation attached.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithVariables(int $id): Egg;
 
@@ -27,7 +27,7 @@ interface EggRepositoryInterface extends RepositoryInterface
     /**
      * Return all the data needed to export a service.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithExportAttributes(int $id): Egg;
 

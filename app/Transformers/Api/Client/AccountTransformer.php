@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 
 class AccountTransformer extends BaseClientTransformer
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Nests;
+namespace SneakyPanel\Services\Nests;
 
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
-use sneakypanel\Exceptions\Service\HasActiveServersException;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Exceptions\Service\HasActiveServersException;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
 
 class NestDeletionService
 {
@@ -13,14 +13,14 @@ class NestDeletionService
      */
     public function __construct(
         protected ServerRepositoryInterface $serverRepository,
-        protected NestRepositoryInterface $repository,
+        protected NestRepositoryInterface $repository
     ) {
     }
 
     /**
      * Delete a nest from the system only if there are no servers attached to it.
      *
-     * @throws HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function handle(int $nest): int
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Schedule;
+namespace SneakyPanel\Console\Commands\Schedule;
 
 use Exception;
 use Illuminate\Console\Command;
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Schedule;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
-use sneakypanel\Services\Schedules\ProcessScheduleService;
+use SneakyPanel\Services\Schedules\ProcessScheduleService;
 
 class ProcessRunnableCommand extends Command
 {

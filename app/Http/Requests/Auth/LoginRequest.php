@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Auth;
+namespace SneakyPanel\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 

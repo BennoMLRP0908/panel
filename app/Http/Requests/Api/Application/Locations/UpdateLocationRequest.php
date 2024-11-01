@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Locations;
+namespace SneakyPanel\Http\Requests\Api\Application\Locations;
 
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Location;
 
 class UpdateLocationRequest extends StoreLocationRequest
 {

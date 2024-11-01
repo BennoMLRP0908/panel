@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Database;
+use SneakyPanel\Models\Database;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
-use sneakypanel\Http\Middleware\TrimStrings;
-use sneakypanel\Http\Middleware\AdminAuthenticate;
-use sneakypanel\Http\Middleware\RequireTwoFactorAuthentication;
+use SneakyPanel\Http\Middleware\TrimStrings;
+use SneakyPanel\Http\Middleware\AdminAuthenticate;
+use SneakyPanel\Http\Middleware\RequireTwoFactorAuthentication;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider

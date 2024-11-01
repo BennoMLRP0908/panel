@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Services\Activity;
+namespace SneakyPanel\Services\Activity;
 
 use Ramsey\Uuid\Uuid;
 

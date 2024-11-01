@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Services\Nodes;
+namespace SneakyPanel\Services\Nodes;
 
 use Illuminate\Support\Str;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
-use sneakypanel\Repositories\Wings\DaemonConfigurationRepository;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
-use sneakypanel\Exceptions\Service\Node\ConfigurationNotPersistedException;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Repositories\Wings\DaemonConfigurationRepository;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Exceptions\Service\Node\ConfigurationNotPersistedException;
 
 class NodeUpdateService
 {
@@ -21,7 +21,7 @@ class NodeUpdateService
         private ConnectionInterface $connection,
         private DaemonConfigurationRepository $configurationRepository,
         private Encrypter $encrypter,
-        private NodeRepository $repository,
+        private NodeRepository $repository
     ) {
     }
 
@@ -38,7 +38,7 @@ class NodeUpdateService
         }
 
         [$updated, $exception] = $this->connection->transaction(function () use ($data, $node) {
-            /** @var Node $updated */
+            /** @var \SneakyPanel\Models\Node $updated */
             $updated = $this->repository->withFreshModel()->update($node->id, $data, true, true);
 
             try {

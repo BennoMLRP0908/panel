@@ -1,20 +1,20 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Database;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Services\Databases\DatabasePasswordService;
-use sneakypanel\Transformers\Api\Client\DatabaseTransformer;
-use sneakypanel\Services\Databases\DatabaseManagementService;
-use sneakypanel\Services\Databases\DeployServerDatabaseService;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\Databases\GetDatabasesRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Databases\StoreDatabaseRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Databases\DeleteDatabaseRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Databases\RotatePasswordRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Services\Databases\DatabasePasswordService;
+use SneakyPanel\Transformers\Api\Client\DatabaseTransformer;
+use SneakyPanel\Services\Databases\DatabaseManagementService;
+use SneakyPanel\Services\Databases\DeployServerDatabaseService;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Databases\GetDatabasesRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Databases\StoreDatabaseRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Databases\DeleteDatabaseRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Databases\RotatePasswordRequest;
 
 class DatabaseController extends ClientApiController
 {
@@ -24,7 +24,7 @@ class DatabaseController extends ClientApiController
     public function __construct(
         private DeployServerDatabaseService $deployDatabaseService,
         private DatabaseManagementService $managementService,
-        private DatabasePasswordService $passwordService,
+        private DatabasePasswordService $passwordService
     ) {
         parent::__construct();
     }
@@ -43,8 +43,8 @@ class DatabaseController extends ClientApiController
      * Create a new database for the given server and return it.
      *
      * @throws \Throwable
-     * @throws \sneakypanel\Exceptions\Service\Database\TooManyDatabasesException
-     * @throws \sneakypanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
+     * @throws \SneakyPanel\Exceptions\Service\Database\TooManyDatabasesException
+     * @throws \SneakyPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
      */
     public function store(StoreDatabaseRequest $request, Server $server): array
     {
@@ -86,7 +86,7 @@ class DatabaseController extends ClientApiController
     /**
      * Removes a database from the server.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function delete(DeleteDatabaseRequest $request, Server $server, Database $database): Response
     {

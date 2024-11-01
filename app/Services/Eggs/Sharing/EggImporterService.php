@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Services\Eggs\Sharing;
+namespace SneakyPanel\Services\Eggs\Sharing;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\Nest;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\Nest;
 use Illuminate\Http\UploadedFile;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\EggVariable;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Services\Eggs\EggParserService;
+use SneakyPanel\Services\Eggs\EggParserService;
 
 class EggImporterService
 {
@@ -20,13 +20,13 @@ class EggImporterService
     /**
      * Take an uploaded JSON file and parse it into a new egg.
      *
-     * @throws \sneakypanel\Exceptions\Service\InvalidFileUploadException|\Throwable
+     * @throws \SneakyPanel\Exceptions\Service\InvalidFileUploadException|\Throwable
      */
     public function handle(UploadedFile $file, int $nest): Egg
     {
         $parsed = $this->parser->handle($file);
 
-        /** @var Nest $nest */
+        /** @var \SneakyPanel\Models\Nest $nest */
         $nest = Nest::query()->with('eggs', 'eggs.variables')->findOrFail($nest);
 
         return $this->connection->transaction(function () use ($nest, $parsed) {

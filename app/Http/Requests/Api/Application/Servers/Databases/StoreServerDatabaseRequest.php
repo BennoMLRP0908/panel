@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Servers\Databases;
+namespace SneakyPanel\Http\Requests\Api\Application\Servers\Databases;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Validation\Rule;
 use Illuminate\Database\Query\Builder;
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Services\Databases\DatabaseManagementService;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Databases\DatabaseManagementService;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class StoreServerDatabaseRequest extends ApplicationApiRequest
 {

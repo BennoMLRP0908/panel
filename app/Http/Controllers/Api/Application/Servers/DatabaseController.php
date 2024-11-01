@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Application\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Database;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Database;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Services\Databases\DatabasePasswordService;
-use sneakypanel\Services\Databases\DatabaseManagementService;
-use sneakypanel\Transformers\Api\Application\ServerDatabaseTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Servers\Databases\GetServerDatabaseRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\Databases\GetServerDatabasesRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\Databases\ServerDatabaseWriteRequest;
-use sneakypanel\Http\Requests\Api\Application\Servers\Databases\StoreServerDatabaseRequest;
+use SneakyPanel\Services\Databases\DatabasePasswordService;
+use SneakyPanel\Services\Databases\DatabaseManagementService;
+use SneakyPanel\Transformers\Api\Application\ServerDatabaseTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Servers\Databases\GetServerDatabaseRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\Databases\GetServerDatabasesRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\Databases\ServerDatabaseWriteRequest;
+use SneakyPanel\Http\Requests\Api\Application\Servers\Databases\StoreServerDatabaseRequest;
 
 class DatabaseController extends ApplicationApiController
 {
@@ -22,7 +22,7 @@ class DatabaseController extends ApplicationApiController
      */
     public function __construct(
         private DatabaseManagementService $databaseManagementService,
-        private DatabasePasswordService $databasePasswordService,
+        private DatabasePasswordService $databasePasswordService
     ) {
         parent::__construct();
     }

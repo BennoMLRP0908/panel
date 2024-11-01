@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin;
+namespace SneakyPanel\Http\Requests\Admin;
 
-use sneakypanel\Models\Mount;
+use SneakyPanel\Models\Mount;
 
 class MountFormRequest extends AdminFormRequest
 {

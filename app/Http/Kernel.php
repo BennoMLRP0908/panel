@@ -1,38 +1,38 @@
 <?php
 
-namespace sneakypanel\Http;
+namespace SneakyPanel\Http;
 
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Http\Middleware\HandleCors;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Middleware\TrustProxies;
-use sneakypanel\Http\Middleware\TrimStrings;
+use SneakyPanel\Http\Middleware\TrimStrings;
 use Illuminate\Session\Middleware\StartSession;
-use sneakypanel\Http\Middleware\EncryptCookies;
-use sneakypanel\Http\Middleware\Api\IsValidJson;
-use sneakypanel\Http\Middleware\VerifyCsrfToken;
-use sneakypanel\Http\Middleware\VerifyReCaptcha;
+use SneakyPanel\Http\Middleware\EncryptCookies;
+use SneakyPanel\Http\Middleware\Api\IsValidJson;
+use SneakyPanel\Http\Middleware\VerifyCsrfToken;
+use SneakyPanel\Http\Middleware\VerifyReCaptcha;
 use Illuminate\Routing\Middleware\ThrottleRequests;
-use sneakypanel\Http\Middleware\LanguageMiddleware;
+use SneakyPanel\Http\Middleware\LanguageMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Routing\Middleware\SubstituteBindings;
-use sneakypanel\Http\Middleware\Activity\TrackAPIKey;
+use SneakyPanel\Http\Middleware\Activity\TrackAPIKey;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use sneakypanel\Http\Middleware\MaintenanceMiddleware;
-use sneakypanel\Http\Middleware\EnsureStatefulRequests;
-use sneakypanel\Http\Middleware\RedirectIfAuthenticated;
+use SneakyPanel\Http\Middleware\MaintenanceMiddleware;
+use SneakyPanel\Http\Middleware\EnsureStatefulRequests;
+use SneakyPanel\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Middleware\AuthenticateWithBasicAuth;
-use sneakypanel\Http\Middleware\Api\AuthenticateIPAccess;
+use SneakyPanel\Http\Middleware\Api\AuthenticateIPAccess;
 use Illuminate\Foundation\Http\Middleware\ValidatePostSize;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
-use sneakypanel\Http\Middleware\Api\Daemon\DaemonAuthenticate;
-use sneakypanel\Http\Middleware\Api\Client\RequireClientApiKey;
-use sneakypanel\Http\Middleware\RequireTwoFactorAuthentication;
+use SneakyPanel\Http\Middleware\Api\Daemon\DaemonAuthenticate;
+use SneakyPanel\Http\Middleware\Api\Client\RequireClientApiKey;
+use SneakyPanel\Http\Middleware\RequireTwoFactorAuthentication;
 use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
-use sneakypanel\Http\Middleware\Api\Client\SubstituteClientBindings;
+use SneakyPanel\Http\Middleware\Api\Client\SubstituteClientBindings;
 use Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance;
-use sneakypanel\Http\Middleware\Api\Application\AuthenticateApplicationUser;
+use SneakyPanel\Http\Middleware\Api\Application\AuthenticateApplicationUser;
 
 class Kernel extends HttpKernel
 {

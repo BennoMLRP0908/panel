@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\Subuser;
+use SneakyPanel\Models\Subuser;
 
 class SubuserTransformer extends BaseClientTransformer
 {
@@ -17,7 +17,7 @@ class SubuserTransformer extends BaseClientTransformer
     /**
      * Transforms a subuser into a model that can be shown to a front-end user.
      *
-     * @throws \sneakypanel\Exceptions\Transformer\InvalidTransformerLevelException
+     * @throws \SneakyPanel\Exceptions\Transformer\InvalidTransformerLevelException
      */
     public function transform(Subuser $model): array
     {

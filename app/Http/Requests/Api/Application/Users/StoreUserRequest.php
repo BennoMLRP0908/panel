@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Users;
+namespace SneakyPanel\Http\Requests\Api\Application\Users;
 
-use sneakypanel\Models\User;
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Models\User;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class StoreUserRequest extends ApplicationApiRequest
 {
@@ -15,7 +15,7 @@ class StoreUserRequest extends ApplicationApiRequest
     /**
      * Return the validation rules for this request.
      */
-    public function rules(?array $rules = null): array
+    public function rules(array $rules = null): array
     {
         $rules = $rules ?? User::getRules();
 

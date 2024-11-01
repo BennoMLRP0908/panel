@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use sneakypanel\Http\Controllers\Api\Remote;
+use SneakyPanel\Http\Controllers\Api\Remote;
 
 // Routes for the Wings daemon.
 Route::post('/sftp/auth', Remote\SftpAuthenticationController::class);

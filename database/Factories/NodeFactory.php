@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Str;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

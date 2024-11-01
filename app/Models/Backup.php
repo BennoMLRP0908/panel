@@ -1,10 +1,9 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @property int $id
@@ -22,13 +21,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Carbon\CarbonImmutable $created_at
  * @property \Carbon\CarbonImmutable $updated_at
  * @property \Carbon\CarbonImmutable|null $deleted_at
- * @property Server $server
- * @property \sneakypanel\Models\AuditLog[] $audits
+ * @property \SneakyPanel\Models\Server $server
+ * @property \SneakyPanel\Models\AuditLog[] $audits
  */
 class Backup extends Model
 {
-    /** @use HasFactory<\Database\Factories\BackupFactory> */
-    use HasFactory;
     use SoftDeletes;
 
     public const RESOURCE_NAME = 'backup';

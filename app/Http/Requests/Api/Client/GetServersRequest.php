@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client;
+namespace SneakyPanel\Http\Requests\Api\Client;
 
 class GetServersRequest extends ClientApiRequest
 {

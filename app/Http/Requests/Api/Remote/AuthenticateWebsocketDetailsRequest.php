@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Remote;
+namespace SneakyPanel\Http\Requests\Api\Remote;
 
 use Illuminate\Foundation\Http\FormRequest;
 

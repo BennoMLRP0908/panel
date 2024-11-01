@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Users;
+namespace SneakyPanel\Services\Users;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class TwoFactorSetupService
@@ -17,7 +17,7 @@ class TwoFactorSetupService
     public function __construct(
         private ConfigRepository $config,
         private Encrypter $encrypter,
-        private UserRepositoryInterface $repository,
+        private UserRepositoryInterface $repository
     ) {
     }
 
@@ -26,8 +26,8 @@ class TwoFactorSetupService
      * QR code URL. This URL will need to be attached to a QR generating service in
      * order to function.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function handle(User $user): array
     {

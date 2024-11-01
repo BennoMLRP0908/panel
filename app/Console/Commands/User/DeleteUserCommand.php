@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Console\Commands\User;
+namespace SneakyPanel\Console\Commands\User;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Webmozart\Assert\Assert;
 use Illuminate\Console\Command;
-use sneakypanel\Services\Users\UserDeletionService;
+use SneakyPanel\Services\Users\UserDeletionService;
 
 class DeleteUserCommand extends Command
 {

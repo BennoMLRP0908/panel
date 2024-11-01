@@ -57,8 +57,7 @@ return [
     */
 
     'middleware' => [
-        'authenticate_session' => Laravel\Sanctum\Http\Middleware\AuthenticateSession::class,
-        'encrypt_cookies' => sneakypanel\Http\Middleware\EncryptCookies::class,
-        'verify_csrf_token' => sneakypanel\Http\Middleware\VerifyCsrfToken::class,
+        'verify_csrf_token' => SneakyPanel\Http\Middleware\VerifyCsrfToken::class,
+        'encrypt_cookies' => SneakyPanel\Http\Middleware\EncryptCookies::class,
     ],
 ];

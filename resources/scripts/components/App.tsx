@@ -21,7 +21,7 @@ const AuthenticationRouter = lazy(() => import(/* webpackChunkName: "auth" */ '@
 
 interface ExtendedWindow extends Window {
     SiteConfiguration?: SiteSettings;
-    sneakypanelUser?: {
+    SneakyPanelUser?: {
         uuid: string;
         username: string;
         email: string;
@@ -38,17 +38,17 @@ interface ExtendedWindow extends Window {
 setupInterceptors(history);
 
 const App = () => {
-    const { sneakypanelUser, SiteConfiguration } = window as ExtendedWindow;
-    if (sneakypanelUser && !store.getState().user.data) {
+    const { SneakyPanelUser, SiteConfiguration } = window as ExtendedWindow;
+    if (SneakyPanelUser && !store.getState().user.data) {
         store.getActions().user.setUserData({
-            uuid: sneakypanelUser.uuid,
-            username: sneakypanelUser.username,
-            email: sneakypanelUser.email,
-            language: sneakypanelUser.language,
-            rootAdmin: sneakypanelUser.root_admin,
-            useTotp: sneakypanelUser.use_totp,
-            createdAt: new Date(sneakypanelUser.created_at),
-            updatedAt: new Date(sneakypanelUser.updated_at),
+            uuid: SneakyPanelUser.uuid,
+            username: SneakyPanelUser.username,
+            email: SneakyPanelUser.email,
+            language: SneakyPanelUser.language,
+            rootAdmin: SneakyPanelUser.root_admin,
+            useTotp: SneakyPanelUser.use_totp,
+            createdAt: new Date(SneakyPanelUser.created_at),
+            updatedAt: new Date(SneakyPanelUser.updated_at),
         });
     }
 

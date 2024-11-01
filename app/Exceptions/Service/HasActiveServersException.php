@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service;
+namespace SneakyPanel\Exceptions\Service;
 
 use Illuminate\Http\Response;
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class HasActiveServersException extends DisplayException
 {

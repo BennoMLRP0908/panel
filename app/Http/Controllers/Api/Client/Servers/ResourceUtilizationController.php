@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Carbon\Carbon;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Cache\Repository;
-use sneakypanel\Transformers\Api\Client\StatsTransformer;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\GetServerRequest;
+use SneakyPanel\Transformers\Api\Client\StatsTransformer;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\GetServerRequest;
 
 class ResourceUtilizationController extends ClientApiController
 {
@@ -25,7 +25,7 @@ class ResourceUtilizationController extends ClientApiController
      * 20 seconds at a time to ensure that repeated requests to this endpoint do not cause
      * a flood of unnecessary API calls.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function __invoke(GetServerRequest $request, Server $server): array
     {

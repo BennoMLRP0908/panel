@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Activity;
+namespace SneakyPanel\Http\Middleware\Activity;
 
 use Illuminate\Http\Request;
-use sneakypanel\Facades\LogTarget;
+use SneakyPanel\Facades\LogTarget;
 
 class AccountSubject
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Events;
+namespace SneakyPanel\Events;
 
 use Illuminate\Support\Str;
-use sneakypanel\Models\ActivityLog;
+use SneakyPanel\Models\ActivityLog;
 use Illuminate\Database\Eloquent\Model;
 
 class ActivityLogged extends Event

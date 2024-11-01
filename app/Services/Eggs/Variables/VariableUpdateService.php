@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Services\Eggs\Variables;
+namespace SneakyPanel\Services\Eggs\Variables;
 
 use Illuminate\Support\Str;
-use sneakypanel\Models\EggVariable;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Traits\Services\ValidatesValidationRules;
+use SneakyPanel\Models\EggVariable;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Traits\Services\ValidatesValidationRules;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-use sneakypanel\Contracts\Repository\EggVariableRepositoryInterface;
-use sneakypanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException;
+use SneakyPanel\Contracts\Repository\EggVariableRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException;
 
 class VariableUpdateService
 {
@@ -33,10 +33,10 @@ class VariableUpdateService
     /**
      * Update a specific egg variable.
      *
-     * @throws DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws ReservedVariableNameException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\Variable\ReservedVariableNameException
      */
     public function handle(EggVariable $variable, array $data): mixed
     {

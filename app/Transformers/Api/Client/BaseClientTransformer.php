@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
-use sneakypanel\Transformers\Api\Application\BaseTransformer as BaseApplicationTransformer;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Transformers\Api\Application\BaseTransformer as BaseApplicationTransformer;
 
 abstract class BaseClientTransformer extends BaseApplicationTransformer
 {
@@ -24,13 +24,16 @@ abstract class BaseClientTransformer extends BaseApplicationTransformer
      *
      * @noinspection PhpParameterNameChangedDuringInheritanceInspection
      */
-    protected function authorize(string $ability, ?Server $server = null): bool
+    protected function authorize(string $ability, Server $server = null): bool
     {
         Assert::isInstanceOf($server, Server::class);
 
         return $this->request->user()->can($ability, [$server]);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function makeTransformer(string $abstract)
     {
         Assert::subclassOf($abstract, self::class);

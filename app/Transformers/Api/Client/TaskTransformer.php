@@ -1,11 +1,14 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\Task;
+use SneakyPanel\Models\Task;
 
 class TaskTransformer extends BaseClientTransformer
 {
+    /**
+     * {@inheritdoc}
+     */
     public function getResourceName(): string
     {
         return Task::RESOURCE_NAME;

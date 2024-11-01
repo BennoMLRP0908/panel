@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Api\KeyCreationService;
-use sneakypanel\Contracts\Repository\ApiKeyRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Api\StoreApplicationApiKeyRequest;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Api\KeyCreationService;
+use SneakyPanel\Contracts\Repository\ApiKeyRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Api\StoreApplicationApiKeyRequest;
 
 class ApiController extends Controller
 {
@@ -61,7 +61,7 @@ class ApiController extends Controller
     /**
      * Store the new key and redirect the user back to the application key listing.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreApplicationApiKeyRequest $request): RedirectResponse
     {

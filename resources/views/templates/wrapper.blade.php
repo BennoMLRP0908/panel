@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ config('app.name', 'sneakypanel') }}</title>
+        <title>{{ config('app.name', 'SneakyPanel') }}</title>
 
         @section('meta')
             <meta charset="utf-8">
@@ -22,7 +22,7 @@
         @section('user-data')
             @if(!is_null(Auth::user()))
                 <script>
-                    window.sneakypanelUser = {!! json_encode(Auth::user()->toVueObject()) !!};
+                    window.SneakyPanelUser = {!! json_encode(Auth::user()->toVueObject()) !!};
                 </script>
             @endif
             @if(!empty($siteConfiguration))

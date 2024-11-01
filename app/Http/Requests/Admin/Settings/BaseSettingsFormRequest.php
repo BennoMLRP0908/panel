@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Settings;
+namespace SneakyPanel\Http\Requests\Admin\Settings;
 
 use Illuminate\Validation\Rule;
-use sneakypanel\Traits\Helpers\AvailableLanguages;
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Traits\Helpers\AvailableLanguages;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class BaseSettingsFormRequest extends AdminFormRequest
 {

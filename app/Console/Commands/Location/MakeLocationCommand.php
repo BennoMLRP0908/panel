@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Location;
+namespace SneakyPanel\Console\Commands\Location;
 
 use Illuminate\Console\Command;
-use sneakypanel\Services\Locations\LocationCreationService;
+use SneakyPanel\Services\Locations\LocationCreationService;
 
 class MakeLocationCommand extends Command
 {
@@ -24,7 +24,7 @@ class MakeLocationCommand extends Command
     /**
      * Handle the command execution process.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle()
     {

@@ -1,18 +1,14 @@
 <?php
 
-namespace sneakypanel\Repositories\Wings;
+namespace SneakyPanel\Repositories\Wings;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Backup;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Backup;
+use SneakyPanel\Models\Server;
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Exception\TransferException;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
-/**
- * @method \sneakypanel\Repositories\Wings\DaemonBackupRepository setNode(\sneakypanel\Models\Node $node)
- * @method \sneakypanel\Repositories\Wings\DaemonBackupRepository setServer(\sneakypanel\Models\Server $server)
- */
 class DaemonBackupRepository extends DaemonRepository
 {
     protected ?string $adapter;
@@ -30,7 +26,7 @@ class DaemonBackupRepository extends DaemonRepository
     /**
      * Tells the remote Daemon to begin generating a backup for the server.
      *
-     * @throws DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function backup(Backup $backup): ResponseInterface
     {
@@ -55,9 +51,9 @@ class DaemonBackupRepository extends DaemonRepository
     /**
      * Sends a request to Wings to begin restoring a backup for a server.
      *
-     * @throws DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
-    public function restore(Backup $backup, ?string $url = null, bool $truncate = false): ResponseInterface
+    public function restore(Backup $backup, string $url = null, bool $truncate = false): ResponseInterface
     {
         Assert::isInstanceOf($this->server, Server::class);
 
@@ -80,7 +76,7 @@ class DaemonBackupRepository extends DaemonRepository
     /**
      * Deletes a backup from the daemon.
      *
-     * @throws DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function delete(Backup $backup): ResponseInterface
     {

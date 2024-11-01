@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\Backup;
+use SneakyPanel\Models\Backup;
 
 class BackupTransformer extends BaseClientTransformer
 {

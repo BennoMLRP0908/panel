@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Transformers\Api\Client\UserSSHKeyTransformer;
-use sneakypanel\Http\Requests\Api\Client\Account\StoreSSHKeyRequest;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Transformers\Api\Client\UserSSHKeyTransformer;
+use SneakyPanel\Http\Requests\Api\Client\Account\StoreSSHKeyRequest;
 
 class SSHKeyController extends ClientApiController
 {

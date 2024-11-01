@@ -10,8 +10,8 @@ class MoveFunctionsFromFileToDatabase extends Migration
 'use strict';
 
 /**
- * sneakypanel - Daemon
- * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>
+ * SneakyPanel - Daemon
+ * Copyright (c) 2015 - 2017 Sneaky <dane@daneeveritt.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -45,8 +45,8 @@ EOF;
 'use strict';
 
 /**
- * sneakypanel - Daemon
- * Copyright (c) 2015 - 2017 Dane Everitt <dane@daneeveritt.com>
+ * SneakyPanel - Daemon
+ * Copyright (c) 2015 - 2017 Sneaky <dane@daneeveritt.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -85,7 +85,7 @@ EOF;
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('services', function (Blueprint $table) {
             $table->text('index_file')->after('startup');
@@ -105,7 +105,7 @@ EOF;
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('services', function (Blueprint $table) {
             $table->dropColumn('index_file');

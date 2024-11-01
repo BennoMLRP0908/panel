@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Maintenance;
+namespace SneakyPanel\Console\Commands\Maintenance;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Console\Command;
-use sneakypanel\Repositories\Eloquent\BackupRepository;
+use SneakyPanel\Repositories\Eloquent\BackupRepository;
 
 class PruneOrphanedBackupsCommand extends Command
 {

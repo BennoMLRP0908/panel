@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Location;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Http\Requests\Admin\LocationFormRequest;
-use sneakypanel\Services\Locations\LocationUpdateService;
-use sneakypanel\Services\Locations\LocationCreationService;
-use sneakypanel\Services\Locations\LocationDeletionService;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Requests\Admin\LocationFormRequest;
+use SneakyPanel\Services\Locations\LocationUpdateService;
+use SneakyPanel\Services\Locations\LocationCreationService;
+use SneakyPanel\Services\Locations\LocationDeletionService;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
 
 class LocationController extends Controller
 {
@@ -26,7 +26,7 @@ class LocationController extends Controller
         protected LocationDeletionService $deletionService,
         protected LocationRepositoryInterface $repository,
         protected LocationUpdateService $updateService,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
@@ -43,7 +43,7 @@ class LocationController extends Controller
     /**
      * Return the location view page.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function view(int $id): View
     {
@@ -86,7 +86,7 @@ class LocationController extends Controller
      * Delete a location from the system.
      *
      * @throws \Exception
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function delete(Location $location): RedirectResponse
     {

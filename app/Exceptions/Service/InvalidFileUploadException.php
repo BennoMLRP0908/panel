@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service;
+namespace SneakyPanel\Exceptions\Service;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class InvalidFileUploadException extends DisplayException
 {

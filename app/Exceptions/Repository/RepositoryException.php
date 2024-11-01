@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Exceptions\Repository;
+namespace SneakyPanel\Exceptions\Repository;
 
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
-class RepositoryException extends sneakypanelException
+class RepositoryException extends SneakyPanelException
 {
 }

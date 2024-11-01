@@ -1,20 +1,20 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Nodes;
+namespace SneakyPanel\Http\Controllers\Api\Application\Nodes;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
 use Illuminate\Database\Eloquent\Builder;
-use sneakypanel\Services\Allocations\AssignmentService;
-use sneakypanel\Services\Allocations\AllocationDeletionService;
-use sneakypanel\Transformers\Api\Application\AllocationTransformer;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
-use sneakypanel\Http\Requests\Api\Application\Allocations\GetAllocationsRequest;
-use sneakypanel\Http\Requests\Api\Application\Allocations\StoreAllocationRequest;
-use sneakypanel\Http\Requests\Api\Application\Allocations\DeleteAllocationRequest;
+use SneakyPanel\Services\Allocations\AssignmentService;
+use SneakyPanel\Services\Allocations\AllocationDeletionService;
+use SneakyPanel\Transformers\Api\Application\AllocationTransformer;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Http\Requests\Api\Application\Allocations\GetAllocationsRequest;
+use SneakyPanel\Http\Requests\Api\Application\Allocations\StoreAllocationRequest;
+use SneakyPanel\Http\Requests\Api\Application\Allocations\DeleteAllocationRequest;
 
 class AllocationController extends ApplicationApiController
 {
@@ -23,7 +23,7 @@ class AllocationController extends ApplicationApiController
      */
     public function __construct(
         private AssignmentService $assignmentService,
-        private AllocationDeletionService $deletionService,
+        private AllocationDeletionService $deletionService
     ) {
         parent::__construct();
     }
@@ -56,11 +56,11 @@ class AllocationController extends ApplicationApiController
     /**
      * Store new allocations for a given node.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\CidrOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\InvalidPortMappingException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\PortOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\CidrOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\InvalidPortMappingException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\PortOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
      */
     public function store(StoreAllocationRequest $request, Node $node): JsonResponse
     {
@@ -72,7 +72,7 @@ class AllocationController extends ApplicationApiController
     /**
      * Delete a specific allocation from the Panel.
      *
-     * @throws \sneakypanel\Exceptions\Service\Allocation\ServerUsingAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\ServerUsingAllocationException
      */
     public function delete(DeleteAllocationRequest $request, Node $node, Allocation $allocation): JsonResponse
     {

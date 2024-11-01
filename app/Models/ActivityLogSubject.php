@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 /**
- * \sneakypanel\Models\ActivityLogSubject.
+ * \SneakyPanel\Models\ActivityLogSubject.
  *
  * @property int $id
  * @property int $activity_log_id
  * @property int $subject_id
  * @property string $subject_type
- * @property ActivityLog|null $activityLog
+ * @property \SneakyPanel\Models\ActivityLog|null $activityLog
  * @property \Illuminate\Database\Eloquent\Model|\Eloquent $subject
  *
  * @method static \Illuminate\Database\Eloquent\Builder|ActivityLogSubject newModelQuery()

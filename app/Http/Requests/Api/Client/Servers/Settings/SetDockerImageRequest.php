@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Settings;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Settings;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Validation\Rule;
-use sneakypanel\Models\Permission;
-use sneakypanel\Contracts\Http\ClientPermissionsRequest;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Contracts\Http\ClientPermissionsRequest;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class SetDockerImageRequest extends ClientApiRequest implements ClientPermissionsRequest
 {
@@ -18,13 +18,13 @@ class SetDockerImageRequest extends ClientApiRequest implements ClientPermission
 
     public function rules(): array
     {
-        /** @var Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $this->route()->parameter('server');
 
         Assert::isInstanceOf($server, Server::class);
 
         return [
-            'docker_image' => ['required', 'string', 'max:191', 'regex:/^[\w#\.\/\- ]*\|?~?[\w\.\/\-:@ ]*$/', Rule::in(array_values($server->egg->docker_images))],
+            'docker_image' => ['required', 'string', 'max:191', 'regex:/^[\w#\.\/\- ]*\|*[\w\.\/\-:@ ]*$/', Rule::in(array_values($server->egg->docker_images))],
         ];
     }
 }

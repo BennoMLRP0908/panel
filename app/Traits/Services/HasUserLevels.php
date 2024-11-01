@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Traits\Services;
+namespace SneakyPanel\Traits\Services;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 
 trait HasUserLevels
 {

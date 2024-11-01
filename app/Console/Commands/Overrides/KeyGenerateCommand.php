@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Overrides;
+namespace SneakyPanel\Console\Commands\Overrides;
 
 use Illuminate\Foundation\Console\KeyGenerateCommand as BaseKeyGenerateCommand;
 

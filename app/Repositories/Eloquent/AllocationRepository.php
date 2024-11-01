@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Database\Eloquent\Builder;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
 
 class AllocationRepository extends EloquentRepository implements AllocationRepositoryInterface
 {

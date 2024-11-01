@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Jobs;
+namespace SneakyPanel\Jobs;
 
 use Illuminate\Bus\Queueable;
 

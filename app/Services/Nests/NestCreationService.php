@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Nests;
+namespace SneakyPanel\Services\Nests;
 
 use Ramsey\Uuid\Uuid;
-use sneakypanel\Models\Nest;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Models\Nest;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class NestCreationService
@@ -19,9 +19,9 @@ class NestCreationService
     /**
      * Create a new nest on the system.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
-    public function handle(array $data, ?string $author = null): Nest
+    public function handle(array $data, string $author = null): Nest
     {
         return $this->repository->create([
             'uuid' => Uuid::uuid4()->toString(),

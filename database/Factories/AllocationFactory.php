@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AllocationFactory extends Factory

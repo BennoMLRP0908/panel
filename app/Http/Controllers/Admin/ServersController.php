@@ -1,38 +1,38 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Mount;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Database;
-use sneakypanel\Models\MountServer;
+use SneakyPanel\Models\Mount;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Models\MountServer;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
-use sneakypanel\Services\Servers\SuspensionService;
-use sneakypanel\Repositories\Eloquent\MountRepository;
-use sneakypanel\Services\Servers\ServerDeletionService;
-use sneakypanel\Services\Servers\ReinstallServerService;
-use sneakypanel\Exceptions\Model\DataValidationException;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Services\Servers\BuildModificationService;
-use sneakypanel\Services\Databases\DatabasePasswordService;
-use sneakypanel\Services\Servers\DetailsModificationService;
-use sneakypanel\Services\Servers\StartupModificationService;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
-use sneakypanel\Repositories\Eloquent\DatabaseHostRepository;
-use sneakypanel\Services\Databases\DatabaseManagementService;
+use SneakyPanel\Services\Servers\SuspensionService;
+use SneakyPanel\Repositories\Eloquent\MountRepository;
+use SneakyPanel\Services\Servers\ServerDeletionService;
+use SneakyPanel\Services\Servers\ReinstallServerService;
+use SneakyPanel\Exceptions\Model\DataValidationException;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Services\Servers\BuildModificationService;
+use SneakyPanel\Services\Databases\DatabasePasswordService;
+use SneakyPanel\Services\Servers\DetailsModificationService;
+use SneakyPanel\Services\Servers\StartupModificationService;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Repositories\Eloquent\DatabaseHostRepository;
+use SneakyPanel\Services\Databases\DatabaseManagementService;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
-use sneakypanel\Contracts\Repository\DatabaseRepositoryInterface;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
-use sneakypanel\Services\Servers\ServerConfigurationStructureService;
-use sneakypanel\Http\Requests\Admin\Servers\Databases\StoreServerDatabaseRequest;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseRepositoryInterface;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Services\Servers\ServerConfigurationStructureService;
+use SneakyPanel\Http\Requests\Admin\Servers\Databases\StoreServerDatabaseRequest;
 
 class ServersController extends Controller
 {
@@ -57,15 +57,15 @@ class ServersController extends Controller
         protected NestRepositoryInterface $nestRepository,
         protected ServerConfigurationStructureService $serverConfigurationStructureService,
         protected StartupModificationService $startupModificationService,
-        protected SuspensionService $suspensionService,
+        protected SuspensionService $suspensionService
     ) {
     }
 
     /**
      * Update the details for a server.
      *
-     * @throws DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function setDetails(Request $request, Server $server): RedirectResponse
     {
@@ -81,9 +81,9 @@ class ServersController extends Controller
     /**
      * Toggles the installation status for a server.
      *
-     * @throws DisplayException
-     * @throws DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function toggleInstall(Server $server): RedirectResponse
     {
@@ -103,9 +103,9 @@ class ServersController extends Controller
     /**
      * Reinstalls the server with the currently assigned service.
      *
-     * @throws DisplayException
-     * @throws DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function reinstallServer(Server $server): RedirectResponse
     {
@@ -118,9 +118,9 @@ class ServersController extends Controller
     /**
      * Manage the suspension status for a server.
      *
-     * @throws DisplayException
-     * @throws DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function manageSuspension(Request $request, Server $server): RedirectResponse
     {
@@ -135,9 +135,9 @@ class ServersController extends Controller
     /**
      * Update the build configuration for a server.
      *
-     * @throws DisplayException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws ValidationException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function updateBuild(Request $request, Server $server): RedirectResponse
     {
@@ -159,7 +159,7 @@ class ServersController extends Controller
     /**
      * Start the server deletion process.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      * @throws \Throwable
      */
     public function delete(Request $request, Server $server): RedirectResponse
@@ -173,7 +173,7 @@ class ServersController extends Controller
     /**
      * Update the startup command as well as variables.
      *
-     * @throws ValidationException
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function saveStartup(Request $request, Server $server): RedirectResponse
     {
@@ -220,7 +220,7 @@ class ServersController extends Controller
      */
     public function resetDatabasePassword(Request $request, Server $server): Response
     {
-        /** @var Database $database */
+        /** @var \SneakyPanel\Models\Database $database */
         $database = $server->databases()->findOrFail($request->input('database'));
 
         $this->databasePasswordService->handle($database);

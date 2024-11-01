@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Egg;
+namespace SneakyPanel\Exceptions\Service\Egg;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class NoParentConfigurationFoundException extends DisplayException
 {

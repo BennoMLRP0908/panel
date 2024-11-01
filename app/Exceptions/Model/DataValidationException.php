@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Exceptions\Model;
+namespace SneakyPanel\Exceptions\Model;
 
 use Illuminate\Support\MessageBag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Validation\Validator;
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 use Illuminate\Contracts\Support\MessageProvider;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
-class DataValidationException extends sneakypanelException implements HttpExceptionInterface, MessageProvider
+class DataValidationException extends SneakyPanelException implements HttpExceptionInterface, MessageProvider
 {
     /**
      * DataValidationException constructor.

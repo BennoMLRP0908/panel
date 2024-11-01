@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Middleware;
+namespace SneakyPanel\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
@@ -10,7 +10,7 @@ class AdminAuthenticate
     /**
      * Handle an incoming request.
      *
-     * @throws AccessDeniedHttpException
+     * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
     public function handle(Request $request, \Closure $next): mixed
     {

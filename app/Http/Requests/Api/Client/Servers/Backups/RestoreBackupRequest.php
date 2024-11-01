@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Backups;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Backups;
 
-use sneakypanel\Models\Permission;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class RestoreBackupRequest extends ClientApiRequest
 {

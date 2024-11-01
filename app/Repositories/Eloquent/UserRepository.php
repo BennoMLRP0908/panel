@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\User;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Models\User;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
 
 class UserRepository extends EloquentRepository implements UserRepositoryInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Settings;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Settings;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Permission;
-use sneakypanel\Contracts\Http\ClientPermissionsRequest;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Contracts\Http\ClientPermissionsRequest;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class RenameServerRequest extends ClientApiRequest implements ClientPermissionsRequest
 {

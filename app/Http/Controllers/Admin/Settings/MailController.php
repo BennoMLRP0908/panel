@@ -1,21 +1,21 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Settings;
+namespace SneakyPanel\Http\Controllers\Admin\Settings;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Contracts\Console\Kernel;
-use sneakypanel\Notifications\MailTested;
+use SneakyPanel\Notifications\MailTested;
 use Illuminate\View\Factory as ViewFactory;
 use Illuminate\Support\Facades\Notification;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Providers\SettingsServiceProvider;
+use SneakyPanel\Providers\SettingsServiceProvider;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use sneakypanel\Contracts\Repository\SettingsRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Settings\MailSettingsFormRequest;
+use SneakyPanel\Contracts\Repository\SettingsRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Settings\MailSettingsFormRequest;
 
 class MailController extends Controller
 {
@@ -27,7 +27,7 @@ class MailController extends Controller
         private Encrypter $encrypter,
         private Kernel $kernel,
         private SettingsRepositoryInterface $settings,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 
@@ -46,8 +46,8 @@ class MailController extends Controller
      * Handle request to update SMTP mail settings.
      *
      * @throws DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(MailSettingsFormRequest $request): Response
     {

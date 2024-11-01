@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
-use sneakypanel\Models\Nest;
+use SneakyPanel\Models\Nest;
 use Illuminate\Database\Eloquent\Collection;
 
 interface NestRepositoryInterface extends RepositoryInterface
@@ -10,21 +10,21 @@ interface NestRepositoryInterface extends RepositoryInterface
     /**
      * Return a nest or all nests with their associated eggs and variables.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
-    public function getWithEggs(?int $id = null): Collection|Nest;
+    public function getWithEggs(int $id = null): Collection|Nest;
 
     /**
      * Return a nest or all nests and the count of eggs and servers for that nest.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
-    public function getWithCounts(?int $id = null): Collection|Nest;
+    public function getWithCounts(int $id = null): Collection|Nest;
 
     /**
      * Return a nest along with its associated eggs and the servers relation on those eggs.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithEggServers(int $id): Nest;
 }

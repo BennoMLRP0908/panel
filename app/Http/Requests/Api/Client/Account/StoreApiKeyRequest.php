@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Account;
+namespace SneakyPanel\Http\Requests\Api\Client\Account;
 
 use IPTools\Range;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Illuminate\Validation\Validator;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 
 class StoreApiKeyRequest extends ClientApiRequest
 {

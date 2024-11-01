@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Eggs;
+namespace SneakyPanel\Services\Eggs;
 
 use Ramsey\Uuid\Uuid;
-use sneakypanel\Models\Egg;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use sneakypanel\Exceptions\Service\Egg\NoParentConfigurationFoundException;
+use SneakyPanel\Exceptions\Service\Egg\NoParentConfigurationFoundException;
 
 // When a mommy and a daddy sneakypanel really like each other...
 class EggCreationService
@@ -21,8 +21,8 @@ class EggCreationService
     /**
      * Create a new service option and assign it to the given service.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws NoParentConfigurationFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\NoParentConfigurationFoundException
      */
     public function handle(array $data): Egg
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Event;
-use sneakypanel\Events\ActivityLogged;
+use SneakyPanel\Events\ActivityLogged;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\MassPrunable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Model as IlluminateModel;
 
 /**
- * \sneakypanel\Models\ActivityLog.
+ * \SneakyPanel\Models\ActivityLog.
  *
  * @property int $id
  * @property string|null $batch
@@ -24,11 +24,11 @@ use Illuminate\Database\Eloquent\Model as IlluminateModel;
  * @property int|null $actor_id
  * @property int|null $api_key_id
  * @property \Illuminate\Support\Collection|null $properties
- * @property Carbon $timestamp
+ * @property \Carbon\Carbon $timestamp
  * @property IlluminateModel|\Eloquent $actor
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\ActivityLogSubject[] $subjects
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\ActivityLogSubject[] $subjects
  * @property int|null $subjects_count
- * @property ApiKey|null $apiKey
+ * @property \SneakyPanel\Models\ApiKey|null $apiKey
  *
  * @method static Builder|ActivityLog forActor(\Illuminate\Database\Eloquent\Model $actor)
  * @method static Builder|ActivityLog forEvent(string $action)

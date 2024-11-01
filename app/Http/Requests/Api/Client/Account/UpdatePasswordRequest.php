@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Account;
+namespace SneakyPanel\Http\Requests\Api\Client\Account;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Hashing\Hasher;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Exceptions\Http\Base\InvalidPasswordProvidedException;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Exceptions\Http\Base\InvalidPasswordProvidedException;
 
 class UpdatePasswordRequest extends ClientApiRequest
 {
     /**
-     * @throws InvalidPasswordProvidedException
+     * @throws \SneakyPanel\Exceptions\Http\Base\InvalidPasswordProvidedException
      */
     public function authorize(): bool
     {

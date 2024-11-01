@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Services\Servers\StartupCommandService;
-use sneakypanel\Repositories\Eloquent\ServerVariableRepository;
-use sneakypanel\Transformers\Api\Client\EggVariableTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Services\Servers\StartupCommandService;
+use SneakyPanel\Repositories\Eloquent\ServerVariableRepository;
+use SneakyPanel\Transformers\Api\Client\EggVariableTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use sneakypanel\Http\Requests\Api\Client\Servers\Startup\GetStartupRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Startup\UpdateStartupVariableRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Startup\GetStartupRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Startup\UpdateStartupVariableRequest;
 
 class StartupController extends ClientApiController
 {
@@ -19,7 +19,7 @@ class StartupController extends ClientApiController
      */
     public function __construct(
         private StartupCommandService $startupCommandService,
-        private ServerVariableRepository $repository,
+        private ServerVariableRepository $repository
     ) {
         parent::__construct();
     }
@@ -47,12 +47,12 @@ class StartupController extends ClientApiController
      * Updates a single variable for a server.
      *
      * @throws \Illuminate\Validation\ValidationException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UpdateStartupVariableRequest $request, Server $server): array
     {
-        /** @var \sneakypanel\Models\EggVariable $variable */
+        /** @var \SneakyPanel\Models\EggVariable $variable */
         $variable = $server->variables()->where('env_variable', $request->input('key'))->first();
         $original = $variable->server_value;
 

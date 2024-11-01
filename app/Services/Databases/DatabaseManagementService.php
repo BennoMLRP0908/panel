@@ -1,18 +1,18 @@
 <?php
 
-namespace sneakypanel\Services\Databases;
+namespace SneakyPanel\Services\Databases;
 
 use Exception;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Database;
-use sneakypanel\Helpers\Utilities;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Helpers\Utilities;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Extensions\DynamicDatabaseConnection;
-use sneakypanel\Repositories\Eloquent\DatabaseRepository;
-use sneakypanel\Exceptions\Repository\DuplicateDatabaseNameException;
-use sneakypanel\Exceptions\Service\Database\TooManyDatabasesException;
-use sneakypanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException;
+use SneakyPanel\Extensions\DynamicDatabaseConnection;
+use SneakyPanel\Repositories\Eloquent\DatabaseRepository;
+use SneakyPanel\Exceptions\Repository\DuplicateDatabaseNameException;
+use SneakyPanel\Exceptions\Service\Database\TooManyDatabasesException;
+use SneakyPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException;
 
 class DatabaseManagementService
 {
@@ -20,7 +20,7 @@ class DatabaseManagementService
      * The regex used to validate that the database name passed through to the function is
      * in the expected format.
      *
-     * @see \sneakypanel\Services\Databases\DatabaseManagementService::generateUniqueDatabaseName()
+     * @see \SneakyPanel\Services\Databases\DatabaseManagementService::generateUniqueDatabaseName()
      */
     private const MATCH_NAME_REGEX = '/^(s[\d]+_)(.*)$/';
 
@@ -36,7 +36,7 @@ class DatabaseManagementService
         protected ConnectionInterface $connection,
         protected DynamicDatabaseConnection $dynamic,
         protected Encrypter $encrypter,
-        protected DatabaseRepository $repository,
+        protected DatabaseRepository $repository
     ) {
     }
 
@@ -66,8 +66,8 @@ class DatabaseManagementService
      * Create a new database that is linked to a specific host.
      *
      * @throws \Throwable
-     * @throws TooManyDatabasesException
-     * @throws DatabaseClientFeatureNotEnabledException
+     * @throws \SneakyPanel\Exceptions\Service\Database\TooManyDatabasesException
+     * @throws \SneakyPanel\Exceptions\Service\Database\DatabaseClientFeatureNotEnabledException
      */
     public function create(Server $server, array $data): Database
     {
@@ -153,7 +153,7 @@ class DatabaseManagementService
      * have the same name across multiple hosts, for the sake of keeping this logic easy to understand
      * and avoiding user confusion we will ignore the specific host and just look across all hosts.
      *
-     * @throws DuplicateDatabaseNameException
+     * @throws \SneakyPanel\Exceptions\Repository\DuplicateDatabaseNameException
      * @throws \Throwable
      */
     protected function createModel(array $data): Database

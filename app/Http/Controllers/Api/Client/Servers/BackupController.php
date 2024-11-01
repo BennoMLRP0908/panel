@@ -1,24 +1,24 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\Backup;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Backup;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Models\Permission;
 use Illuminate\Auth\Access\AuthorizationException;
-use sneakypanel\Services\Backups\DeleteBackupService;
-use sneakypanel\Services\Backups\DownloadLinkService;
-use sneakypanel\Repositories\Eloquent\BackupRepository;
-use sneakypanel\Services\Backups\InitiateBackupService;
-use sneakypanel\Repositories\Wings\DaemonBackupRepository;
-use sneakypanel\Transformers\Api\Client\BackupTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Services\Backups\DeleteBackupService;
+use SneakyPanel\Services\Backups\DownloadLinkService;
+use SneakyPanel\Repositories\Eloquent\BackupRepository;
+use SneakyPanel\Services\Backups\InitiateBackupService;
+use SneakyPanel\Repositories\Wings\DaemonBackupRepository;
+use SneakyPanel\Transformers\Api\Client\BackupTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use sneakypanel\Http\Requests\Api\Client\Servers\Backups\StoreBackupRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Backups\RestoreBackupRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Backups\StoreBackupRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Backups\RestoreBackupRequest;
 
 class BackupController extends ClientApiController
 {
@@ -30,7 +30,7 @@ class BackupController extends ClientApiController
         private DeleteBackupService $deleteBackupService,
         private InitiateBackupService $initiateBackupService,
         private DownloadLinkService $downloadLinkService,
-        private BackupRepository $repository,
+        private BackupRepository $repository
     ) {
         parent::__construct();
     }
@@ -39,7 +39,7 @@ class BackupController extends ClientApiController
      * Returns all the backups for a given server instance in a paginated
      * result set.
      *
-     * @throws AuthorizationException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function index(Request $request, Server $server): array
     {
@@ -93,7 +93,7 @@ class BackupController extends ClientApiController
      * Toggles the lock status of a given backup for a server.
      *
      * @throws \Throwable
-     * @throws AuthorizationException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function toggleLock(Request $request, Server $server, Backup $backup): array
     {
@@ -115,7 +115,7 @@ class BackupController extends ClientApiController
     /**
      * Returns information about a single backup.
      *
-     * @throws AuthorizationException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function view(Request $request, Server $server, Backup $backup): array
     {
@@ -156,7 +156,7 @@ class BackupController extends ClientApiController
      * which the user is redirected to.
      *
      * @throws \Throwable
-     * @throws AuthorizationException
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function download(Request $request, Server $server, Backup $backup): JsonResponse
     {

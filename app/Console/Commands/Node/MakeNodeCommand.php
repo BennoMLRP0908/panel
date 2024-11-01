@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Node;
+namespace SneakyPanel\Console\Commands\Node;
 
 use Illuminate\Console\Command;
-use sneakypanel\Services\Nodes\NodeCreationService;
+use SneakyPanel\Services\Nodes\NodeCreationService;
 
 class MakeNodeCommand extends Command
 {
@@ -38,7 +38,7 @@ class MakeNodeCommand extends Command
     /**
      * Handle the command execution process.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function handle()
     {

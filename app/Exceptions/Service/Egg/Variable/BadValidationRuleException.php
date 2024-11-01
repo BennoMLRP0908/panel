@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Egg\Variable;
+namespace SneakyPanel\Exceptions\Service\Egg\Variable;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class BadValidationRuleException extends DisplayException
 {

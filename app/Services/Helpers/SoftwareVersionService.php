@@ -1,12 +1,13 @@
 <?php
 
-namespace sneakypanel\Services\Helpers;
+namespace SneakyPanel\Services\Helpers;
 
+use Exception;
 use GuzzleHttp\Client;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
-use sneakypanel\Exceptions\Service\Helper\CdnVersionFetchingException;
+use SneakyPanel\Exceptions\Service\Helper\CdnVersionFetchingException;
 
 class SoftwareVersionService
 {
@@ -19,7 +20,7 @@ class SoftwareVersionService
      */
     public function __construct(
         protected CacheRepository $cache,
-        protected Client $client,
+        protected Client $client
     ) {
         self::$result = $this->cacheVersionData();
     }
@@ -45,7 +46,7 @@ class SoftwareVersionService
      */
     public function getDiscord(): string
     {
-        return Arr::get(self::$result, 'discord') ?? 'https://sneakypanel.com/discord';
+        return Arr::get(self::$result, 'discord') ?? 'https://sneakypanel.io/discord';
     }
 
     /**
@@ -53,7 +54,7 @@ class SoftwareVersionService
      */
     public function getDonations(): string
     {
-        return Arr::get(self::$result, 'donations') ?? 'https://github.com/sponsors/sneakypi';
+        return Arr::get(self::$result, 'donations') ?? 'https://github.com/sponsors/matthewpi';
     }
 
     /**
@@ -94,7 +95,7 @@ class SoftwareVersionService
                 }
 
                 throw new CdnVersionFetchingException();
-            } catch (\Exception) {
+            } catch (Exception) {
                 return [];
             }
         });

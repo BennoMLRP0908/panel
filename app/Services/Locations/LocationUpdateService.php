@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Services\Locations;
+namespace SneakyPanel\Services\Locations;
 
-use sneakypanel\Models\Location;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Models\Location;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
 
 class LocationUpdateService
 {
@@ -17,8 +17,8 @@ class LocationUpdateService
     /**
      * Update an existing location.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function handle(Location|int $location, array $data): Location
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
-use sneakypanel\Models\User;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Server;
 
 class GetUserPermissionsService
 {
@@ -26,7 +26,7 @@ class GetUserPermissionsService
             return $permissions;
         }
 
-        /** @var \sneakypanel\Models\Subuser|null $subuserPermissions */
+        /** @var \SneakyPanel\Models\Subuser|null $subuserPermissions */
         $subuserPermissions = $server->subusers()->where('user_id', $user->id)->first();
 
         return $subuserPermissions ? $subuserPermissions->permissions : [];

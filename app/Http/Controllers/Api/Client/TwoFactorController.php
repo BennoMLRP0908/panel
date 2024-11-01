@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Services\Users\TwoFactorSetupService;
-use sneakypanel\Services\Users\ToggleTwoFactorService;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Services\Users\TwoFactorSetupService;
+use SneakyPanel\Services\Users\ToggleTwoFactorService;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -20,7 +20,7 @@ class TwoFactorController extends ClientApiController
     public function __construct(
         private ToggleTwoFactorService $toggleTwoFactorService,
         private TwoFactorSetupService $setupService,
-        private ValidationFactory $validation,
+        private ValidationFactory $validation
     ) {
         parent::__construct();
     }
@@ -30,8 +30,8 @@ class TwoFactorController extends ClientApiController
      * it on their account. If two-factor is already enabled this endpoint
      * will return a 400 error.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(Request $request): JsonResponse
     {
@@ -86,7 +86,7 @@ class TwoFactorController extends ClientApiController
             throw new BadRequestHttpException('The password provided was not valid.');
         }
 
-        /** @var \sneakypanel\Models\User $user */
+        /** @var \SneakyPanel\Models\User $user */
         $user = $request->user();
 
         $user->update([

@@ -1,20 +1,20 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nodes;
+namespace SneakyPanel\Http\Controllers\Admin\Nodes;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Support\Collection;
-use sneakypanel\Models\Allocation;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Models\Allocation;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory as ViewFactory;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
-use sneakypanel\Repositories\Eloquent\ServerRepository;
-use sneakypanel\Traits\Controllers\JavascriptInjection;
-use sneakypanel\Services\Helpers\SoftwareVersionService;
-use sneakypanel\Repositories\Eloquent\LocationRepository;
-use sneakypanel\Repositories\Eloquent\AllocationRepository;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Repositories\Eloquent\ServerRepository;
+use SneakyPanel\Traits\Controllers\JavascriptInjection;
+use SneakyPanel\Services\Helpers\SoftwareVersionService;
+use SneakyPanel\Repositories\Eloquent\LocationRepository;
+use SneakyPanel\Repositories\Eloquent\AllocationRepository;
 
 class NodeViewController extends Controller
 {
@@ -29,7 +29,7 @@ class NodeViewController extends Controller
         private NodeRepository $repository,
         private ServerRepository $serverRepository,
         private SoftwareVersionService $versionService,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 

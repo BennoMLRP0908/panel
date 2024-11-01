@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Egg;
+namespace SneakyPanel\Http\Requests\Admin\Egg;
 
-use sneakypanel\Models\EggVariable;
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Models\EggVariable;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class EggVariableFormRequest extends AdminFormRequest
 {

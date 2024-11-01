@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Observers;
+namespace SneakyPanel\Observers;
 
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\EggVariable;
 
 class EggVariableObserver
 {

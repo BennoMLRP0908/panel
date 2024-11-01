@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Node;
+namespace SneakyPanel\Exceptions\Service\Node;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class ConfigurationNotPersistedException extends DisplayException
 {

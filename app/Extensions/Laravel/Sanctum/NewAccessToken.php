@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Extensions\Laravel\Sanctum;
+namespace SneakyPanel\Extensions\Laravel\Sanctum;
 
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Laravel\Sanctum\NewAccessToken as SanctumAccessToken;
 
 /**
- * @property ApiKey $accessToken
+ * @property \SneakyPanel\Models\ApiKey $accessToken
  */
 class NewAccessToken extends SanctumAccessToken
 {

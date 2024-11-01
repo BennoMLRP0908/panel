@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Remote;
+namespace SneakyPanel\Http\Controllers\Api\Remote;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Servers\EnvironmentService;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Servers\EnvironmentService;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
 
 class EggInstallController extends Controller
 {
@@ -21,13 +21,13 @@ class EggInstallController extends Controller
      * Handle request to get script and installation information for a server
      * that is being created on the node.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(Request $request, string $uuid): JsonResponse
     {
         $node = $request->attributes->get('node');
 
-        /** @var \sneakypanel\Models\Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $this->repository->findFirstWhere([
             ['uuid', '=', $uuid],
             ['node_id', '=', $node->id],

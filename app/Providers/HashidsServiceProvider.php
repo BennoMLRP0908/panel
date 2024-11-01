@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
-use sneakypanel\Extensions\Hashids;
+use SneakyPanel\Extensions\Hashids;
 use Illuminate\Support\ServiceProvider;
-use sneakypanel\Contracts\Extensions\HashidsInterface;
+use SneakyPanel\Contracts\Extensions\HashidsInterface;
 
 class HashidsServiceProvider extends ServiceProvider
 {

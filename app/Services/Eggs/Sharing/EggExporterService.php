@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Eggs\Sharing;
+namespace SneakyPanel\Services\Eggs\Sharing;
 
 use Carbon\Carbon;
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Support\Collection;
-use sneakypanel\Models\EggVariable;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Models\EggVariable;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
 
 class EggExporterService
 {
@@ -20,14 +20,14 @@ class EggExporterService
     /**
      * Return a JSON representation of an egg and its variables.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function handle(int $egg): string
     {
         $egg = $this->repository->getWithExportAttributes($egg);
 
         $struct = [
-            '_comment' => 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY sneakypanel PANEL - sneakypanel.com',
+            '_comment' => 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO',
             'meta' => [
                 'version' => Egg::EXPORT_VERSION,
                 'update_url' => $egg->update_url,

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Location;
+use SneakyPanel\Models\Location;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
 
 class LocationRepository extends EloquentRepository implements LocationRepositoryInterface
 {
@@ -37,7 +37,7 @@ class LocationRepository extends EloquentRepository implements LocationRepositor
     /**
      * Return all the nodes and their respective count of servers for a location.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithNodes(int $id): Location
     {
@@ -51,7 +51,7 @@ class LocationRepository extends EloquentRepository implements LocationRepositor
     /**
      * Return a location and the count of nodes in that location.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithNodeCount(int $id): Location
     {

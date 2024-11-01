@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Traits\Controllers;
+namespace SneakyPanel\Traits\Controllers;
 
 use JavaScript;
 

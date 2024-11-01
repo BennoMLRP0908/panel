@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Facades;
+namespace SneakyPanel\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use sneakypanel\Services\Activity\ActivityLogTargetableService;
+use SneakyPanel\Services\Activity\ActivityLogTargetableService;
 
 class LogTarget extends Facade
 {

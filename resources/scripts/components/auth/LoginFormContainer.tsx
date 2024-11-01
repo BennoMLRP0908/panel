@@ -44,11 +44,11 @@ export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => 
             &copy; 2015 - {new Date().getFullYear()}&nbsp;
             <a
                 rel={'noopener nofollow noreferrer'}
-                href={'https://sneakypanel.com'}
+                href={'https://sneakypanel.io'}
                 target={'_blank'}
                 css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
             >
-                sneakypanel Software
+                SneakyPanel Software
             </a>
         </p>
     </Container>

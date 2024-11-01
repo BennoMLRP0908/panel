@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nests;
+namespace SneakyPanel\Http\Controllers\Admin\Nests;
 
 use Illuminate\View\View;
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Eggs\Scripts\InstallScriptService;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Egg\EggScriptFormRequest;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Eggs\Scripts\InstallScriptService;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Egg\EggScriptFormRequest;
 
 class EggScriptController extends Controller
 {
@@ -21,7 +21,7 @@ class EggScriptController extends Controller
         protected AlertsMessageBag $alert,
         protected EggRepositoryInterface $repository,
         protected InstallScriptService $installScriptService,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
@@ -51,9 +51,9 @@ class EggScriptController extends Controller
     /**
      * Handle a request to update the installation script for an Egg.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Egg\InvalidCopyFromException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\InvalidCopyFromException
      */
     public function update(EggScriptFormRequest $request, Egg $egg): RedirectResponse
     {

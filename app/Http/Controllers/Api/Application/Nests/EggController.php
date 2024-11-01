@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Nests;
+namespace SneakyPanel\Http\Controllers\Api\Application\Nests;
 
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\Nest;
-use sneakypanel\Transformers\Api\Application\EggTransformer;
-use sneakypanel\Http\Requests\Api\Application\Nests\Eggs\GetEggRequest;
-use sneakypanel\Http\Requests\Api\Application\Nests\Eggs\GetEggsRequest;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\Nest;
+use SneakyPanel\Transformers\Api\Application\EggTransformer;
+use SneakyPanel\Http\Requests\Api\Application\Nests\Eggs\GetEggRequest;
+use SneakyPanel\Http\Requests\Api\Application\Nests\Eggs\GetEggsRequest;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class EggController extends ApplicationApiController
 {

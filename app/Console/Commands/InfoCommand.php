@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Console\Commands;
+namespace SneakyPanel\Console\Commands;
 
 use Illuminate\Console\Command;
-use sneakypanel\Services\Helpers\SoftwareVersionService;
+use SneakyPanel\Services\Helpers\SoftwareVersionService;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
 class InfoCommand extends Command

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
-use sneakypanel\Models\ActivityLog;
+use SneakyPanel\Models\ActivityLog;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
-use sneakypanel\Transformers\Api\Client\ActivityLogTransformer;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Transformers\Api\Client\ActivityLogTransformer;
 
 class ActivityLogController extends ClientApiController
 {

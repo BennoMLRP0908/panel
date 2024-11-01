@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Deployment;
+namespace SneakyPanel\Services\Deployment;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Webmozart\Assert\Assert;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use sneakypanel\Exceptions\Service\Deployment\NoViableNodeException;
+use SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException;
 
 class FindViableNodesService
 {
@@ -64,9 +64,9 @@ class FindViableNodesService
      *                       If "null" is provided as the value no pagination will
      *                       be used.
      *
-     * @throws NoViableNodeException
+     * @throws \SneakyPanel\Exceptions\Service\Deployment\NoViableNodeException
      */
-    public function handle(?int $perPage = null, ?int $page = null): LengthAwarePaginator|Collection
+    public function handle(int $perPage = null, int $page = null): LengthAwarePaginator|Collection
     {
         Assert::integer($this->disk, 'Disk space must be an int, got %s');
         Assert::integer($this->memory, 'Memory usage must be an int, got %s');

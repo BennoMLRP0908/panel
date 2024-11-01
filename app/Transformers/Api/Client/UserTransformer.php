@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
 use Illuminate\Support\Str;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 
 class UserTransformer extends BaseClientTransformer
 {

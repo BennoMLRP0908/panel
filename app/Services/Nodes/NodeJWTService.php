@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Services\Nodes;
+namespace SneakyPanel\Services\Nodes;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
-use sneakypanel\Models\Node;
-use sneakypanel\Models\User;
+use SneakyPanel\Models\Node;
+use SneakyPanel\Models\User;
 use Lcobucci\JWT\Token\Plain;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key\InMemory;
-use sneakypanel\Extensions\Lcobucci\JWT\Encoding\TimestampDates;
+use SneakyPanel\Extensions\Lcobucci\JWT\Encoding\TimestampDates;
 
 class NodeJWTService
 {

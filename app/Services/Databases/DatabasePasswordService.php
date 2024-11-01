@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Services\Databases;
+namespace SneakyPanel\Services\Databases;
 
-use sneakypanel\Models\Database;
-use sneakypanel\Helpers\Utilities;
+use SneakyPanel\Models\Database;
+use SneakyPanel\Helpers\Utilities;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Encryption\Encrypter;
-use sneakypanel\Extensions\DynamicDatabaseConnection;
-use sneakypanel\Contracts\Repository\DatabaseRepositoryInterface;
+use SneakyPanel\Extensions\DynamicDatabaseConnection;
+use SneakyPanel\Contracts\Repository\DatabaseRepositoryInterface;
 
 class DatabasePasswordService
 {
@@ -18,7 +18,7 @@ class DatabasePasswordService
         private ConnectionInterface $connection,
         private DynamicDatabaseConnection $dynamic,
         private Encrypter $encrypter,
-        private DatabaseRepositoryInterface $repository,
+        private DatabaseRepositoryInterface $repository
     ) {
     }
 

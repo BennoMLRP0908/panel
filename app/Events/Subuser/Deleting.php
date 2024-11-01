@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Events\Subuser;
+namespace SneakyPanel\Events\Subuser;
 
-use sneakypanel\Events\Event;
-use sneakypanel\Models\Subuser;
+use SneakyPanel\Events\Event;
+use SneakyPanel\Models\Subuser;
 use Illuminate\Queue\SerializesModels;
 
 class Deleting extends Event

@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
 use Illuminate\Support\Collection;
-use sneakypanel\Models\DatabaseHost;
-use sneakypanel\Contracts\Repository\DatabaseHostRepositoryInterface;
+use SneakyPanel\Models\DatabaseHost;
+use SneakyPanel\Contracts\Repository\DatabaseHostRepositoryInterface;
 
 class DatabaseHostRepository extends EloquentRepository implements DatabaseHostRepositoryInterface
 {

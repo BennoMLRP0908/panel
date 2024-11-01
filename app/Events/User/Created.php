@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Events\User;
+namespace SneakyPanel\Events\User;
 
-use sneakypanel\Models\User;
-use sneakypanel\Events\Event;
+use SneakyPanel\Models\User;
+use SneakyPanel\Events\Event;
 use Illuminate\Queue\SerializesModels;
 
 class Created extends Event

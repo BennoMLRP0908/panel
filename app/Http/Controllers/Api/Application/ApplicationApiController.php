@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application;
+namespace SneakyPanel\Http\Controllers\Api\Application;
 
 use Illuminate\Http\Request;
 use Webmozart\Assert\Assert;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Container\Container;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Extensions\Spatie\Fractalistic\Fractal;
-use sneakypanel\Transformers\Api\Application\BaseTransformer;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Extensions\Spatie\Fractalistic\Fractal;
+use SneakyPanel\Transformers\Api\Application\BaseTransformer;
 
 abstract class ApplicationApiController extends Controller
 {
@@ -49,7 +49,7 @@ abstract class ApplicationApiController extends Controller
     /**
      * Return an instance of an application transformer.
      *
-     * @template T of \sneakypanel\Transformers\Api\Application\BaseTransformer
+     * @template T of \SneakyPanel\Transformers\Api\Application\BaseTransformer
      *
      * @param class-string<T> $abstract
      *

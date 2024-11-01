@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Subuser;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
-use sneakypanel\Contracts\Repository\SubuserRepositoryInterface;
+use SneakyPanel\Models\Subuser;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\SubuserRepositoryInterface;
 
 class SubuserRepository extends EloquentRepository implements SubuserRepositoryInterface
 {
@@ -51,7 +51,7 @@ class SubuserRepository extends EloquentRepository implements SubuserRepositoryI
     /**
      * Return a subuser and associated permissions given a user_id and server_id.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithPermissionsUsingUserAndServer(int $user, int $server): Subuser
     {

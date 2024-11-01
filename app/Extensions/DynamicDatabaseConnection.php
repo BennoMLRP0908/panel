@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Extensions;
+namespace SneakyPanel\Extensions;
 
-use sneakypanel\Models\DatabaseHost;
+use SneakyPanel\Models\DatabaseHost;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Config\Repository as ConfigRepository;
-use sneakypanel\Contracts\Repository\DatabaseHostRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseHostRepositoryInterface;
 
 class DynamicDatabaseConnection
 {
@@ -19,14 +19,14 @@ class DynamicDatabaseConnection
     public function __construct(
         protected ConfigRepository $config,
         protected Encrypter $encrypter,
-        protected DatabaseHostRepositoryInterface $repository,
+        protected DatabaseHostRepositoryInterface $repository
     ) {
     }
 
     /**
      * Adds a dynamic database connection entry to the runtime config.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function set(string $connection, DatabaseHost|int $host, string $database = 'mysql'): void
     {

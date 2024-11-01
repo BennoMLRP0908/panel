@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Setting;
-use sneakypanel\Contracts\Repository\SettingsRepositoryInterface;
+use SneakyPanel\Models\Setting;
+use SneakyPanel\Contracts\Repository\SettingsRepositoryInterface;
 
 class SettingsRepository extends EloquentRepository implements SettingsRepositoryInterface
 {
@@ -22,9 +22,9 @@ class SettingsRepository extends EloquentRepository implements SettingsRepositor
     /**
      * Store a new persistent setting in the database.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
-    public function set(string $key, ?string $value = null)
+    public function set(string $key, string $value = null)
     {
         // Clear item from the cache.
         $this->clearCache($key);

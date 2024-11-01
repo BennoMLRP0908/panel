@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Application\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Application\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Services\Servers\SuspensionService;
-use sneakypanel\Services\Servers\ReinstallServerService;
-use sneakypanel\Http\Requests\Api\Application\Servers\ServerWriteRequest;
-use sneakypanel\Http\Controllers\Api\Application\ApplicationApiController;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Services\Servers\SuspensionService;
+use SneakyPanel\Services\Servers\ReinstallServerService;
+use SneakyPanel\Http\Requests\Api\Application\Servers\ServerWriteRequest;
+use SneakyPanel\Http\Controllers\Api\Application\ApplicationApiController;
 
 class ServerManagementController extends ApplicationApiController
 {
@@ -16,7 +16,7 @@ class ServerManagementController extends ApplicationApiController
      */
     public function __construct(
         private ReinstallServerService $reinstallServerService,
-        private SuspensionService $suspensionService,
+        private SuspensionService $suspensionService
     ) {
         parent::__construct();
     }
@@ -48,9 +48,9 @@ class ServerManagementController extends ApplicationApiController
     /**
      * Mark a server as needing to be reinstalled.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function reinstall(ServerWriteRequest $request, Server $server): Response
     {

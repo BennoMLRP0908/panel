@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Notifications;
+namespace SneakyPanel\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;

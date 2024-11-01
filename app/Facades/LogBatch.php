@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Facades;
+namespace SneakyPanel\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use sneakypanel\Services\Activity\ActivityLogBatchService;
+use SneakyPanel\Services\Activity\ActivityLogBatchService;
 
 class LogBatch extends Facade
 {

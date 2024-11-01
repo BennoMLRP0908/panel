@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use sneakypanel\Models\Schedule;
+use SneakyPanel\Models\Schedule;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ScheduleFactory extends Factory

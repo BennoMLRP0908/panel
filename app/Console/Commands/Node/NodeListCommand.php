@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Node;
+namespace SneakyPanel\Console\Commands\Node;
 
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Console\Command;
 
 class NodeListCommand extends Command

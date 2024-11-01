@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Webmozart\Assert\Assert;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
 
 class EggRepository extends EloquentRepository implements EggRepositoryInterface
 {
@@ -22,7 +22,7 @@ class EggRepository extends EloquentRepository implements EggRepositoryInterface
     /**
      * Return an egg with the variables relation attached.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithVariables(int $id): Egg
     {
@@ -46,7 +46,7 @@ class EggRepository extends EloquentRepository implements EggRepositoryInterface
      *
      * @param int|string $value
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithCopyAttributes($value, string $column = 'id'): Egg
     {
@@ -62,7 +62,7 @@ class EggRepository extends EloquentRepository implements EggRepositoryInterface
     /**
      * Return all the data needed to export a service.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getWithExportAttributes(int $id): Egg
     {

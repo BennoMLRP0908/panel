@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\RecoveryToken;
+use SneakyPanel\Models\RecoveryToken;
 
 class RecoveryTokenRepository extends EloquentRepository
 {

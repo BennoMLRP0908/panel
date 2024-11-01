@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Api\Client;
+namespace SneakyPanel\Http\Middleware\Api\Client;
 
 use Illuminate\Http\Request;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class RequireClientApiKey

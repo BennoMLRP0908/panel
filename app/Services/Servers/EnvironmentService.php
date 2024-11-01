@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\EggVariable;
 
 class EnvironmentService
 {

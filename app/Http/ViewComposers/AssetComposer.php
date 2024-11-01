@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Http\ViewComposers;
+namespace SneakyPanel\Http\ViewComposers;
 
 use Illuminate\View\View;
-use sneakypanel\Services\Helpers\AssetHashService;
+use SneakyPanel\Services\Helpers\AssetHashService;
 
 class AssetComposer
 {
@@ -21,7 +21,7 @@ class AssetComposer
     {
         $view->with('asset', $this->assetHashService);
         $view->with('siteConfiguration', [
-            'name' => config('app.name') ?? 'sneakypanel',
+            'name' => config('app.name') ?? 'SneakyPanel',
             'locale' => config('app.locale') ?? 'en',
             'recaptcha' => [
                 'enabled' => config('recaptcha.enabled', false),

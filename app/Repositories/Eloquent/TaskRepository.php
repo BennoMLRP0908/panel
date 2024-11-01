@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
-use sneakypanel\Models\Task;
+use SneakyPanel\Models\Task;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Contracts\Repository\TaskRepositoryInterface;
-use sneakypanel\Exceptions\Repository\RecordNotFoundException;
+use SneakyPanel\Contracts\Repository\TaskRepositoryInterface;
+use SneakyPanel\Exceptions\Repository\RecordNotFoundException;
 
 class TaskRepository extends EloquentRepository implements TaskRepositoryInterface
 {
@@ -20,7 +20,7 @@ class TaskRepository extends EloquentRepository implements TaskRepositoryInterfa
     /**
      * Get a task and the server relationship for that task.
      *
-     * @throws RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function getTaskForJobProcess(int $id): Task
     {

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Client\Servers\Schedules;
+namespace SneakyPanel\Http\Requests\Api\Client\Servers\Schedules;
 
-use sneakypanel\Models\Task;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Schedule;
-use sneakypanel\Models\Permission;
-use sneakypanel\Http\Requests\Api\Client\ClientApiRequest;
+use SneakyPanel\Models\Task;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Schedule;
+use SneakyPanel\Models\Permission;
+use SneakyPanel\Http\Requests\Api\Client\ClientApiRequest;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ViewScheduleRequest extends ClientApiRequest

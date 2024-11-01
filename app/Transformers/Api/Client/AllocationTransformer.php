@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 
 class AllocationTransformer extends BaseClientTransformer
 {

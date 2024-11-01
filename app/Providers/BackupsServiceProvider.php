@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Providers;
+namespace SneakyPanel\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use sneakypanel\Extensions\Backups\BackupManager;
+use SneakyPanel\Extensions\Backups\BackupManager;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
 class BackupsServiceProvider extends ServiceProvider implements DeferrableProvider

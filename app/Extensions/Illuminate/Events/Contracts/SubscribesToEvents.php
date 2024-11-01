@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Extensions\Illuminate\Events\Contracts;
+namespace SneakyPanel\Extensions\Illuminate\Events\Contracts;
 
 use Illuminate\Contracts\Events\Dispatcher;
 

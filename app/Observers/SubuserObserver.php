@@ -1,11 +1,11 @@
 <?php
 
-namespace sneakypanel\Observers;
+namespace SneakyPanel\Observers;
 
-use sneakypanel\Events;
-use sneakypanel\Models\Subuser;
-use sneakypanel\Notifications\AddedToServer;
-use sneakypanel\Notifications\RemovedFromServer;
+use SneakyPanel\Events;
+use SneakyPanel\Models\Subuser;
+use SneakyPanel\Notifications\AddedToServer;
+use SneakyPanel\Notifications\RemovedFromServer;
 
 class SubuserObserver
 {

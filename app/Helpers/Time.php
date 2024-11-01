@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Helpers;
+namespace SneakyPanel\Helpers;
 
 use Carbon\CarbonImmutable;
 

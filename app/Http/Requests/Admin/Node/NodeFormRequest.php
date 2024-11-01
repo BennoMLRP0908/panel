@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Node;
+namespace SneakyPanel\Http\Requests\Admin\Node;
 
-use sneakypanel\Rules\Fqdn;
-use sneakypanel\Models\Node;
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Rules\Fqdn;
+use SneakyPanel\Models\Node;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class NodeFormRequest extends AdminFormRequest
 {

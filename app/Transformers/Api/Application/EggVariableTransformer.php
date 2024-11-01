@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Application;
+namespace SneakyPanel\Transformers\Api\Application;
 
-use sneakypanel\Models\Egg;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Models\EggVariable;
 
 class EggVariableTransformer extends BaseTransformer
 {

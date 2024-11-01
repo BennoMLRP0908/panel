@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Repositories\Eloquent;
+namespace SneakyPanel\Repositories\Eloquent;
 
 use Carbon\Carbon;
-use sneakypanel\Models\Backup;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Backup;
+use SneakyPanel\Models\Server;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 

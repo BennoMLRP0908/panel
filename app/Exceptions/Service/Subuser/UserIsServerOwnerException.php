@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Subuser;
+namespace SneakyPanel\Exceptions\Service\Subuser;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class UserIsServerOwnerException extends DisplayException
 {

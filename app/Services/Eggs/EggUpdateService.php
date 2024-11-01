@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Eggs;
+namespace SneakyPanel\Services\Eggs;
 
-use sneakypanel\Models\Egg;
-use sneakypanel\Contracts\Repository\EggRepositoryInterface;
-use sneakypanel\Exceptions\Service\Egg\NoParentConfigurationFoundException;
+use SneakyPanel\Models\Egg;
+use SneakyPanel\Contracts\Repository\EggRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Egg\NoParentConfigurationFoundException;
 
 class EggUpdateService
 {
@@ -18,9 +18,9 @@ class EggUpdateService
     /**
      * Update a service option.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws NoParentConfigurationFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\NoParentConfigurationFoundException
      */
     public function handle(Egg $egg, array $data): void
     {

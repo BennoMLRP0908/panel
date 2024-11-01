@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use sneakypanel\Http\Controllers\Base;
-use sneakypanel\Http\Middleware\RequireTwoFactorAuthentication;
+use SneakyPanel\Http\Controllers\Base;
+use SneakyPanel\Http\Middleware\RequireTwoFactorAuthentication;
 
 Route::get('/', [Base\IndexController::class, 'index'])->name('index')->fallback();
 Route::get('/account', [Base\IndexController::class, 'index'])

@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nests;
+namespace SneakyPanel\Http\Controllers\Admin\Nests;
 
-use sneakypanel\Models\Egg;
+use SneakyPanel\Models\Egg;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use sneakypanel\Services\Eggs\Sharing\EggExporterService;
-use sneakypanel\Services\Eggs\Sharing\EggImporterService;
-use sneakypanel\Http\Requests\Admin\Egg\EggImportFormRequest;
-use sneakypanel\Services\Eggs\Sharing\EggUpdateImporterService;
+use SneakyPanel\Services\Eggs\Sharing\EggExporterService;
+use SneakyPanel\Services\Eggs\Sharing\EggImporterService;
+use SneakyPanel\Http\Requests\Admin\Egg\EggImportFormRequest;
+use SneakyPanel\Services\Eggs\Sharing\EggUpdateImporterService;
 
 class EggShareController extends Controller
 {
@@ -21,12 +21,12 @@ class EggShareController extends Controller
         protected AlertsMessageBag $alert,
         protected EggExporterService $exporterService,
         protected EggImporterService $importerService,
-        protected EggUpdateImporterService $updateImporterService,
+        protected EggUpdateImporterService $updateImporterService
     ) {
     }
 
     /**
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function export(Egg $egg): Response
     {
@@ -43,10 +43,10 @@ class EggShareController extends Controller
     /**
      * Import a new service option using an XML file.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Egg\BadJsonFormatException
-     * @throws \sneakypanel\Exceptions\Service\InvalidFileUploadException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\BadJsonFormatException
+     * @throws \SneakyPanel\Exceptions\Service\InvalidFileUploadException
      */
     public function import(EggImportFormRequest $request): RedirectResponse
     {
@@ -59,10 +59,10 @@ class EggShareController extends Controller
     /**
      * Update an existing Egg using a new imported file.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
-     * @throws \sneakypanel\Exceptions\Service\Egg\BadJsonFormatException
-     * @throws \sneakypanel\Exceptions\Service\InvalidFileUploadException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Service\Egg\BadJsonFormatException
+     * @throws \SneakyPanel\Exceptions\Service\InvalidFileUploadException
      */
     public function update(EggImportFormRequest $request, Egg $egg): RedirectResponse
     {

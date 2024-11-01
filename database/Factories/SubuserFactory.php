@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use sneakypanel\Models\Subuser;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Subuser;
+use SneakyPanel\Models\Permission;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SubuserFactory extends Factory

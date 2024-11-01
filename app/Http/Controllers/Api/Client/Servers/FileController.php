@@ -1,27 +1,27 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\JsonResponse;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Services\Nodes\NodeJWTService;
-use sneakypanel\Repositories\Wings\DaemonFileRepository;
-use sneakypanel\Transformers\Api\Client\FileObjectTransformer;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\CopyFileRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\PullFileRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\ListFilesRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\ChmodFilesRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\DeleteFileRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\RenameFileRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\CreateFolderRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\CompressFilesRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\DecompressFilesRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\GetFileContentsRequest;
-use sneakypanel\Http\Requests\Api\Client\Servers\Files\WriteFileContentRequest;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Services\Nodes\NodeJWTService;
+use SneakyPanel\Repositories\Wings\DaemonFileRepository;
+use SneakyPanel\Transformers\Api\Client\FileObjectTransformer;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\CopyFileRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\PullFileRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\ListFilesRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\ChmodFilesRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\DeleteFileRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\RenameFileRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\CreateFolderRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\CompressFilesRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\DecompressFilesRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\GetFileContentsRequest;
+use SneakyPanel\Http\Requests\Api\Client\Servers\Files\WriteFileContentRequest;
 
 class FileController extends ClientApiController
 {
@@ -30,7 +30,7 @@ class FileController extends ClientApiController
      */
     public function __construct(
         private NodeJWTService $jwtService,
-        private DaemonFileRepository $fileRepository,
+        private DaemonFileRepository $fileRepository
     ) {
         parent::__construct();
     }
@@ -38,7 +38,7 @@ class FileController extends ClientApiController
     /**
      * Returns a listing of files in a given directory.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function directory(ListFilesRequest $request, Server $server): array
     {
@@ -102,7 +102,7 @@ class FileController extends ClientApiController
     /**
      * Writes the contents of the specified file to the server.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function write(WriteFileContentRequest $request, Server $server): JsonResponse
     {
@@ -154,7 +154,7 @@ class FileController extends ClientApiController
     /**
      * Copies a file on the server.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function copy(CopyFileRequest $request, Server $server): JsonResponse
     {
@@ -168,7 +168,7 @@ class FileController extends ClientApiController
     }
 
     /**
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function compress(CompressFilesRequest $request, Server $server): array
     {
@@ -188,7 +188,7 @@ class FileController extends ClientApiController
     }
 
     /**
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function decompress(DecompressFilesRequest $request, Server $server): JsonResponse
     {
@@ -210,7 +210,7 @@ class FileController extends ClientApiController
     /**
      * Deletes files or folders for the server in the given root directory.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function delete(DeleteFileRequest $request, Server $server): JsonResponse
     {
@@ -230,7 +230,7 @@ class FileController extends ClientApiController
     /**
      * Updates file permissions for file(s) in the given root directory.
      *
-     * @throws \sneakypanel\Exceptions\Http\Connection\DaemonConnectionException
+     * @throws \SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException
      */
     public function chmod(ChmodFilesRequest $request, Server $server): JsonResponse
     {

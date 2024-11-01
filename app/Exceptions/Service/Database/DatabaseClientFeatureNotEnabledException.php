@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Database;
+namespace SneakyPanel\Exceptions\Service\Database;
 
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
-class DatabaseClientFeatureNotEnabledException extends sneakypanelException
+class DatabaseClientFeatureNotEnabledException extends SneakyPanelException
 {
     public function __construct()
     {

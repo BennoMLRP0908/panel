@@ -1,14 +1,14 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client;
+namespace SneakyPanel\Http\Controllers\Api\Client;
 
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Permission;
 use Spatie\QueryBuilder\QueryBuilder;
 use Spatie\QueryBuilder\AllowedFilter;
-use sneakypanel\Models\Filters\MultiFieldServerFilter;
-use sneakypanel\Transformers\Api\Client\ServerTransformer;
-use sneakypanel\Http\Requests\Api\Client\GetServersRequest;
+use SneakyPanel\Models\Filters\MultiFieldServerFilter;
+use SneakyPanel\Transformers\Api\Client\ServerTransformer;
+use SneakyPanel\Http\Requests\Api\Client\GetServersRequest;
 
 class ClientController extends ClientApiController
 {

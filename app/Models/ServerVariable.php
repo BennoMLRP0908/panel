@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string $variable_value
  * @property \Carbon\CarbonImmutable|null $created_at
  * @property \Carbon\CarbonImmutable|null $updated_at
- * @property EggVariable $variable
- * @property Server $server
+ * @property \SneakyPanel\Models\EggVariable $variable
+ * @property \SneakyPanel\Models\Server $server
  */
 class ServerVariable extends Model
 {

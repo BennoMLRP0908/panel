@@ -1,9 +1,8 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @property int $id
@@ -13,14 +12,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string|null $description
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Server[] $servers
- * @property \Illuminate\Database\Eloquent\Collection|\sneakypanel\Models\Egg[] $eggs
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Server[] $servers
+ * @property \Illuminate\Database\Eloquent\Collection|\SneakyPanel\Models\Egg[] $eggs
  */
 class Nest extends Model
 {
-    /** @use HasFactory<\Database\Factories\NestFactory> */
-    use HasFactory;
-
     /**
      * The resource name for this model when it is transformed into an
      * API representation using fractal.

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Location;
+namespace SneakyPanel\Exceptions\Service\Location;
 
 use Illuminate\Http\Response;
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class HasActiveNodesException extends DisplayException
 {

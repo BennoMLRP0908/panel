@@ -1,17 +1,17 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nests;
+namespace SneakyPanel\Http\Controllers\Admin\Nests;
 
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Nests\NestUpdateService;
-use sneakypanel\Services\Nests\NestCreationService;
-use sneakypanel\Services\Nests\NestDeletionService;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Nest\StoreNestFormRequest;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Nests\NestUpdateService;
+use SneakyPanel\Services\Nests\NestCreationService;
+use SneakyPanel\Services\Nests\NestDeletionService;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Nest\StoreNestFormRequest;
 
 class NestController extends Controller
 {
@@ -24,14 +24,14 @@ class NestController extends Controller
         protected NestDeletionService $nestDeletionService,
         protected NestRepositoryInterface $repository,
         protected NestUpdateService $nestUpdateService,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
     /**
      * Render nest listing page.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function index(): View
     {
@@ -51,7 +51,7 @@ class NestController extends Controller
     /**
      * Handle the storage of a new nest.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(StoreNestFormRequest $request): RedirectResponse
     {
@@ -64,7 +64,7 @@ class NestController extends Controller
     /**
      * Return details about a nest including all the eggs and servers per egg.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function view(int $nest): View
     {
@@ -76,8 +76,8 @@ class NestController extends Controller
     /**
      * Handle request to update a nest.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(StoreNestFormRequest $request, int $nest): RedirectResponse
     {
@@ -90,7 +90,7 @@ class NestController extends Controller
     /**
      * Handle request to delete a nest.
      *
-     * @throws \sneakypanel\Exceptions\Service\HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function destroy(int $nest): RedirectResponse
     {

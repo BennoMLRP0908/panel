@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Contracts\Repository;
+namespace SneakyPanel\Contracts\Repository;
 
 interface SettingsRepositoryInterface extends RepositoryInterface
 {
     /**
      * Store a new persistent setting in the database.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
-    public function set(string $key, ?string $value = null);
+    public function set(string $key, string $value = null);
 
     /**
      * Retrieve a persistent setting from the database.

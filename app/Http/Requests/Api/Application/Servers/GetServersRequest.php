@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Servers;
+namespace SneakyPanel\Http\Requests\Api\Application\Servers;
 
 class GetServersRequest extends GetServerRequest
 {

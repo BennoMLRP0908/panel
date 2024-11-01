@@ -1,21 +1,21 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Exception;
 use Illuminate\View\View;
-use sneakypanel\Models\DatabaseHost;
+use SneakyPanel\Models\DatabaseHost;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Databases\Hosts\HostUpdateService;
-use sneakypanel\Http\Requests\Admin\DatabaseHostFormRequest;
-use sneakypanel\Services\Databases\Hosts\HostCreationService;
-use sneakypanel\Services\Databases\Hosts\HostDeletionService;
-use sneakypanel\Contracts\Repository\DatabaseRepositoryInterface;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
-use sneakypanel\Contracts\Repository\DatabaseHostRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Databases\Hosts\HostUpdateService;
+use SneakyPanel\Http\Requests\Admin\DatabaseHostFormRequest;
+use SneakyPanel\Services\Databases\Hosts\HostCreationService;
+use SneakyPanel\Services\Databases\Hosts\HostDeletionService;
+use SneakyPanel\Contracts\Repository\DatabaseRepositoryInterface;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Contracts\Repository\DatabaseHostRepositoryInterface;
 
 class DatabaseController extends Controller
 {
@@ -30,7 +30,7 @@ class DatabaseController extends Controller
         private HostDeletionService $deletionService,
         private HostUpdateService $updateService,
         private LocationRepositoryInterface $locationRepository,
-        private ViewFactory $view,
+        private ViewFactory $view
     ) {
     }
 
@@ -48,7 +48,7 @@ class DatabaseController extends Controller
     /**
      * Display database host to user.
      *
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function view(int $host): View
     {
@@ -117,7 +117,7 @@ class DatabaseController extends Controller
     /**
      * Handle request to delete a database host.
      *
-     * @throws \sneakypanel\Exceptions\Service\HasActiveServersException
+     * @throws \SneakyPanel\Exceptions\Service\HasActiveServersException
      */
     public function delete(int $host): RedirectResponse
     {

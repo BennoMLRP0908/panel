@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Egg;
+namespace SneakyPanel\Http\Requests\Admin\Egg;
 
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class EggImportFormRequest extends AdminFormRequest
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Nodes;
+namespace SneakyPanel\Http\Controllers\Admin\Nodes;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Spatie\QueryBuilder\QueryBuilder;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 
 class NodeController extends Controller

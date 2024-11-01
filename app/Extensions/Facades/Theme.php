@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Extensions\Facades;
+namespace SneakyPanel\Extensions\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Observers;
+namespace SneakyPanel\Observers;
 
-use sneakypanel\Events;
-use sneakypanel\Models\Server;
+use SneakyPanel\Events;
+use SneakyPanel\Models\Server;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
 class ServerObserver

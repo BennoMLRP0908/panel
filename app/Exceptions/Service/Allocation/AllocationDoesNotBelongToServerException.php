@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Allocation;
+namespace SneakyPanel\Exceptions\Service\Allocation;
 
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
-class AllocationDoesNotBelongToServerException extends sneakypanelException
+class AllocationDoesNotBelongToServerException extends SneakyPanelException
 {
 }

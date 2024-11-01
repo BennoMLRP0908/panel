@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 
 class StartupCommandService
 {

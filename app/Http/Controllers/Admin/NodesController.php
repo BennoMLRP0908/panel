@@ -1,30 +1,30 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Node;
+use SneakyPanel\Models\Node;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Nodes\NodeUpdateService;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Nodes\NodeUpdateService;
 use Illuminate\Cache\Repository as CacheRepository;
-use sneakypanel\Services\Nodes\NodeCreationService;
-use sneakypanel\Services\Nodes\NodeDeletionService;
-use sneakypanel\Services\Allocations\AssignmentService;
-use sneakypanel\Services\Helpers\SoftwareVersionService;
-use sneakypanel\Http\Requests\Admin\Node\NodeFormRequest;
-use sneakypanel\Contracts\Repository\NodeRepositoryInterface;
-use sneakypanel\Contracts\Repository\ServerRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Node\AllocationFormRequest;
-use sneakypanel\Services\Allocations\AllocationDeletionService;
-use sneakypanel\Contracts\Repository\LocationRepositoryInterface;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
-use sneakypanel\Http\Requests\Admin\Node\AllocationAliasFormRequest;
+use SneakyPanel\Services\Nodes\NodeCreationService;
+use SneakyPanel\Services\Nodes\NodeDeletionService;
+use SneakyPanel\Services\Allocations\AssignmentService;
+use SneakyPanel\Services\Helpers\SoftwareVersionService;
+use SneakyPanel\Http\Requests\Admin\Node\NodeFormRequest;
+use SneakyPanel\Contracts\Repository\NodeRepositoryInterface;
+use SneakyPanel\Contracts\Repository\ServerRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Node\AllocationFormRequest;
+use SneakyPanel\Services\Allocations\AllocationDeletionService;
+use SneakyPanel\Contracts\Repository\LocationRepositoryInterface;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Http\Requests\Admin\Node\AllocationAliasFormRequest;
 
 class NodesController extends Controller
 {
@@ -44,7 +44,7 @@ class NodesController extends Controller
         protected ServerRepositoryInterface $serverRepository,
         protected NodeUpdateService $updateService,
         protected SoftwareVersionService $versionService,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
@@ -66,7 +66,7 @@ class NodesController extends Controller
     /**
      * Post controller to create a new node on the system.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function store(NodeFormRequest $request): RedirectResponse
     {
@@ -79,9 +79,9 @@ class NodesController extends Controller
     /**
      * Updates settings for a node.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function updateSettings(NodeFormRequest $request, Node $node): RedirectResponse
     {
@@ -94,7 +94,7 @@ class NodesController extends Controller
     /**
      * Removes a single allocation from a node.
      *
-     * @throws \sneakypanel\Exceptions\Service\Allocation\ServerUsingAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\ServerUsingAllocationException
      */
     public function allocationRemoveSingle(int $node, Allocation $allocation): Response
     {
@@ -106,7 +106,7 @@ class NodesController extends Controller
     /**
      * Removes multiple individual allocations from a node.
      *
-     * @throws \sneakypanel\Exceptions\Service\Allocation\ServerUsingAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\ServerUsingAllocationException
      */
     public function allocationRemoveMultiple(Request $request, int $node): Response
     {
@@ -140,8 +140,8 @@ class NodesController extends Controller
     /**
      * Sets an alias for a specific allocation on a node.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function allocationSetAlias(AllocationAliasFormRequest $request): \Symfony\Component\HttpFoundation\Response
     {
@@ -155,10 +155,10 @@ class NodesController extends Controller
     /**
      * Creates new allocations on a node.
      *
-     * @throws \sneakypanel\Exceptions\Service\Allocation\CidrOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\InvalidPortMappingException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\PortOutOfRangeException
-     * @throws \sneakypanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\CidrOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\InvalidPortMappingException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\PortOutOfRangeException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\TooManyPortsInRangeException
      */
     public function createAllocation(AllocationFormRequest $request, Node $node): RedirectResponse
     {
@@ -171,7 +171,7 @@ class NodesController extends Controller
     /**
      * Deletes a node from the system.
      *
-     * @throws \sneakypanel\Exceptions\DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function delete(int|Node $node): RedirectResponse
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Exceptions\Service\Schedule\Task;
+namespace SneakyPanel\Exceptions\Service\Schedule\Task;
 
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 
 class TaskIntervalTooLongException extends DisplayException
 {

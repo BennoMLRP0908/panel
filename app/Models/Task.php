@@ -1,12 +1,11 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Container\Container;
 use Znck\Eloquent\Traits\BelongsToThrough;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use sneakypanel\Contracts\Extensions\HashidsInterface;
+use SneakyPanel\Contracts\Extensions\HashidsInterface;
 
 /**
  * @property int $id
@@ -20,13 +19,11 @@ use sneakypanel\Contracts\Extensions\HashidsInterface;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property string $hashid
- * @property Schedule $schedule
- * @property Server $server
+ * @property \SneakyPanel\Models\Schedule $schedule
+ * @property \SneakyPanel\Models\Server $server
  */
 class Task extends Model
 {
-    /** @use HasFactory<\Database\Factories\TaskFactory> */
-    use HasFactory;
     use BelongsToThrough;
 
     /**
@@ -36,7 +33,7 @@ class Task extends Model
     public const RESOURCE_NAME = 'schedule_task';
 
     /**
-     * The default actions that can exist for a task in sneakypanel.
+     * The default actions that can exist for a task in SneakyPanel.
      */
     public const ACTION_POWER = 'power';
     public const ACTION_COMMAND = 'command';
@@ -96,6 +93,9 @@ class Task extends Model
         'continue_on_failure' => 'boolean',
     ];
 
+    /**
+     * {@inheritDoc}
+     */
     public function getRouteKeyName(): string
     {
         return $this->getKeyName();

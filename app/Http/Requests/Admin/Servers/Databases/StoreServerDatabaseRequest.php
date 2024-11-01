@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Servers\Databases;
+namespace SneakyPanel\Http\Requests\Admin\Servers\Databases;
 
 use Illuminate\Validation\Rule;
 use Illuminate\Database\Query\Builder;
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class StoreServerDatabaseRequest extends AdminFormRequest
 {

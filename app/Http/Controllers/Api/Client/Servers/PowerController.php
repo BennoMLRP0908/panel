@@ -1,13 +1,13 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Api\Client\Servers;
+namespace SneakyPanel\Http\Controllers\Api\Client\Servers;
 
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
-use sneakypanel\Facades\Activity;
-use sneakypanel\Repositories\Wings\DaemonPowerRepository;
-use sneakypanel\Http\Controllers\Api\Client\ClientApiController;
-use sneakypanel\Http\Requests\Api\Client\Servers\SendPowerRequest;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Facades\Activity;
+use SneakyPanel\Repositories\Wings\DaemonPowerRepository;
+use SneakyPanel\Http\Controllers\Api\Client\ClientApiController;
+use SneakyPanel\Http\Requests\Api\Client\Servers\SendPowerRequest;
 
 class PowerController extends ClientApiController
 {

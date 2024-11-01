@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Models;
+namespace SneakyPanel\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class MountServer extends Model
 
     public $timestamps = false;
 
-    protected $primaryKey;
+    protected $primaryKey = null;
 
     public $incrementing = false;
 }

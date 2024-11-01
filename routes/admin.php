@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use sneakypanel\Http\Controllers\Admin;
-use sneakypanel\Http\Middleware\Admin\Servers\ServerInstalled;
+use SneakyPanel\Http\Controllers\Admin;
+use SneakyPanel\Http\Middleware\Admin\Servers\ServerInstalled;
 
 Route::get('/', [Admin\BaseController::class, 'index'])->name('admin.index');
 

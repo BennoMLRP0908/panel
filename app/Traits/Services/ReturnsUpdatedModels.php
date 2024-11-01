@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Traits\Services;
+namespace SneakyPanel\Traits\Services;
 
 trait ReturnsUpdatedModels
 {

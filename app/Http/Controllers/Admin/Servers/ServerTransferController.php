@@ -1,19 +1,19 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin\Servers;
+namespace SneakyPanel\Http\Controllers\Admin\Servers;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\Request;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
-use sneakypanel\Models\ServerTransfer;
+use SneakyPanel\Models\ServerTransfer;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Http\Controllers\Controller;
-use sneakypanel\Services\Nodes\NodeJWTService;
-use sneakypanel\Repositories\Eloquent\NodeRepository;
-use sneakypanel\Repositories\Wings\DaemonTransferRepository;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Http\Controllers\Controller;
+use SneakyPanel\Services\Nodes\NodeJWTService;
+use SneakyPanel\Repositories\Eloquent\NodeRepository;
+use SneakyPanel\Repositories\Wings\DaemonTransferRepository;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
 
 class ServerTransferController extends Controller
 {
@@ -26,7 +26,7 @@ class ServerTransferController extends Controller
         private ConnectionInterface $connection,
         private DaemonTransferRepository $daemonTransferRepository,
         private NodeJWTService $nodeJWTService,
-        private NodeRepository $nodeRepository,
+        private NodeRepository $nodeRepository
     ) {
     }
 

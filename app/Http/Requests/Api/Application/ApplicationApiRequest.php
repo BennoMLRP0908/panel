@@ -1,15 +1,15 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application;
+namespace SneakyPanel\Http\Requests\Api\Application;
 
 use Webmozart\Assert\Assert;
-use sneakypanel\Models\ApiKey;
+use SneakyPanel\Models\ApiKey;
 use Laravel\Sanctum\TransientToken;
 use Illuminate\Validation\Validator;
 use Illuminate\Database\Eloquent\Model;
-use sneakypanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
 use Illuminate\Foundation\Http\FormRequest;
-use sneakypanel\Exceptions\sneakypanelException;
+use SneakyPanel\Exceptions\SneakyPanelException;
 
 abstract class ApplicationApiRequest extends FormRequest
 {
@@ -29,12 +29,12 @@ abstract class ApplicationApiRequest extends FormRequest
      * Determine if the current user is authorized to perform
      * the requested action against the API.
      *
-     * @throws sneakypanelException
+     * @throws \SneakyPanel\Exceptions\SneakyPanelException
      */
     public function authorize(): bool
     {
         if (is_null($this->resource)) {
-            throw new sneakypanelException('An ACL resource must be defined on API requests.');
+            throw new SneakyPanelException('An ACL resource must be defined on API requests.');
         }
 
         $token = $this->user()->currentAccessToken();

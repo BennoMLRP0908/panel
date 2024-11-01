@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
 
 class ReinstallServerService
 {
@@ -13,7 +13,7 @@ class ReinstallServerService
      */
     public function __construct(
         private ConnectionInterface $connection,
-        private DaemonServerRepository $daemonServerRepository,
+        private DaemonServerRepository $daemonServerRepository
     ) {
     }
 

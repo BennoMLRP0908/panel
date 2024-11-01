@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Middleware\Admin\Servers;
+namespace SneakyPanel\Http\Middleware\Admin\Servers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Server;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -15,7 +15,7 @@ class ServerInstalled
      */
     public function handle(Request $request, \Closure $next): mixed
     {
-        /** @var Server|null $server */
+        /** @var \SneakyPanel\Models\Server|null $server */
         $server = $request->route()->parameter('server');
 
         if (!$server instanceof Server) {

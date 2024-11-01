@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Api\Application\Nodes;
+namespace SneakyPanel\Http\Requests\Api\Application\Nodes;
 
-use sneakypanel\Models\Node;
-use sneakypanel\Services\Acl\Api\AdminAcl;
-use sneakypanel\Http\Requests\Api\Application\ApplicationApiRequest;
+use SneakyPanel\Models\Node;
+use SneakyPanel\Services\Acl\Api\AdminAcl;
+use SneakyPanel\Http\Requests\Api\Application\ApplicationApiRequest;
 
 class StoreNodeRequest extends ApplicationApiRequest
 {
@@ -15,7 +15,7 @@ class StoreNodeRequest extends ApplicationApiRequest
     /**
      * Validation rules to apply to this request.
      */
-    public function rules(?array $rules = null): array
+    public function rules(array $rules = null): array
     {
         return collect($rules ?? Node::getRules())->only([
             'public',

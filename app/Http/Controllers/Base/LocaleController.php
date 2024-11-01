@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Base;
+namespace SneakyPanel\Http\Controllers\Base;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Translation\Translator;
 use Illuminate\Contracts\Translation\Loader;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Http\Controllers\Controller;
 
 class LocaleController extends Controller
 {

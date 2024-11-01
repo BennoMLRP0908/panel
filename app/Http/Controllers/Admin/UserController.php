@@ -1,26 +1,26 @@
 <?php
 
-namespace sneakypanel\Http\Controllers\Admin;
+namespace SneakyPanel\Http\Controllers\Admin;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use sneakypanel\Models\User;
-use sneakypanel\Models\Model;
+use SneakyPanel\Models\User;
+use SneakyPanel\Models\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Http\RedirectResponse;
 use Prologue\Alerts\AlertsMessageBag;
 use Spatie\QueryBuilder\QueryBuilder;
 use Illuminate\View\Factory as ViewFactory;
-use sneakypanel\Exceptions\DisplayException;
-use sneakypanel\Http\Controllers\Controller;
+use SneakyPanel\Exceptions\DisplayException;
+use SneakyPanel\Http\Controllers\Controller;
 use Illuminate\Contracts\Translation\Translator;
-use sneakypanel\Services\Users\UserUpdateService;
-use sneakypanel\Traits\Helpers\AvailableLanguages;
-use sneakypanel\Services\Users\UserCreationService;
-use sneakypanel\Services\Users\UserDeletionService;
-use sneakypanel\Http\Requests\Admin\UserFormRequest;
-use sneakypanel\Http\Requests\Admin\NewUserFormRequest;
-use sneakypanel\Contracts\Repository\UserRepositoryInterface;
+use SneakyPanel\Services\Users\UserUpdateService;
+use SneakyPanel\Traits\Helpers\AvailableLanguages;
+use SneakyPanel\Services\Users\UserCreationService;
+use SneakyPanel\Services\Users\UserDeletionService;
+use SneakyPanel\Http\Requests\Admin\UserFormRequest;
+use SneakyPanel\Http\Requests\Admin\NewUserFormRequest;
+use SneakyPanel\Contracts\Repository\UserRepositoryInterface;
 
 class UserController extends Controller
 {
@@ -36,7 +36,7 @@ class UserController extends Controller
         protected Translator $translator,
         protected UserUpdateService $updateService,
         protected UserRepositoryInterface $repository,
-        protected ViewFactory $view,
+        protected ViewFactory $view
     ) {
     }
 
@@ -85,7 +85,7 @@ class UserController extends Controller
      * Delete a user from the system.
      *
      * @throws \Exception
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function delete(Request $request, User $user): RedirectResponse
     {
@@ -115,8 +115,8 @@ class UserController extends Controller
     /**
      * Update a user on the system.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
-     * @throws \sneakypanel\Exceptions\Repository\RecordNotFoundException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Repository\RecordNotFoundException
      */
     public function update(UserFormRequest $request, User $user): RedirectResponse
     {

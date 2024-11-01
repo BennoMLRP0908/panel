@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Http\Requests\Admin\Node;
+namespace SneakyPanel\Http\Requests\Admin\Node;
 
-use sneakypanel\Http\Requests\Admin\AdminFormRequest;
+use SneakyPanel\Http\Requests\Admin\AdminFormRequest;
 
 class AllocationAliasFormRequest extends AdminFormRequest
 {

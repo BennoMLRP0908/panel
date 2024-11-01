@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
-use sneakypanel\Models\User;
+use SneakyPanel\Models\User;
 use Illuminate\Support\Collection;
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\EggVariable;
 use Illuminate\Validation\ValidationException;
-use sneakypanel\Traits\Services\HasUserLevels;
+use SneakyPanel\Traits\Services\HasUserLevels;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class VariableValidatorService
@@ -23,7 +23,7 @@ class VariableValidatorService
     /**
      * Validate all of the passed data against the given service option variables.
      *
-     * @throws ValidationException
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function handle(int $egg, array $fields = []): Collection
     {
@@ -34,7 +34,7 @@ class VariableValidatorService
             $query = $query->where('user_editable', true)->where('user_viewable', true);
         }
 
-        /** @var \sneakypanel\Models\EggVariable[] $variables */
+        /** @var \SneakyPanel\Models\EggVariable[] $variables */
         $variables = $query->get();
 
         $data = $rules = $customAttributes = [];

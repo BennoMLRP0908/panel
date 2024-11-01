@@ -1,9 +1,9 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
-use sneakypanel\Models\Mount;
-use sneakypanel\Models\Server;
+use SneakyPanel\Models\Mount;
+use SneakyPanel\Models\Server;
 
 class ServerConfigurationStructureService
 {

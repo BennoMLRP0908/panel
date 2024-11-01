@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\UserSSHKey;
+use SneakyPanel\Models\UserSSHKey;
 
 class UserSSHKeyTransformer extends BaseClientTransformer
 {

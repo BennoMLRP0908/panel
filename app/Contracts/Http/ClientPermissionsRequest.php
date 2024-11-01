@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Contracts\Http;
+namespace SneakyPanel\Contracts\Http;
 
 interface ClientPermissionsRequest
 {

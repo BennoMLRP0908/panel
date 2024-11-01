@@ -1,16 +1,16 @@
 <?php
 
-namespace sneakypanel\Services\Servers;
+namespace SneakyPanel\Services\Servers;
 
 use Illuminate\Support\Arr;
-use sneakypanel\Models\Server;
-use sneakypanel\Models\Allocation;
+use SneakyPanel\Models\Server;
+use SneakyPanel\Models\Allocation;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\ConnectionInterface;
-use sneakypanel\Exceptions\DisplayException;
+use SneakyPanel\Exceptions\DisplayException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use sneakypanel\Repositories\Wings\DaemonServerRepository;
-use sneakypanel\Exceptions\Http\Connection\DaemonConnectionException;
+use SneakyPanel\Repositories\Wings\DaemonServerRepository;
+use SneakyPanel\Exceptions\Http\Connection\DaemonConnectionException;
 
 class BuildModificationService
 {
@@ -20,7 +20,7 @@ class BuildModificationService
     public function __construct(
         private ConnectionInterface $connection,
         private DaemonServerRepository $daemonServerRepository,
-        private ServerConfigurationStructureService $structureService,
+        private ServerConfigurationStructureService $structureService
     ) {
     }
 
@@ -28,11 +28,11 @@ class BuildModificationService
      * Change the build details for a specified server.
      *
      * @throws \Throwable
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     public function handle(Server $server, array $data): Server
     {
-        /** @var Server $server */
+        /** @var \SneakyPanel\Models\Server $server */
         $server = $this->connection->transaction(function () use ($server, $data) {
             $this->processAllocations($server, $data);
 
@@ -77,7 +77,7 @@ class BuildModificationService
     /**
      * Process the allocations being assigned in the data and ensure they are available for a server.
      *
-     * @throws DisplayException
+     * @throws \SneakyPanel\Exceptions\DisplayException
      */
     private function processAllocations(Server $server, array &$data): void
     {

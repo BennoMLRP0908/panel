@@ -3,18 +3,18 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use sneakypanel\Services\Nests\NestCreationService;
-use sneakypanel\Contracts\Repository\NestRepositoryInterface;
+use SneakyPanel\Services\Nests\NestCreationService;
+use SneakyPanel\Contracts\Repository\NestRepositoryInterface;
 
 class NestSeeder extends Seeder
 {
     /**
-     * @var NestCreationService
+     * @var \SneakyPanel\Services\Nests\NestCreationService
      */
     private $creationService;
 
     /**
-     * @var NestRepositoryInterface
+     * @var \SneakyPanel\Contracts\Repository\NestRepositoryInterface
      */
     private $repository;
 
@@ -23,7 +23,7 @@ class NestSeeder extends Seeder
      */
     public function __construct(
         NestCreationService $creationService,
-        NestRepositoryInterface $repository,
+        NestRepositoryInterface $repository
     ) {
         $this->creationService = $creationService;
         $this->repository = $repository;
@@ -32,12 +32,12 @@ class NestSeeder extends Seeder
     /**
      * Run the seeder to add missing nests to the Panel.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
     public function run()
     {
         $items = $this->repository->findWhere([
-            'author' => 'support@sneakypanel.com',
+            'author' => 'support@sneakypanel.io',
         ])->keyBy('name')->toArray();
 
         $this->createMinecraftNest(array_get($items, 'Minecraft'));
@@ -49,60 +49,60 @@ class NestSeeder extends Seeder
     /**
      * Create the Minecraft nest to be used later on.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
-    private function createMinecraftNest(?array $nest = null)
+    private function createMinecraftNest(array $nest = null)
     {
         if (is_null($nest)) {
             $this->creationService->handle([
                 'name' => 'Minecraft',
                 'description' => 'Minecraft - the classic game from Mojang. With support for Vanilla MC, Spigot, and many others!',
-            ], 'support@sneakypanel.com');
+            ], 'support@sneakypanel.io');
         }
     }
 
     /**
      * Create the Source Engine Games nest to be used later on.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
-    private function createSourceEngineNest(?array $nest = null)
+    private function createSourceEngineNest(array $nest = null)
     {
         if (is_null($nest)) {
             $this->creationService->handle([
                 'name' => 'Source Engine',
                 'description' => 'Includes support for most Source Dedicated Server games.',
-            ], 'support@sneakypanel.com');
+            ], 'support@sneakypanel.io');
         }
     }
 
     /**
      * Create the Voice Servers nest to be used later on.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
-    private function createVoiceServersNest(?array $nest = null)
+    private function createVoiceServersNest(array $nest = null)
     {
         if (is_null($nest)) {
             $this->creationService->handle([
                 'name' => 'Voice Servers',
                 'description' => 'Voice servers such as Mumble and Teamspeak 3.',
-            ], 'support@sneakypanel.com');
+            ], 'support@sneakypanel.io');
         }
     }
 
     /**
      * Create the Rust nest to be used later on.
      *
-     * @throws \sneakypanel\Exceptions\Model\DataValidationException
+     * @throws \SneakyPanel\Exceptions\Model\DataValidationException
      */
-    private function createRustNest(?array $nest = null)
+    private function createRustNest(array $nest = null)
     {
         if (is_null($nest)) {
             $this->creationService->handle([
                 'name' => 'Rust',
                 'description' => 'Rust - A game where you must fight to survive.',
-            ], 'support@sneakypanel.com');
+            ], 'support@sneakypanel.io');
         }
     }
 }

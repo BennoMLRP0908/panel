@@ -1,6 +1,6 @@
 <?php
 
-namespace sneakypanel\Extensions\Backups;
+namespace SneakyPanel\Extensions\Backups;
 
 use Closure;
 use Aws\S3\S3Client;
@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 use Webmozart\Assert\Assert;
 use Illuminate\Foundation\Application;
 use League\Flysystem\FilesystemAdapter;
-use sneakypanel\Extensions\Filesystem\S3Filesystem;
+use SneakyPanel\Extensions\Filesystem\S3Filesystem;
 use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 
@@ -38,7 +38,7 @@ class BackupManager
     /**
      * Returns a backup adapter instance.
      */
-    public function adapter(?string $name = null): FilesystemAdapter
+    public function adapter(string $name = null): FilesystemAdapter
     {
         return $this->get($name ?: $this->getDefaultAdapter());
     }

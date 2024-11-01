@@ -1,12 +1,12 @@
 <?php
 
-namespace sneakypanel\Listeners\Auth;
+namespace SneakyPanel\Listeners\Auth;
 
-use sneakypanel\Facades\Activity;
+use SneakyPanel\Facades\Activity;
 use Illuminate\Auth\Events\Failed;
-use sneakypanel\Events\Auth\DirectLogin;
+use SneakyPanel\Events\Auth\DirectLogin;
 use Illuminate\Contracts\Events\Dispatcher;
-use sneakypanel\Extensions\Illuminate\Events\Contracts\SubscribesToEvents;
+use SneakyPanel\Extensions\Illuminate\Events\Contracts\SubscribesToEvents;
 
 class AuthenticationListener implements SubscribesToEvents
 {

@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use sneakypanel\Models\Permission;
+use SneakyPanel\Models\Permission;
 use Illuminate\Support\Facades\Schema;
-use sneakypanel\Models\Permission as P;
+use SneakyPanel\Models\Permission as P;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -61,8 +61,10 @@ class MergePermissionsTableIntoSubusers extends Migration
 
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('subusers', function (Blueprint $table) {
             $table->json('permissions')->nullable()->after('server_id');
@@ -70,12 +72,7 @@ class MergePermissionsTableIntoSubusers extends Migration
 
         $cursor = DB::table('permissions')
             ->select(['subuser_id'])
-            ->when(DB::getPdo()->getAttribute(PDO::ATTR_DRIVER_NAME) === 'mysql', function ($query) {
-                $query->selectRaw('group_concat(permission) as permissions');
-            })
-            ->when(DB::getPdo()->getAttribute(PDO::ATTR_DRIVER_NAME) === 'pgsql', function ($query) {
-                $query->selectRaw("string_agg(permission, ',') as permissions");
-            })
+            ->selectRaw('GROUP_CONCAT(permission) as permissions')
             ->from('permissions')
             ->groupBy(['subuser_id'])
             ->cursor();
@@ -101,8 +98,10 @@ class MergePermissionsTableIntoSubusers extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         $flipped = array_flip(array_filter(self::$permissionsMap));
 

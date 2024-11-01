@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Services\Allocations;
+namespace SneakyPanel\Services\Allocations;
 
-use sneakypanel\Models\Allocation;
-use sneakypanel\Contracts\Repository\AllocationRepositoryInterface;
-use sneakypanel\Exceptions\Service\Allocation\ServerUsingAllocationException;
+use SneakyPanel\Models\Allocation;
+use SneakyPanel\Contracts\Repository\AllocationRepositoryInterface;
+use SneakyPanel\Exceptions\Service\Allocation\ServerUsingAllocationException;
 
 class AllocationDeletionService
 {
@@ -19,7 +19,7 @@ class AllocationDeletionService
      * Delete an allocation from the database only if it does not have a server
      * that is actively attached to it.
      *
-     * @throws ServerUsingAllocationException
+     * @throws \SneakyPanel\Exceptions\Service\Allocation\ServerUsingAllocationException
      */
     public function handle(Allocation $allocation): int
     {

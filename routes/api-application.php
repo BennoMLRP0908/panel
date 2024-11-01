@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use sneakypanel\Http\Controllers\Api\Application;
+use SneakyPanel\Http\Controllers\Api\Application;
 
 /*
 |--------------------------------------------------------------------------

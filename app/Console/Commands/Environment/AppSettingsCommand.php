@@ -1,10 +1,10 @@
 <?php
 
-namespace sneakypanel\Console\Commands\Environment;
+namespace SneakyPanel\Console\Commands\Environment;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\Kernel;
-use sneakypanel\Traits\Commands\EnvironmentWriterTrait;
+use SneakyPanel\Traits\Commands\EnvironmentWriterTrait;
 
 class AppSettingsCommand extends Command
 {
@@ -59,7 +59,7 @@ class AppSettingsCommand extends Command
     /**
      * Handle command execution.
      *
-     * @throws \sneakypanel\Exceptions\sneakypanelException
+     * @throws \SneakyPanel\Exceptions\SneakyPanelException
      */
     public function handle(): int
     {
@@ -119,8 +119,8 @@ class AppSettingsCommand extends Command
             $this->variables['APP_ENVIRONMENT_ONLY'] = $this->confirm('Enable UI based settings editor?', true) ? 'false' : 'true';
         }
 
-        $this->output->comment('Please reference https://sneakypanel.com/panel/1.0/additional_configuration.html#telemetry for more detailed information regarding telemetry data and collection.');
-        $this->variables['sneakypanel_TELEMETRY_ENABLED'] = $this->option('telemetry') ?? $this->confirm(
+        $this->output->comment('Please reference https://sneakypanel.io/panel/1.0/additional_configuration.html#telemetry for more detailed information regarding telemetry data and collection.');
+        $this->variables['PTERODACTYL_TELEMETRY_ENABLED'] = $this->option('telemetry') ?? $this->confirm(
             'Enable sending anonymous telemetry data?',
             config('sneakypanel.telemetry.enabled', true)
         ) ? 'true' : 'false';

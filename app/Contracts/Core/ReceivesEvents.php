@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Contracts\Core;
+namespace SneakyPanel\Contracts\Core;
 
-use sneakypanel\Events\Event;
+use SneakyPanel\Events\Event;
 
 interface ReceivesEvents
 {

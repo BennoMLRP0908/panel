@@ -1,8 +1,8 @@
 <?php
 
-namespace sneakypanel\Transformers\Api\Client;
+namespace SneakyPanel\Transformers\Api\Client;
 
-use sneakypanel\Models\EggVariable;
+use SneakyPanel\Models\EggVariable;
 
 class EggVariableTransformer extends BaseClientTransformer
 {
